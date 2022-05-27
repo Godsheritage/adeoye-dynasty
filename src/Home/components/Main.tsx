@@ -4,7 +4,7 @@ import { MAIN_DETAILS_TYPE } from "../../types";
 
 const Main: React.FC = () => {
   const MAIN_DETAILS: MAIN_DETAILS_TYPE = {
-    heading: "This family's story begins in 1878 when david was born",
+    heading: "This story begins in 1878, the year David was born",
     subHeading: "Every family has a story",
   };
 
