@@ -11,7 +11,7 @@ const Main: React.FC = () => {
   return (
     <div className="container">
       <div className="main d-flex flex-column justify-content-center align-items-start ">
-        <h3>{MAIN_DETAILS.subHeading}</h3>
+        <h3>{MAIN_DETAILS.subHeading}</h3> 
         <h1 className="">{MAIN_DETAILS.heading}</h1>
         <Input className="search-bar" placeHolder="search for family members" />
       </div>
