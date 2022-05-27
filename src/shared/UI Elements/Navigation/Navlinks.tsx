@@ -5,7 +5,7 @@ const Navlinks: React.FC<any> = ({ className, navStyles }) => {
   return (
     <ul className={className}>
       <li>
-        <NavLink to="/" className={`text-decoration-none ${navStyles} `}>
+        <NavLink  to="/" className={`text-decoration-none ${navStyles} `}>
           Home
         </NavLink>
       </li>

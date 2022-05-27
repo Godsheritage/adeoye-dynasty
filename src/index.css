@@ -25,11 +25,13 @@
   font-family: Helvetica Rounded;
 }
 
-.link-styles li a:hover,
-.link-styles li a:active .link-styles li a.active {
-  background: #f8df00;
-  border-color: #292929;
-  color: #292929;
+.link-styles li a.active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 50px;
+  background-color: #E63946;
+  margin-left: 9px;
 }
 
 .logo {
