@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,gBAAgB,EAAE,wCAAwC;EAC1D,mBAAmB,EAAE,MAAM;EAC3B,iBAAiB,EAAE,SAAS;EAC5B,eAAe,EAAE,KAAK;EACtB,MAAM,EAAE,IAAI;CASb;;AAdD,AAOE,cAPY,CAOZ,MAAM,CAAC;EACL,UAAU,EAAE,IAAI;CAKjB;;AAbH,AASI,cATU,CAOZ,MAAM,CAEJ,CAAC,CAAC;EACA,WAAW,EAAE,iBAAiB;EAC9B,SAAS,EAAE,MAAM;CAClB",
+    "sources": [
+        "custom-header.scss"
+    ],
+    "names": [],
+    "file": "custom-header.css"
+}

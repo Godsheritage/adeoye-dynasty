@@ -1,0 +1,30 @@
+.card {
+  width: 12rem;
+  height: 11rem;
+  border: 2px solid #fff;
+  background-color: #fff;
+  margin: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: -3px 10px 10px 1px #333;
+          box-shadow: -3px 10px 10px 1px #333;
+  border-radius: 7px;
+}
+
+.card img {
+  border-radius: 7px;
+  height: 75%;
+  width: 100%;
+}
+
+.card h3 {
+  color: black;
+  text-align: center;
+}
+
+.card p {
+  color: black;
+  font-family: Helvetica Rounded;
+  text-align: center;
+}
+/*# sourceMappingURL=card.css.map */

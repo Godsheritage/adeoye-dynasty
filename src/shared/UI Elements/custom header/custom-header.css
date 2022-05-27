@@ -1,0 +1,23 @@
+.custom-header {
+  background: linear-gradient(
+      to right,
+      rgba(50, 70, 80, 0.7),
+      rgba(77, 67, 186, 0.7)
+    ),
+    url("../../../assets/images/family.jpg");
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+}
+ 
+.custom-header .links {
+  margin-top: 2rem;
+}
+
+.custom-header .links a {
+  font-family: Helvetica Rounded;
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=custom-header.css.map */
