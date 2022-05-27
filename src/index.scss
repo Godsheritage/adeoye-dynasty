@@ -74,17 +74,21 @@
     font-size: 1.4rem;
     color: #fff;
     background-color: #e63946;
+    padding: 0 16px ;
   }
   h1 {
     font-family: "Merriweather", serif;
     font-size: 2.5rem;
+    font-style:oblique;
+    font-weight: bold;
+    line-height: 4rem;
     color: #fff;
     width: 50%;
   }
 }
 
 .footer {
-  background-color: #c7bebe;
+  background-color: #fff;
   height: 8vh;
   p {
     font-family: Helvetica Rounded;
