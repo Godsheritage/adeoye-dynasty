@@ -8,7 +8,7 @@ const FamilyMembersList:React.FC = () => {
   const { familyMembers} = useContext(FamilyContext) as contextTypes
  
   return (
-    <div className = 'family-member row  justify-content-center align-items-center' style={{ backgroundColor:'#EDF1F4'}}>
+    <div className = 'family-member d-flex flex-wrap justify-content-center align-items-center' style={{ backgroundColor:'#EDF1F4'}}>
       {familyMembers.map((member, index) => (
         <FamilyMember key={index} member={member} />
       ))}

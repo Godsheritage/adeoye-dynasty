@@ -1,13 +1,11 @@
 .card {
-  width: 12rem;
-  height: 11rem;
+  width: 13rem;
+  height: 17rem;
   border: 2px solid #fff;
   background-color: #fff;
   margin: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-shadow: -3px 10px 10px 1px #333;
-          box-shadow: -3px 10px 10px 1px #333;
   border-radius: 7px;
 }
 
@@ -23,7 +21,6 @@
 }
 
 .card p {
-  color: black;
   font-family: Helvetica Rounded;
   text-align: center;
 }
