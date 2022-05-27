@@ -1,4 +1,4 @@
-import "./input.css";
+import "./input.scss";
 import React from "react";
 import { inputTypes } from "../../types";
 import { FaSearch } from "react-icons/fa";
