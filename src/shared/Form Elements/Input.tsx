@@ -1,11 +1,17 @@
-import React from 'react'
-import { inputTypes } from '../../types'
-import './input.css'
+import "./input.css";
+import React from "react";
+import { inputTypes } from "../../types";
+import { FaSearch } from "react-icons/fa";
 
-const Input:React.FC<inputTypes> = ({className, placeHolder}) => {
+const Input: React.FC<inputTypes> = ({ className, placeHolder }) => {
   return (
-    <input className={className} placeholder={placeHolder} />
-  )
-}
+    <div className="search">
+      <input className={className} placeholder={placeHolder} />
+      <button>
+        <FaSearch className="search-btn" size="1.8rem" />
+      </button>
+    </div>
+  );
+};
 
-export default Input
+export default Input;
