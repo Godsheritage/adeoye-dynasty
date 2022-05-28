@@ -22,3 +22,7 @@ function App() {
 }
 
 export default App;
+
+//todo  work on the backend 
+//todo  work on the single page
+//todo  work on the gllery page
