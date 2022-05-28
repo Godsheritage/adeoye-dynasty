@@ -2,9 +2,9 @@ import "./index.scss";
 import Home from "./Home/pages/Home";
 import Family from "./Family/pages/Family";
 import Gallery from "./Gallery/pages/Gallery";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FamilyContext from "./context/FamilyContext";
 import { FamilyContextProvider } from "./context/FamilyContext";
+import SingleMemberPage from "./shared/single member/SingleMemberPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/family" element={<Family />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/family/:name" element={<SingleMemberPage/>} />
         </Routes>
       </Router>
     </FamilyContextProvider>

@@ -1,6 +1,6 @@
 import React from "react";
 import Main from "../components/Main";
-import Footer from "../../shared/Footer";
+import Footer from "../../shared/UI Elements/footer/Footer";
 import MainNavigation from "../../shared/UI Elements/Navigation/MainNavigation";
 
 const Home = () => {

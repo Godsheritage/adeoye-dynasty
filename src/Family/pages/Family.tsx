@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../shared/Footer";
+import Footer from "../../shared/UI Elements/footer/Footer";
 import FamilyMembersList from "../components/FamilyMembersList";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 
