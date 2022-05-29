@@ -104,3 +104,11 @@
 .family-member{
   overflow-x: hidden;
 }
+
+
+//gallery
+.gallery-pictures{
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.4%;
+  // width: 100%;
+}
