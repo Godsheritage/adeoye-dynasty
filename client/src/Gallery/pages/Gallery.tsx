@@ -25,28 +25,28 @@ const Gallery: React.FC = () => {
         </div>
         <div>
           <img
-            src={require("../../assets/images/family pictures/Godsheritage.JPG")}
+            src={require("../../assets/images/family pictures/Crownfit.jpg")}
             alt="name"
             className="img-fluid"
           />
         </div>
         <div>
           <img
-            src={require("../../assets/images/family pictures/Godsheritage.JPG")}
+            src={require("../../assets/images/family pictures/Tunde.jpg")}
             alt="name"
             className="img-fluid"
           />
         </div>
         <div>
           <img
-            src={require("../../assets/images/family pictures/Godsheritage.JPG")}
+            src={require("../../assets/images/family pictures/Ruth.jpg")}
             alt="name"
             className="img-fluid"
           />
         </div>
         <div>
           <img
-            src={require("../../assets/images/family pictures/Godsheritage.JPG")}
+            src={require("../../assets/images/family pictures/Mojola.JPG")}
             alt="name"
             className="img-fluid"
           />
