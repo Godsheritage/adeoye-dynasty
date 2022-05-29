@@ -1,8 +1,9 @@
 export interface familyMemberTypes {
   member: {
     name: string;
-    Age: Date;
+    DOB: Date;
     image: string;
+    age:number,
     sex: string;
     bio: string;
     isAlive: true;
