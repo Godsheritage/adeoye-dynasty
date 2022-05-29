@@ -9,7 +9,8 @@ const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
     <div className="family-member">
       <Card>
         <img src={member.image} alt={member.name} onClick={() => navigate(`/family/${member.name}`)} />
-        <p className="p-3 text-dark">{member.name}</p>
+        <p className=" text-dark">{member.name}</p>
+        <p className=" text-dark">{member.age}</p>
       </Card>
     </div>
   );

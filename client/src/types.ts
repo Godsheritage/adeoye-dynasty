@@ -7,7 +7,6 @@ export interface familyMemberTypes {
     sex: string;
     bio: string;
     isAlive: true;
-    yearOfBirth: number;
     YearOfDeath: number | null;
   };
 }
