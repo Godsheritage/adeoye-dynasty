@@ -6,6 +6,13 @@ const SingleMemberPage = () => {
   return (
     <>
     <CustomHeader location='/family'/>
+    <div>
+      <div className="img-fluid"></div>
+      <div className="member-details">
+        <h1>name</h1>
+        <p>age</p>
+      </div>
+    </div>
     <Footer/>
     </>
   )
