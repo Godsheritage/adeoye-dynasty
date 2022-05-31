@@ -24,7 +24,7 @@ const Gallery: React.FC = () => {
           </div>
         ))}
 
-        {/* 
+        {/*  
         <div>
           <img
             src={require("../../assets/images/family pictures/Crownfit.jpg")}
