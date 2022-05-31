@@ -1,0 +1,22 @@
+{
+  "name": "adeoye-dynasty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "CLIENT_BUILD":"npm run build --prefix client",
+    "deploy":"npm run CLIENT_BUILD && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godsheritage/adeoye-dynasty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Godsheritage/adeoye-dynasty/issues"
+  },
+  "homepage": "https://github.com/Godsheritage/adeoye-dynasty#readme"
+}
