@@ -9,7 +9,7 @@ const familyMembers = [
     {
         name: "Tunde Adeoye",
         DOB: new Date("26 May 1971"),
-        // image: require("../../../client/src/assets/images/family pictures/Tunde.jpg"),
+        image: require("../assets/images/family pictures/Tunde.jpg"),
         sex: "male",
         bio: "",
         age: age(new Date("26 May 1971")),
@@ -19,7 +19,7 @@ const familyMembers = [
     {
         name: "Ruth Adeoye",
         DOB: new Date("21 September 1976"),
-        // image: require("../../../client/src/assets/images/family pictures/Ruth.jpg"),
+        image: require("../assets/images/family pictures/Ruth.jpg"),
         sex: "female",
         bio: "",
         age: age(new Date("21 September 1976")),
@@ -29,7 +29,7 @@ const familyMembers = [
     {
         name: "Crownfit Adeoye",
         DOB: new Date("28 August 2002"),
-        // image: require("../../../client/src/assets/images/family pictures/Crownfit.jpg"),
+        image: require("../assets/images/family pictures/Crownfit.jpg"),
         sex: "male",
         bio: "",
         age: age(new Date("28 August 2002")),
@@ -39,7 +39,7 @@ const familyMembers = [
     {
         name: "Godsheritage Adeoye",
         DOB: new Date("30 march 2004"),
-        // image: require("../../../client/src/assets/images/family pictures/Godsheritage.JPG"),
+        image: require("../assets/images/family pictures/Godsheritage.JPG"),
         sex: "male",
         bio: "",
         age: age(new Date("30 march 2004")),
@@ -49,7 +49,7 @@ const familyMembers = [
     {
         name: "Mojola Adeoye",
         DOB: new Date("16 November 2007"),
-        // image: require("../../../client/src/assets/images/family pictures/Mojola.JPG"),
+        image: require("../assets/images/family pictures/Mojola.JPG"),
         sex: "male",
         bio: "",
         age: age(new Date("16 November 2007")),
@@ -59,7 +59,7 @@ const familyMembers = [
     {
         name: "Tunde Adeoye",
         DOB: new Date("26 May 1971"),
-        // image: require("../../../client/src/assets/images/family pictures/Tunde.jpg"),
+        image: require("../assets/images/family pictures/Tunde.jpg"),
         sex: "male",
         bio: "",
         age: age(new Date("26 May 1971")),
@@ -69,7 +69,7 @@ const familyMembers = [
     {
         name: "Ruth Adeoye",
         DOB: new Date("21 September 1976"),
-        // image: require("../../../client/src/assets/images/family pictures/Ruth.jpg"),
+        image: require("../assets/images/family pictures/Ruth.jpg"),
         sex: "female",
         bio: "",
         age: age(new Date("21 September 1976")),
@@ -79,7 +79,7 @@ const familyMembers = [
     {
         name: "Crownfit Adeoye",
         DOB: new Date("28 August 2002"),
-        // image: require("../../../client/src/assets/images/family pictures/Crownfit.jpg"),
+        image: require("../assets/images/family pictures/Crownfit.jpg"),
         sex: "male",
         bio: "",
         age: age(new Date("28 August 2002")),
@@ -89,7 +89,7 @@ const familyMembers = [
     {
         name: "Godsheritage Adeoye",
         DOB: new Date("30 march 2004"),
-        // image: require("../../../client/src/assets/images/family pictures/Godsheritage.JPG"),
+        image: require("../assets/images/family pictures/Godsheritage.JPG"),
         sex: "male",
         bio: "",
         age: age(new Date("30 march 2004")),
@@ -99,7 +99,7 @@ const familyMembers = [
     {
         name: "Mojola Adeoye",
         DOB: new Date("16 November 2007"),
-        // image: require("../../../client/src/assets/images/family pictures/Mojola.JPG"),
+        image: require("../assets/images/family pictures/Mojola.JPG"),
         sex: "male",
         bio: "",
         age: age(new Date("16 November 2007")),
