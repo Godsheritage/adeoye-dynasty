@@ -1,20 +1,26 @@
-import React, { useContext } from "react";
-import Footer from "../../shared/UI Elements/footer/Footer";
-import { contextTypes, familyMemberTypes } from "../../types";
 import FamilyContext from "../../context/FamilyContext";
+import { useContext } from "react";
+import { contextTypes } from "../../types";
+import Footer from "../../shared/UI Elements/footer/Footer";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 
 // const FamilyMember = () => {
-//   const { familyMembers } = useContext(FamilyContext) as contextTypes;
-//   return familyMembers.map((member, index) => (
-// <Gallery key={index} member={member} />
-//   ));
-// };
-
-const Gallery: React.FC = () => {
+  // return familyMembers.map((member, index) => (
+    // <Gallery key={index} member={member} />
+    // ));
+    // };
+    
+    const Gallery: React.FC = () => {
+  const { familyMembers } = useContext(FamilyContext) as contextTypes;
+  
   return (
     <div>
       <CustomHeader location="/gallery" />
+
+
+
+
+
       <div className="gallery-pictures">
         <div>
           <img
