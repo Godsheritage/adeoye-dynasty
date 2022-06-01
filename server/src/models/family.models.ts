@@ -23,7 +23,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     DOB: new Date("21 September 1976"),
     image: require("./assets/images/family pictures/Ruth.jpg"),
     sex: "female",
-    bio: "",
+    bio: "",  
     age: age(new Date("21 September 1976")),
     isAlive: true,
     YearOfDeath: null,
