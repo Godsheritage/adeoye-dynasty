@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "CLIENT_BUILD":"npm run build --prefix client",
-    "deploy":"npm run CLIENT_BUILD && npm start"
+    "deploy":"npm run CLIENT_BUILD && npm start",
+    "start":"npm start --prefix server"
   },
   "repository": {
     "type": "git",
