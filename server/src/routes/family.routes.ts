@@ -1,9 +1,9 @@
 import  express  from "express";
-import { httpGetFamilyMembers } from "./family.controllers";
+import { httpFetchFamilyMembers } from "./family.controllers";
 
 const familyRoute = express.Router()
 
-familyRoute.get('/', httpGetFamilyMembers)
+familyRoute.get('/members', httpFetchFamilyMembers)
 
 export default familyRoute
  

@@ -10,7 +10,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   >();
 
   const fetchFamily = async () => {
-    const response = await axios.get("http:localhost:5000/family/members");
+    const response = await axios.get("http:localhost:1234/family/members");
     setFamilyMembers(response.data);
   };
 

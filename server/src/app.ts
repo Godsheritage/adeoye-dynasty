@@ -1,10 +1,14 @@
+import path from "path";
+import morgan from "morgan";
 import express from "express";
 import familyRoute from "./routes/family.routes";
-import path from "path";
 
 const app = express();
 
-app.use("/family/members", familyRoute);
+app.use(express.json());
+app.use(morgan("combined"));
+
+app.use("/family", familyRoute);
 
 app.use(express.static(path.join(__dirname, "..", "public ")));
 

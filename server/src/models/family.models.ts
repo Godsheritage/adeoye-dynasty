@@ -128,8 +128,9 @@ const addFamilyMembers = async () => {
 // addFamilyMembers();
 
 export const fetchFamilyMembers = async () => {
-  return await familyModel.find({} , {__v:0});
+  return await familyModel.find({}, {__v:0});
 };
 
 
 export default familyMembers;
+ 
