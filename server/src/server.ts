@@ -12,8 +12,8 @@ mongoose.connection.on("error", (error) => {
 });
 
 mongoose.connection.once("open", () => {
-  console.log("mongo connection is ready");
-});
+  console.log("mongo connection is ready"); 
+}); 
 
 const PORT = 5000;
 
