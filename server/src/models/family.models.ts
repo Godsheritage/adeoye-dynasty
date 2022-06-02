@@ -1,5 +1,5 @@
 import { familyMemberTypes } from "../types";
-// import  "/assets/images/family pictures/Tunde.jpg" 
+import  "./assets/images/family pictures/Tunde.jpg" 
 
 // to find the age of a member
 const year: any = new Date().getFullYear();

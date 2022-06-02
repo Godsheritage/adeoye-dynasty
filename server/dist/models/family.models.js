@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// import  "/assets/images/family pictures/Tunde.jpg" 
+require("./assets/images/family pictures/Tunde.jpg");
 // to find the age of a member
 const year = new Date().getFullYear();
 const age = (DOB) => {
