@@ -1,6 +1,7 @@
 import { familyMemberTypes } from "../types";
-import  "./assets/images/family pictures/Tunde.jpg" 
+import path from 'path'
 
+  
 // to find the age of a member
 const year: any = new Date().getFullYear();
 const age = (DOB: Date) => {
