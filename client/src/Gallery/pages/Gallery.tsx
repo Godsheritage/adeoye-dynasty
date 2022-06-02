@@ -20,46 +20,9 @@ const Gallery: React.FC = () => {
       <div className="gallery-pictures">
         {familyMembers.map((member, index) => (
           <div>
-            <img src={member.image} alt="name" className="img-fluid" />
+            <img src={member.image} alt={member.name} className="img-fluid" />
           </div>
         ))}
-
-        {/*  
-        <div>
-          <img
-            src={require("../../assets/images/family pictures/Crownfit.jpg")}
-            alt="name"
-            className="img-fluid"
-          />
-        </div>
-        <div>
-          <img
-            src={require("../../assets/images/family pictures/Tunde.jpg")}
-            alt="name"
-            className="img-fluid"
-          />
-        </div>
-        <div>
-          <img
-            src={require("../../assets/images/family pictures/Ruth.jpg")}
-            alt="name"
-            className="img-fluid"
-          />
-        </div>
-        <div>
-          <img
-            src={require("../../assets/images/family pictures/Mojola.JPG")}
-            alt="name"
-            className="img-fluid"
-          />
-        </div>
-        <div>
-          <img
-            src={require("../../assets/images/family pictures/Godsheritage.JPG")}
-            alt="name"
-            className="img-fluid"
-          />
-        </div> */}
       </div>
       <Footer />
     </div>
