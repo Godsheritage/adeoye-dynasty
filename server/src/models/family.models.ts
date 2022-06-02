@@ -1,7 +1,9 @@
 import { familyMemberTypes } from "../types";
+import { familyModel } from "./family.mongo";
 import path from 'path'
 
-  
+
+
 // to find the age of a member
 const year: any = new Date().getFullYear();
 const age = (DOB: Date) => {
@@ -110,5 +112,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     YearOfDeath: null,
   },
 ];
+
+
 
 export default familyMembers
