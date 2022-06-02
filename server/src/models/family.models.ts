@@ -125,7 +125,7 @@ const addFamilyMembers = async () => {
   await familyModel.updateOne(familyMembers, familyMembers, { upsert: true });
 };
 
-addFamilyMembers();
+// addFamilyMembers();
 
 export const fetchFamilyMembers = async () => {
   return await familyModel.find({}, {});

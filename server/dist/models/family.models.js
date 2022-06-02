@@ -112,7 +112,7 @@ const familyMembers = [
 const addFamilyMembers = async () => {
     await family_mongo_1.familyModel.updateOne(familyMembers, familyMembers, { upsert: true });
 };
-addFamilyMembers();
+// addFamilyMembers();
 const fetchFamilyMembers = async () => {
     return await family_mongo_1.familyModel.find({}, {});
 };
