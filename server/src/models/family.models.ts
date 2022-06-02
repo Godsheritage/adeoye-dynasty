@@ -120,6 +120,15 @@ const familyMembers: familyMemberTypes["member"][] = [
   },
 ];
 
-familyModel.updateOne(familyMembers, familyMembers, { upsert: true });
+const addFamilyMembers = async () => {
+  await familyModel.updateOne(familyMembers, familyMembers, { upsert: true });
+};
+
+addFamilyMembers();
+
+export const fetchFamilyMembers = async () => {
+  return await familyModel.find({}, {});
+};
+
 
 export default familyMembers;
