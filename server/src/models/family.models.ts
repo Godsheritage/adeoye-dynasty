@@ -3,6 +3,7 @@ import { familyModel } from "./family.mongo";
 
 // to find the age of a member
 const year: any = new Date().getFullYear();
+
 const age = (DOB: Date) => {
   return year - DOB.getFullYear();
 };
