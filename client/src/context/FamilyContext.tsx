@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { contextTypes, familyMemberTypes } from "../types";
 
 const FamilyContext = createContext<contextTypes | null>(null);
@@ -13,6 +13,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     const response = await axios.get("http:localhost:5000/family/members");
     setFamilyMembers(response.data);
   };
+
+  useEffect(() => {
+    fetchFamily();
+  }, []);
 
   return (
     <FamilyContext.Provider value={{ familyMembers }}>

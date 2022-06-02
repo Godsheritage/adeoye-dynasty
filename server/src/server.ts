@@ -15,7 +15,7 @@ mongoose.connection.once("open", () => {
   console.log("mongo connection is ready"); 
 });   
 
-const PORT = 5000;
+const PORT = process.env.PORT || 1234;
 
 server.listen(PORT, async () => {
   // make the mongo connection on start
@@ -23,4 +23,4 @@ server.listen(PORT, async () => {
 
   console.log(`server is listening on port ${PORT}`);
 });
- 
+  

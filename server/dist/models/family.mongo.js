@@ -13,6 +13,6 @@ const familySchema = new mongoose_1.default.Schema({
     sex: { type: String, required: true },
     bio: { type: String, required: true },
     isAlive: { type: Boolean, required: true },
-    YearOfDeath: { type: Number, required: true },
+    YearOfDeath: { type: Number },
 });
 exports.familyModel = mongoose_1.default.model("familyMember", familySchema);

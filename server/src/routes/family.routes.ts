@@ -6,3 +6,4 @@ const familyRoute = express.Router()
 familyRoute.get('/', httpGetFamilyMembers)
 
 export default familyRoute
+ 
