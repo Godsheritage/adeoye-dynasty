@@ -11,7 +11,7 @@ const familyMembers = [
     {
         name: "Tunde Adeoye",
         DOB: new Date("26 May 1971"),
-        image: "https://drive.google.com/file/d/1PrP6zle2Cayr4D0v5drtROnmwtkALWnJ/view?usp=sharing",
+        image: "Tunde.jpg",
         sex: "male",
         bio: "just there",
         age: age(new Date("26 May 1971")),
@@ -21,7 +21,7 @@ const familyMembers = [
     {
         name: "Ruth Adeoye",
         DOB: new Date("21 September 1976"),
-        image: "https://drive.google.com/file/d/1hIItCJAsBxXJaDUv7qcRFO7tk22bWzmY/view?usp=sharing",
+        image: "Ruth.jpg",
         sex: "female",
         bio: "just there",
         age: age(new Date("21 September 1976")),
@@ -31,7 +31,7 @@ const familyMembers = [
     {
         name: "Crownfit Adeoye",
         DOB: new Date("28 August 2002"),
-        image: "https://drive.google.com/file/d/1rjrdHIs2ZijDes5GCSPjc-WRGu8GubDv/view?usp=sharing",
+        image: "Crownfit.jpg",
         sex: "male",
         bio: "just there",
         age: age(new Date("28 August 2002")),
@@ -41,7 +41,7 @@ const familyMembers = [
     {
         name: "Godsheritage Adeoye",
         DOB: new Date("30 march 2004"),
-        image: "https://drive.google.com/file/d/1Wzu7DKuusAxESZO1gQgW4aR8d1fbt-M4/view?usp=sharing",
+        image: "Godsheritage.JPG",
         sex: "male",
         bio: "just there",
         age: age(new Date("30 march 2004")),
@@ -51,7 +51,7 @@ const familyMembers = [
     {
         name: "Mojola Adeoye",
         DOB: new Date("16 November 2007"),
-        image: "https://drive.google.com/file/d/1yXSeftvxK3mSI6ys9Hsetg-Skh6xWiWt/view?usp=sharing",
+        image: "Mojola.JPG",
         sex: "male",
         bio: "just there",
         age: age(new Date("16 November 2007")),
@@ -61,7 +61,7 @@ const familyMembers = [
     {
         name: "Tunde Adeoye",
         DOB: new Date("26 May 1971"),
-        image: "https://drive.google.com/file/d/1PrP6zle2Cayr4D0v5drtROnmwtkALWnJ/view?usp=sharing",
+        image: "Tunde.jpg",
         sex: "male",
         bio: "just there",
         age: age(new Date("26 May 1971")),
@@ -71,7 +71,7 @@ const familyMembers = [
     {
         name: "Ruth Adeoye",
         DOB: new Date("21 September 1976"),
-        image: "https://drive.google.com/file/d/1hIItCJAsBxXJaDUv7qcRFO7tk22bWzmY/view?usp=sharing",
+        image: "Ruth.jpg",
         sex: "female",
         bio: "just there",
         age: age(new Date("21 September 1976")),
@@ -81,7 +81,7 @@ const familyMembers = [
     {
         name: "Crownfit Adeoye",
         DOB: new Date("28 August 2002"),
-        image: "https://drive.google.com/file/d/1rjrdHIs2ZijDes5GCSPjc-WRGu8GubDv/view?usp=sharing",
+        image: "Crownfit.jpg",
         sex: "male",
         bio: "just there",
         age: age(new Date("28 August 2002")),
@@ -91,7 +91,7 @@ const familyMembers = [
     {
         name: "Godsheritage Adeoye",
         DOB: new Date("30 march 2004"),
-        image: "https://drive.google.com/file/d/1Wzu7DKuusAxESZO1gQgW4aR8d1fbt-M4/view?usp=sharing",
+        image: "Godsheritage.JPG",
         sex: "male",
         bio: "just there",
         age: age(new Date("30 march 2004")),
@@ -101,7 +101,7 @@ const familyMembers = [
     {
         name: "Mojola Adeoye",
         DOB: new Date("16 November 2007"),
-        image: "https://drive.google.com/file/d/1yXSeftvxK3mSI6ys9Hsetg-Skh6xWiWt/view?usp=sharing",
+        image: "Mojola.JPG",
         sex: "male",
         bio: "just there",
         age: age(new Date("16 November 2007")),

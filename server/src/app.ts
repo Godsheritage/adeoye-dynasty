@@ -11,14 +11,13 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("combined"));
 app.use("/family", familyRoute);
-
+       
 app.get("/images/:key", (req, res) => {
   const key = req.params.key;
   const readStream = getFileStream(key);
-
   readStream.pipe(res);
 });
-
+    
 app.use(express.static(path.join(__dirname, "..", "public ")));
 
 app.get("/*", (req, res) => {

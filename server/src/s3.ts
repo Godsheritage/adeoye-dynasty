@@ -29,10 +29,10 @@ export const uploadFile: any = (file: any) => {
 };
 
 //download an image
-
-export const getFileStream = (filekey: any) => {
+ 
+export const getFileStream = (fileKey: any) => {
   const downloadParams: any = {
-    key: filekey,
+    Key: fileKey,
     Bucket: AWS_BUCKET_NAME,
   };
   return s3.getObject(downloadParams).createReadStream();

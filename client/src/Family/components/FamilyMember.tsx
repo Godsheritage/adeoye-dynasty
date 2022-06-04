@@ -9,10 +9,10 @@ const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
     <div className="family-member">
       <Card>
         <img
-          src={member.image}
+          src={`/images/${member.image}`} 
           alt={member.name}
           onClick={() => navigate(`/family/${member.name}`)}
-        />
+        /> 
         <div className="d-flex flex-column pt-2 justify-content-around align-items-around">
           <p className=" text-dark">{member.name}</p>
           <p className=" text-dark">Age:{member.age}</p>
@@ -22,4 +22,4 @@ const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
   );
 };
 
-export default FamilyMember;
+export default FamilyMember;  
