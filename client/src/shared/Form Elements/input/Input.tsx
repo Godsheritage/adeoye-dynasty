@@ -1,6 +1,6 @@
 import "./input.scss";
 import React from "react";
-import { inputTypes } from "../../types";
+import { inputTypes } from "../../../types";
 import { FaSearch } from "react-icons/fa";
 
 const Input: React.FC<inputTypes> = ({ className, placeHolder }) => {
