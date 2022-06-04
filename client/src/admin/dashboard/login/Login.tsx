@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Button from "../shared/Form Elements/buttons/Buttons";
-import Input from "../shared/Form Elements/input/Input";
+import Input from "../../../shared/Form Elements/input/Input";
+import Button from "../../../shared/Form Elements/buttons/Buttons";
 // import GoogleLogo from "../assets/img/Google.png";
 // import { contextTypes, signUpTypes, SIGN_IN_VALIDATION_TYPES } from "../types";
 // import ProductContext from "../context/ProductContext";
@@ -27,15 +26,6 @@ const LogIn: React.FC = () => {
     },
   };
 
-  // const buttonVariants = {
-  //   visible: {
-  //     scale: 0.95,
-  //     color: "#333",
-  //     backgroundColor: "#fff",
-  //     border: "3px solid #F51167",
-  //     transition: { duration: 0.7, ease: "easeInOut" },
-  //   },
-  // };
 
   //submit form
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -85,17 +75,6 @@ const LogIn: React.FC = () => {
           >
             Sign In
           </Button>
-          <div className="my-3">
-            <a href="/auth/google">
-              {/* <img src={GoogleLogo} className="googleLogo" alt="" /> */}
-            </a>
-          </div>
-          <Button
-            element="link"
-            to="/signup"
-            className="card-link"
-            text=" Don't have an account? Sign up"
-          ></Button>
         </form>
       </div>
     </motion.div>

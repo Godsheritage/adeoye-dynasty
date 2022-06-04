@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import { contextTypes } from "../../types";
+import FamilyContext from "../../context/FamilyContext";
 import Footer from "../../shared/UI Elements/footer/Footer";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
-import FamilyContext from "../../context/FamilyContext";
 
 const ViewFamily = () => {
   const { familyMembers } = useContext(FamilyContext) as contextTypes;

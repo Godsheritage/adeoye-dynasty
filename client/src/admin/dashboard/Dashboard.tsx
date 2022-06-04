@@ -1,7 +1,7 @@
 import "./dashboard.scss";
-import Footer from "../../shared/UI Elements/footer/Footer";
 import AddImage from "../../assets/add.svg";
 import EditImage from "../../assets/edit.png";
+import Footer from "../../shared/UI Elements/footer/Footer";
 
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 import { useNavigate, Link } from "react-router-dom";
