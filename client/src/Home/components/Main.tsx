@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../../shared/Form Elements/input/Input";
 import { FaSearch } from "react-icons/fa";
 import { MAIN_DETAILS_TYPE } from "../../types";
+import "./main.scss";
 
 const Main: React.FC = () => {
   const MAIN_DETAILS: MAIN_DETAILS_TYPE = {
@@ -14,15 +15,15 @@ const Main: React.FC = () => {
       <div className="main d-flex flex-column justify-content-center align-items-start ">
         <h3>{MAIN_DETAILS.subHeading}</h3>
         <h1 className="">{MAIN_DETAILS.heading}</h1>
-        <div>
+        <div className="search-section">
           <Input
             className="search-bar"
             placeHolder="search for family members"
             element="input"
             type="text"
           />
-          <button>
-            <FaSearch className="search-btn" size="1.8rem" />
+          <button className="search-btn">
+            <FaSearch className="search-icon" size="1.8rem" />
           </button>
         </div>
       </div>
