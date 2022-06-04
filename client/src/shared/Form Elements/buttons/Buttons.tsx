@@ -9,10 +9,16 @@ const Button: React.FC<ButtonTypes> = ({
   to,
   onClick,
   children,
+  disabled,
 }) => {
   if (element === "button") {
     return (
-      <button className={className} onClick={onClick}>
+      <button
+        className={className}
+        onClick={onClick}
+        disabled={disabled}
+        type='submit'
+      >
         {children}
       </button>
     );

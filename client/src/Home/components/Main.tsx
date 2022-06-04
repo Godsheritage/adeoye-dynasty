@@ -18,9 +18,10 @@ const Main: React.FC = () => {
         <div className="search-section">
           <Input
             className="search-bar"
-            placeHolder="search for family members"
+            placeholder="search for family members"
             element="input"
             type="text"
+            errorText=""
           />
           <button className="search-btn">
             <FaSearch className="search-icon" size="1.8rem" />

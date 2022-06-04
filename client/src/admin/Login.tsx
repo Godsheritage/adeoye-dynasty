@@ -1,7 +1,9 @@
-import React, { useState, useReducer } from "react";
 import { useContext } from "react";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "../shared/Form Elements/buttons/Buttons";
+import Input from "../shared/Form Elements/input/Input";
 // import GoogleLogo from "../assets/img/Google.png";
 // import { contextTypes, signUpTypes, SIGN_IN_VALIDATION_TYPES } from "../types";
 // import ProductContext from "../context/ProductContext";
@@ -54,47 +56,47 @@ const LogIn: React.FC = () => {
       <div className="form w-50 d-flex flex-column">
         <h1 className="text-center pb-2">Login</h1>
         <form className=" d-flex flex-column ">
-          {/* <div className="my-3"> */}
-            {/* <Input
+          <div className="my-3">
+            <Input
               element="input"
               type="email"
               className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
               placeholder="Email"
-              errorText = 'please enter a valid email'
-              validators={[EMAIL_REQUIRED()]}
-              />
+              errorText="please enter a valid email"
+              // validators={[EMAIL_REQUIRED()]}
+            />
           </div>
           <div className="mb-3">
             <Input
-            element="input"
+              element="input"
               type="password"
               className="form-control"
-              id="password"
               placeholder="Password"
-              errorText = 'password must be greater than 8 digits'
-              validators={[PASSWORD_REQUIRED()]}
+              errorText="password must be greater than 8 digits"
+              // validators={[PASSWORD_REQUIRED()]}
             />
-          </div> */}
-          <motion.button
-            type="submit"
+          </div>
+          <Button
+            element="button"
             className="contact-btn align-self-center mt-3 w-50 "
             disabled={true}
           >
             Sign In
-          </motion.button>
+          </Button>
           <div className="my-3">
             <a href="/auth/google">
               {/* <img src={GoogleLogo} className="googleLogo" alt="" /> */}
             </a>
           </div>
-          <Link to="/signup" className="card-link">
-            Don't have an account? Sign up
-          </Link>
+          <Button
+            element="link"
+            to="/signup"
+            className="card-link"
+            text=" Don't have an account? Sign up"
+          ></Button>
         </form>
       </div>
-    </motion.div> 
+    </motion.div>
   );
 };
 

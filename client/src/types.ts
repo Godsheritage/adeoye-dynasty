@@ -13,17 +13,20 @@ export interface familyMemberTypes {
 
 export interface inputTypes {
   className: string;
-  placeHolder: string;
+  placeholder: string;
   element: string;
   type: string;
+  errorText:string;
 }
+
 export interface ButtonTypes {
   className?: string;
   element: string;
   text?: string;
   to?: string;
   onClick?: any;
-  children: any;
+  children?: any;
+  disabled?:boolean
 }
 
 export interface MAIN_DETAILS_TYPE {
