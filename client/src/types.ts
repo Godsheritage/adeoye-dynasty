@@ -3,7 +3,7 @@ export interface familyMemberTypes {
     name: string;
     DOB: Date;
     image: string;
-    age:number,
+    age: number;
     sex: string;
     bio: string;
     isAlive: true;
@@ -14,6 +14,16 @@ export interface familyMemberTypes {
 export interface inputTypes {
   className: string;
   placeHolder: string;
+  element: string;
+  type: string;
+}
+export interface ButtonTypes {
+  className?: string;
+  element: string;
+  text?: string;
+  to?: string;
+  onClick?: any;
+  children: any;
 }
 
 export interface MAIN_DETAILS_TYPE {
@@ -22,6 +32,5 @@ export interface MAIN_DETAILS_TYPE {
 }
 
 export interface contextTypes {
-  familyMembers: familyMemberTypes["member"][]
-  
+  familyMembers: familyMemberTypes["member"][];
 }
