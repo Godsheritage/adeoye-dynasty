@@ -2,6 +2,7 @@ import path from "path";
 import cors from 'cors'
 import morgan from "morgan";
 import express from "express";
+import { uploadFile } from "./s3";
 import familyRoute from "./routes/family.routes";
 
 const app = express();
