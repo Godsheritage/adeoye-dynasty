@@ -1,9 +1,14 @@
-import React from 'react'
-
-const AddFamily = () => {
+import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
+import Footer from "../../shared/UI Elements/footer/Footer";
+import FamilyForm from "./FamilyForm";
+const AddFamily: React.FC = () => {
   return (
-    <div>AddFamily</div>
-  )
-}
+    <div>
+      <CustomHeader location="/dashboard" />
+      <FamilyForm />
+      <Footer />
+    </div>
+  );
+};
 
-export default AddFamily
+export default AddFamily;
