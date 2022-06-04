@@ -17,6 +17,7 @@ export interface inputTypes {
   element: string;
   type: string;
   errorText:string;
+  style?:any
 }
 
 export interface ButtonTypes {

@@ -1,0 +1,15 @@
+.login {
+  background: linear-gradient(
+      to right,
+      rgba(172, 150, 150, 0.7),
+      rgba(192, 167, 167, 0.7),
+    ),
+    url("../../../assets/images/family2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.input {
+  width: 20rem;
+}

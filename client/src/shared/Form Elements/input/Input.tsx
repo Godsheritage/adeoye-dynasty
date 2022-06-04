@@ -7,12 +7,18 @@ const Input: React.FC<inputTypes> = ({
   placeholder,
   element,
   type,
-  errorText
+  errorText,
+  style,
 }) => {
   if (element === "input") {
     return (
       <div className="search">
-        <input className={className} placeholder={placeholder} type={type} />
+        <input
+          className={className}
+          placeholder={placeholder}
+          type={type}
+          style={style}
+        />
       </div>
     );
   }
