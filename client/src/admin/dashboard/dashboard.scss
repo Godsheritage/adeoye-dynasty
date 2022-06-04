@@ -1,14 +1,18 @@
-.dashboard_bg{
-    height: 65vh;
-    background-color: rgb(223, 218, 218);
-    .members{
-        width:25rem;
-        height:10rem;
-        border-radius: 50px;
-        h3{
-            font-size: 1.3rem;
-            text-align: center;
-            font-family: helvetica rounded;
-        }
+.dashboard_bg {
+  height: 65vh;
+  background-color: rgb(223, 218, 218);
+  .members {
+    width: 25rem;
+    height: 10rem;
+    border-radius: 50px;
+    .add-svg {
+      height: 5rem;
+      width: 5rem;
     }
+    h3 {
+      font-size: 1.3rem;
+      text-align: center;
+      font-family: helvetica rounded;
+    }
+  }
 }

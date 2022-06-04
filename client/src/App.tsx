@@ -4,6 +4,7 @@ import Home from "./Home/pages/Home";
 import Family from "./Family/pages/Family";
 import Gallery from "./Gallery/pages/Gallery";
 import Dashboard from "./admin/dashboard/Dashboard";
+import AddFamily from "./admin/add family form/AddFamily";
 import { FamilyContextProvider } from "./context/FamilyContext";
 import SingleMemberPage from "./shared/single member/SingleMemberPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/family" element={<Family />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/addfamilymember" element={<AddFamily/>} />
           <Route path="/family/:name" element={<SingleMemberPage/>} />
         </Routes>
       </Router>
