@@ -16,8 +16,10 @@ export interface inputTypes {
   placeholder: string;
   element: string;
   type: string;
-  errorText:string;
-  style?:any
+  errorText: string;
+  style?: any;
+  value?: string;
+  name?: string;
 }
 
 export interface ButtonTypes {
@@ -27,7 +29,7 @@ export interface ButtonTypes {
   to?: string;
   onClick?: any;
   children?: any;
-  disabled?:boolean
+  disabled?: boolean;
 }
 
 export interface MAIN_DETAILS_TYPE {

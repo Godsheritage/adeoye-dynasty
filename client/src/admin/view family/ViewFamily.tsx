@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { contextTypes } from "../../types";
 import FamilyContext from "../../context/FamilyContext";
 import Footer from "../../shared/UI Elements/footer/Footer";
+import FamilyMembersList from "../../Family/components/FamilyMembersList";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 
 const ViewFamily = () => {
@@ -10,12 +11,7 @@ const ViewFamily = () => {
   return (
     <div>
       <CustomHeader location="/dashboard" />
-      {familyMembers.map((member, index) => (
-        <div className="d-flex w-100 bg-secondary m-1">
-          <div>{member.name}</div>
-          <div>{member.age}</div>
-        </div>
-      ))}
+      <FamilyMembersList />
       <Footer />
     </div>
   );

@@ -9,6 +9,8 @@ const Input: React.FC<inputTypes> = ({
   type,
   errorText,
   style,
+  value,
+  name
 }) => {
   if (element === "input") {
     return (
@@ -18,6 +20,8 @@ const Input: React.FC<inputTypes> = ({
           placeholder={placeholder}
           type={type}
           style={style}
+          value={value}
+          name={name}
         />
       </div>
     );
