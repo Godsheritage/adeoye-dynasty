@@ -46,7 +46,7 @@ const LogIn: React.FC = () => {
       animate="visible"
     >
       <div className="login d-flex justify-content-center align-items-center">
-        <div className="form w-50 d-flex justify-content-center align-items-center flex-column py-5 bg-white">
+        <div className="form d-flex justify-content-center align-items-center flex-column p-5 bg-white">
           <h3 className="text-center pb-2">Login</h3>
           <form className=" d-flex flex-column " onSubmit={handleSubmit}>
             <div className=" d-flex flex-column ">
@@ -72,7 +72,7 @@ const LogIn: React.FC = () => {
             </div>
             <Button
               element="button"
-              className="contact-btn align-self-center mt-3 w-50 "
+              className="btn btn-primary align-self-center mt-3 w-50 "
               disabled={false}
             >
               Sign In
