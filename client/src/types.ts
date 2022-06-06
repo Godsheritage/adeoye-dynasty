@@ -20,7 +20,7 @@ export interface inputTypes {
   style?: any;
   value?: string;
   name?: string;
-  validators:any
+  validators: any;
 }
 
 export interface ButtonTypes {
@@ -40,4 +40,24 @@ export interface MAIN_DETAILS_TYPE {
 
 export interface contextTypes {
   familyMembers: familyMemberTypes["member"][];
+}
+
+export interface initialReducerState {
+  inputs: {
+    email: {
+      value: string;
+      isValid: boolean;
+    };
+    password: {
+      value: string;
+      isValid: boolean;
+    };
+  };
+  isValid: boolean;
+}
+
+export interface actionTypes {
+  type:string
+  val:string
+  validators:any
 }

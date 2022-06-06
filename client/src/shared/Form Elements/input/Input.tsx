@@ -1,7 +1,7 @@
 import "./input.scss";
 import React from "react";
 import { useReducer } from "react";
-import { inputTypes } from "../../../types";
+import { actionTypes, initialReducerState, inputTypes } from "../../../types";
 import { validate } from "../../utils/validators";
 
 const Input: React.FC<inputTypes> = ({
@@ -15,9 +15,24 @@ const Input: React.FC<inputTypes> = ({
   name,
   validators,
 }) => {
-  const validationReducer: any = (State: any, Action: any) => {};
 
-  const initialState: any = {
+  
+  const validationReducer: any = (
+    state: initialReducerState,
+    action: actionTypes
+  ) => {
+    switch (action.type) {
+      case "CHANGE":
+        return {
+          ...state
+        };
+
+      default:
+        return state;
+    }
+  };
+
+  const initialState: initialReducerState = {
     inputs: {
       email: {
         value: "",
@@ -31,15 +46,11 @@ const Input: React.FC<inputTypes> = ({
     isValid: false,
   };
 
-  const [state, Dispatch] = useReducer(validationReducer, initialState);
+  const [inputState, dispatch] = useReducer(validationReducer, initialState);
 
-
-  const inputHandler = (e:any) => {
-    Dispatch()
-
-    
-
-  }
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch({ type: "CHANGE", val: e.target.value, validators });
+  };
 
   if (element === "input") {
     return (
