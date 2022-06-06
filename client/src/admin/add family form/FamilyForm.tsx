@@ -51,28 +51,35 @@ const FamilyForm = () => {
             type="text"
             errorText=""
           />
-          <div>
+          <div className="d-flex justify-content-between">
             <Input
               placeholder="Date of Birth"
-              className="form-control"
+              className="form-control align-items-center"
               element="input"
               type="date"
               errorText=""
             />
-            <Input
-              placeholder="Date of Birth"
-              className="form-control"
-              element="input"
-              type="radio"
-              errorText=""
-            />
-            <Input
-              placeholder="Date of Birth"
-              className="form-control"
-              element="input"
-              type="radio"
-              errorText=""
-            />
+            <div className="d-flex gap-2  ">
+              <p>isAlive</p>
+              <Input
+                placeholder="Date of Birth"
+                className=""
+                name="is alive"
+                element="input"
+                type="radio"
+                value="yes"
+                errorText=""
+              />
+              <Input
+                placeholder="Date of Birth"
+                name="is alive"
+                className=""
+                element="input"
+                value="No"
+                type="radio"
+                errorText=""
+              />
+            </div>
           </div>
         </div>
         <Input
@@ -88,6 +95,7 @@ const FamilyForm = () => {
         >
           Add Member
         </Button>
+        
       </form>
     </div>
   );
