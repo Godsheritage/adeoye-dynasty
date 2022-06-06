@@ -1,6 +1,8 @@
 import "./input.scss";
 import React from "react";
+import { useReducer } from "react";
 import { inputTypes } from "../../../types";
+import { validate } from "../../utils/validators";
 
 const Input: React.FC<inputTypes> = ({
   className,
@@ -10,8 +12,35 @@ const Input: React.FC<inputTypes> = ({
   errorText,
   style,
   value,
-  name
+  name,
+  validators,
 }) => {
+  const validationReducer: any = (State: any, Action: any) => {};
+
+  const initialState: any = {
+    inputs: {
+      email: {
+        value: "",
+        isValid: false,
+      },
+      password: {
+        value: "",
+        isValid: false,
+      },
+    },
+    isValid: false,
+  };
+
+  const [state, Dispatch] = useReducer(validationReducer, initialState);
+
+
+  const inputHandler = (e:any) => {
+    Dispatch()
+
+    
+
+  }
+
   if (element === "input") {
     return (
       <div className="search">
@@ -22,6 +51,7 @@ const Input: React.FC<inputTypes> = ({
           style={style}
           value={value}
           name={name}
+          onChange={inputHandler}
         />
       </div>
     );

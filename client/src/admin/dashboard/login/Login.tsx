@@ -5,11 +5,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../../shared/Form Elements/input/Input";
 import Button from "../../../shared/Form Elements/buttons/Buttons";
-// import GoogleLogo from "../assets/img/Google.png";
 // import { contextTypes, signUpTypes, SIGN_IN_VALIDATION_TYPES } from "../types";
 // import ProductContext from "../context/ProductContext";
-// import Input from "../shared/form elements/input/Input";
-// import { EMAIL_REQUIRED, PASSWORD_REQUIRED } from "../shared/util/validation";
+import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from "../../../shared/utils/validators";
 
 const LogIn: React.FC = () => {
   const navigate = useNavigate();
@@ -57,6 +55,7 @@ const LogIn: React.FC = () => {
                   className="form-control input"
                   placeholder="Email"
                   errorText="please enter a valid email"
+                  validators={[VALIDATOR_EMAIL()]}
                 />
               </div>
               <div className="mb-3">
@@ -66,7 +65,7 @@ const LogIn: React.FC = () => {
                   className="form-control"
                   placeholder="Password"
                   errorText="password must be greater than 8 digits"
-                  // validators={[PASSWORD_REQUIRED()]}
+                  validators={[VALIDATOR_MINLENGTH(8)]}
                 />
               </div>
             </div>

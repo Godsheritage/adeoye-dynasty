@@ -20,6 +20,7 @@ export interface inputTypes {
   style?: any;
   value?: string;
   name?: string;
+  validators:any
 }
 
 export interface ButtonTypes {
