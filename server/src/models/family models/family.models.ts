@@ -1,4 +1,4 @@
-import { familyMemberTypes } from "../types";
+import { familyMemberTypes } from "../../types";
 import { familyModel } from "./family.mongo";
 
 // to find the age of a member

@@ -22,6 +22,8 @@ const Input: React.FC<inputTypes> = ({
   id,
   onInput,
 }) => {
+
+
   // reducer function
   const validationReducer: reducerType["validationReducer"] = (
     state: inputReducerState,
@@ -46,6 +48,8 @@ const Input: React.FC<inputTypes> = ({
     }
   };
 
+
+  // initial state
   const initialState: inputReducerState = {
     value: "",
     isValid: false,
