@@ -69,19 +69,22 @@ const FamilyForm = () => {
             id="proffession"
             onInput={inputHandler}
           />
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between" style={{ columnGap:'5rem'}}>
+            <label >date of birth</label>
             <Input
               placeholder="Date of Birth"
-              className="form-control align-items-center"
+              className="form-control align-items-center "
               element="input"
               type="date"
               errorText=""
               validators={[VALIDATOR_REQUIRE()]}
               id="DOB"
+              style={{ width: "20vw", marginRight:'2rem' }}
+              divClass='md-form md-outline input-with-post-icon datepicker'
               onInput={inputHandler}
             />
-            <div className="d-flex gap-2  ">
-              <p>isAlive</p>
+            <div className="d-flex">
+              <label>isAlive</label>
               <Input
                 placeholder="Date of Birth"
                 className=""
@@ -109,6 +112,16 @@ const FamilyForm = () => {
             </div>
           </div>
         </div>
+        <Input
+          placeholder="pressent address"
+          className="form-control my-3"
+          element="input"
+          type="text"
+          errorText="bio must be at least 10 characters"
+          validators={[VALIDATOR_MINLENGTH(10)]}
+          id="bio"
+          onInput={inputHandler}
+        />
         <Input
           placeholder="BIO"
           className="form-control my-3"

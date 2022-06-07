@@ -23,6 +23,7 @@ export interface inputTypes {
   validators: any;
   id: string;
   onInput: (id: string, value: string, isValid: boolean) => void;
+  divClass? :any
 }
 
 export interface ButtonTypes {

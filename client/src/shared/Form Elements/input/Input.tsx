@@ -21,6 +21,7 @@ const Input: React.FC<inputTypes> = ({
   validators,
   id,
   onInput,
+  divClass
 }) => {
 
 
@@ -72,7 +73,7 @@ const Input: React.FC<inputTypes> = ({
 
   if (element === "input") {
     return (
-      <div className="search">
+      <div className={`search ${divClass}`}>
         <input
           className={
             !inputState.isValid && inputState.isTouched
