@@ -21,8 +21,8 @@ export interface inputTypes {
   value?: string;
   name?: string;
   validators: any;
-  id:string;
-  onInput?:any
+  id: string;
+  onInput?: any;
 }
 
 export interface ButtonTypes {
@@ -64,9 +64,19 @@ export interface actionTypes {
   validators: any;
 }
 
-export interface validatioinRediucerType {
+export interface formActionTypes {
+  type:string
+  inputId: string;
+  isValid:boolean
+}
+
+export interface reducerType {
   validationReducer: (
     state: initialReducerState,
     action: actionTypes
+  ) => initialReducerState;
+  FormReducer: (
+    state: initialReducerState,
+    action: formActionTypes
   ) => initialReducerState;
 }

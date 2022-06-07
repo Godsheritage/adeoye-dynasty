@@ -5,7 +5,7 @@ import {
   actionTypes,
   initialReducerState,
   inputTypes,
-  validatioinRediucerType,
+  reducerType
 } from "../../../types";
 import { validate } from "../../utils/validators";
 
@@ -22,7 +22,7 @@ const Input: React.FC<inputTypes> = ({
   id,
   onInput,
 }) => {
-  const validationReducer: validatioinRediucerType["validationReducer"] = (
+  const validationReducer:reducerType["validationReducer"] = (
     state: initialReducerState,
     action: actionTypes
   ) => {
@@ -64,7 +64,7 @@ const Input: React.FC<inputTypes> = ({
 
 
 
-  
+
   if (element === "input") {
     return (
       <div className="search">

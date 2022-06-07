@@ -1,5 +1,5 @@
 import "./login.scss";
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useReducer } from "react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,7 @@ import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
 } from "../../../shared/utils/validators";
+import { actionTypes, formActionTypes, initialReducerState, reducerType } from "../../../types";
 
 const LogIn: React.FC = () => {
   const navigate = useNavigate();
@@ -27,6 +28,45 @@ const LogIn: React.FC = () => {
       transition: { type: "spring", stiffnes: 2 },
     },
   };
+
+  const formReducer: reducerType["FormReducer"] = (
+    state: initialReducerState,
+    action: formActionTypes
+  ) => {
+    switch (action.type) {
+      case "INPUT_CHANGE":
+        let formIsValid = false
+        for(const inputId in state.inputs){
+          if (inputId === action.inputId ){
+            formIsValid = formIsValid && action.isValid
+          }
+          else {
+            formIsValid = formIsValid && state.inputs
+          }
+        }
+        return {
+          ...state,
+        };
+      default:
+        return state;
+    }
+  };
+
+  const initialState: initialReducerState = {
+    inputs: {
+      email: {
+        value: "",
+        isValid: false,
+      },
+      password: {
+        value: "",
+        isValid: false,
+      },
+    },
+    isValid: false,
+  };
+
+  const [state, dispatch] = useReducer(formReducer, initialState);
 
   //submit form
   const handleSubmit = async (e: React.SyntheticEvent) => {
