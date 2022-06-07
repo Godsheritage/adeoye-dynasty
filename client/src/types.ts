@@ -21,6 +21,8 @@ export interface inputTypes {
   value?: string;
   name?: string;
   validators: any;
+  id:string;
+  onInput?:any
 }
 
 export interface ButtonTypes {

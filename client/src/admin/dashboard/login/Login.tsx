@@ -1,5 +1,5 @@
 import "./login.scss";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,10 @@ import Input from "../../../shared/Form Elements/input/Input";
 import Button from "../../../shared/Form Elements/buttons/Buttons";
 // import { contextTypes, signUpTypes, SIGN_IN_VALIDATION_TYPES } from "../types";
 // import ProductContext from "../context/ProductContext";
-import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from "../../../shared/utils/validators";
+import {
+  VALIDATOR_EMAIL,
+  VALIDATOR_MINLENGTH,
+} from "../../../shared/utils/validators";
 
 const LogIn: React.FC = () => {
   const navigate = useNavigate();
@@ -29,12 +32,16 @@ const LogIn: React.FC = () => {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     navigate("/dashboard");
-    // const credentials = {
-    //   email,
-    //   password,
-    // };
-    // await signUsersIn(credentials);
   };
+
+  const emailInputHandler = useCallback(
+    (id: string, value: string, isValid: boolean) => {},
+    []
+  );
+  const passwordInputHandler = useCallback(
+    (id: string, value: string, isValid: boolean) => {},
+    []
+  );
 
   return (
     <motion.div
@@ -56,6 +63,8 @@ const LogIn: React.FC = () => {
                   placeholder="Email"
                   errorText="please enter a valid email"
                   validators={[VALIDATOR_EMAIL()]}
+                  id="email"
+                  onInput={emailInputHandler}
                 />
               </div>
               <div className="mb-3">
@@ -66,6 +75,8 @@ const LogIn: React.FC = () => {
                   placeholder="Password"
                   errorText="password must be greater than 8 digits"
                   validators={[VALIDATOR_MINLENGTH(8)]}
+                  id="password"
+                  onInput={passwordInputHandler}
                 />
               </div>
             </div>

@@ -24,6 +24,7 @@ const Main: React.FC = () => {
             type="text"
             errorText="you must enter a valid name"
             validators={[VALIDATOR_REQUIRE()]}
+            id="search"
           />
           <button className="search-btn">
             <FaSearch className="search-icon" size="1.8rem" />

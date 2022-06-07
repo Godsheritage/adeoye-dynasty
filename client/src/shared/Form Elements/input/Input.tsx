@@ -1,7 +1,12 @@
 import "./input.scss";
-import React from "react";
+import React, { useEffect } from "react";
 import { useReducer } from "react";
-import { actionTypes, initialReducerState, inputTypes, validatioinRediucerType } from "../../../types";
+import {
+  actionTypes,
+  initialReducerState,
+  inputTypes,
+  validatioinRediucerType,
+} from "../../../types";
 import { validate } from "../../utils/validators";
 
 const Input: React.FC<inputTypes> = ({
@@ -14,17 +19,17 @@ const Input: React.FC<inputTypes> = ({
   value,
   name,
   validators,
+  id,
+  onInput,
 }) => {
-
-  
-  const validationReducer:validatioinRediucerType['validationReducer'] = (
+  const validationReducer: validatioinRediucerType["validationReducer"] = (
     state: initialReducerState,
     action: actionTypes
   ) => {
     switch (action.type) {
       case "CHANGE":
         return {
-          ...state
+          ...state,
         };
 
       default:
@@ -46,17 +51,20 @@ const Input: React.FC<inputTypes> = ({
     isValid: false,
   };
 
-
-// interface dispatch{
-//   dispatch: (value:any) => void
-// }
-
   const [inputState, dispatch] = useReducer(validationReducer, initialState);
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: "CHANGE", val: e.target.value, validators });
   };
 
+  useEffect(() => {
+    onInput(id, inputState.inputs.password.value, inputState.isValid);
+  }, [id, inputState.inputs.password.value, inputState.isValid, onInput]);
+
+
+
+
+  
   if (element === "input") {
     return (
       <div className="search">
