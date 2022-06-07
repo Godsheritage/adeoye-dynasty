@@ -45,6 +45,7 @@ export interface contextTypes {
 }
 
 export interface inputReducerState {
+  isTouched:boolean
   value: string;
   isValid: boolean;
 }

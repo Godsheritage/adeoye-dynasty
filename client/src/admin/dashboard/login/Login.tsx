@@ -31,6 +31,7 @@ const LogIn: React.FC = () => {
     },
   };
 
+
   // Reducer function
   const formReducer: reducerType["FormReducer"] = (
     state: initialReducerState,
@@ -43,7 +44,7 @@ const LogIn: React.FC = () => {
           if (inputId === action.inputId) {
             formIsValid = formIsValid && action.isValid;
           } else {
-            formIsValid = formIsValid && state.inputs;
+            formIsValid = formIsValid && state.isValid;
           }
         }
         return {
@@ -86,7 +87,7 @@ const LogIn: React.FC = () => {
     (id: string, value: string, isValid: boolean) => {
       dispatch({ type: "INPUT_CHANGE", inputId: id, value, isValid });
     },
-    []
+    [dispatch]
   );
 
   return (
@@ -129,7 +130,7 @@ const LogIn: React.FC = () => {
             <Button
               element="button"
               className="btn btn-primary align-self-center mt-3 w-50 "
-              disabled={false}
+              disabled={!state.isValid}
             >
               Sign In
             </Button>

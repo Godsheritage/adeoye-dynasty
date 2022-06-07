@@ -30,8 +30,14 @@ const Input: React.FC<inputTypes> = ({
       case "CHANGE":
         return {
           ...state,
-          value:action.val,
-          isValid:validate(action.val, action.validators )
+          value: action.val,
+          isValid: validate(action.val, action.validators),
+        };
+
+      case "TOUCH":
+        return {
+          ...state,
+          isTouched: true,
         };
 
       default:
@@ -42,12 +48,17 @@ const Input: React.FC<inputTypes> = ({
   const initialState: inputReducerState = {
     value: "",
     isValid: false,
+    isTouched:false
   };
 
   const [inputState, dispatch] = useReducer(validationReducer, initialState);
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: "CHANGE", val: e.target.value, validators });
+  };
+
+  const touchHandler = () => {
+    // dispatch({ type: "TOUCH" });
   };
 
   useEffect(() => {
@@ -65,11 +76,19 @@ const Input: React.FC<inputTypes> = ({
           value={value}
           name={name}
           onChange={inputHandler}
+          onBlur={touchHandler}
         />
+        {inputState.isValid && <p>{errorText}</p>}
       </div>
     );
   }
-  return <textarea className={className} placeholder={placeholder}></textarea>;
+  return (
+    <textarea
+      className={className}
+      placeholder={placeholder}
+      onBlur={touchHandler}
+    ></textarea>
+  );
 };
 
 export default Input;
