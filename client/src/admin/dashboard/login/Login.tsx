@@ -14,6 +14,7 @@ import {
   actionTypes,
   formActionTypes,
   initialReducerState,
+  inputHandlerType,
   reducerType,
 } from "../../../types";
 
@@ -30,7 +31,6 @@ const LogIn: React.FC = () => {
       transition: { type: "spring", stiffnes: 2 },
     },
   };
-
 
   // Reducer function
   const formReducer: reducerType["FormReducer"] = (
@@ -83,7 +83,7 @@ const LogIn: React.FC = () => {
     navigate("/dashboard");
   };
 
-  const InputHandler = useCallback(
+  const inputHandler: inputHandlerType["inputHandler"] = useCallback(
     (id: string, value: string, isValid: boolean) => {
       dispatch({ type: "INPUT_CHANGE", inputId: id, value, isValid });
     },
@@ -111,7 +111,7 @@ const LogIn: React.FC = () => {
                   errorText="please enter a valid email"
                   validators={[VALIDATOR_EMAIL()]}
                   id="email"
-                  onInput={InputHandler}
+                  onInput={() => inputHandler}
                 />
               </div>
               <div className="mb-3">
@@ -123,7 +123,7 @@ const LogIn: React.FC = () => {
                   errorText="password must be greater than 8 digits"
                   validators={[VALIDATOR_MINLENGTH(8)]}
                   id="password"
-                  onInput={InputHandler}
+                  onInput={() => inputHandler}
                 />
               </div>
             </div>

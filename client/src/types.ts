@@ -87,3 +87,9 @@ export interface reducerType {
     action: formActionTypes
   ) => initialReducerState;
 }
+
+export interface inputHandlerType {
+  inputHandler:(id: string, value: string, isValid: boolean) => void
+
+
+}

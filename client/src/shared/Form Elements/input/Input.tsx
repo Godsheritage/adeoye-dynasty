@@ -22,6 +22,8 @@ const Input: React.FC<inputTypes> = ({
   id,
   onInput,
 }) => {
+
+  // reducer function
   const validationReducer: reducerType["validationReducer"] = (
     state: inputReducerState,
     action: actionTypes
