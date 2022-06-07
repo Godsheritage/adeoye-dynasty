@@ -1,7 +1,7 @@
 import "./input.scss";
 import React from "react";
 import { useReducer } from "react";
-import { actionTypes, initialReducerState, inputTypes } from "../../../types";
+import { actionTypes, initialReducerState, inputTypes, validatioinRediucerType } from "../../../types";
 import { validate } from "../../utils/validators";
 
 const Input: React.FC<inputTypes> = ({
@@ -17,7 +17,7 @@ const Input: React.FC<inputTypes> = ({
 }) => {
 
   
-  const validationReducer: any = (
+  const validationReducer:validatioinRediucerType['validationReducer'] = (
     state: initialReducerState,
     action: actionTypes
   ) => {

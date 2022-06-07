@@ -57,7 +57,14 @@ export interface initialReducerState {
 }
 
 export interface actionTypes {
-  type:string
-  val:string
-  validators:any
+  type: string;
+  val: string;
+  validators: any;
+}
+
+export interface validatioinRediucerType {
+  validationReducer: (
+    state: initialReducerState,
+    action: actionTypes
+  ) => initialReducerState;
 }
