@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../shared/Form Elements/input/Input";
-import { VALIDATOR_REQUIRE } from "../../shared/utils/validators";
+import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from "../../shared/utils/validators";
 import Button from "../../shared/Form Elements/buttons/Buttons";
 
 const FamilyForm = () => {
@@ -16,7 +16,7 @@ const FamilyForm = () => {
             style={{ width: "40vw" }}
             element="input"
             type="text"
-            errorText=""
+            errorText="first name is required"
             validators={[VALIDATOR_REQUIRE()]}
             id="firstName"
             onInput={inputHandler}
@@ -27,7 +27,7 @@ const FamilyForm = () => {
             style={{ width: "40vw" }}
             element="input"
             type="text"
-            errorText=""
+            errorText="last name is required"
             validators={[VALIDATOR_REQUIRE()]}
             id="lastName"
             onInput={inputHandler}
@@ -40,7 +40,7 @@ const FamilyForm = () => {
             style={{ width: "40vw" }}
             element="input"
             type="text"
-            errorText=""
+            errorText="father's name is required"
             validators={[VALIDATOR_REQUIRE()]}
             id="fatherName"
             onInput={inputHandler}
@@ -51,7 +51,7 @@ const FamilyForm = () => {
             style={{ width: "40vw" }}
             element="input"
             type="text"
-            errorText=""
+            errorText="mothers's name is required"
             validators={[VALIDATOR_REQUIRE()]}
             id="motherName"
             onInput={inputHandler}
@@ -64,7 +64,7 @@ const FamilyForm = () => {
             style={{ width: "40vw" }}
             element="input"
             type="text"
-            errorText=""
+            errorText="proffession name is required"
             validators={[VALIDATOR_REQUIRE()]}
             id="proffession"
             onInput={inputHandler}
@@ -114,8 +114,8 @@ const FamilyForm = () => {
           className="form-control my-3"
           element="text area"
           type="text"
-          errorText=""
-          validators={[VALIDATOR_REQUIRE()]}
+          errorText="bio must be at least 10 characters"
+          validators={[VALIDATOR_MINLENGTH(10)]}
           id="bio"
           onInput={inputHandler}
         />

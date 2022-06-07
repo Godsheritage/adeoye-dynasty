@@ -54,7 +54,7 @@ const Input: React.FC<inputTypes> = ({
 
   const [inputState, dispatch] = useReducer(validationReducer, initialState);
 
-  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const inputHandler: any = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: "CHANGE", val: e.target.value, validators });
   };
 
@@ -70,7 +70,11 @@ const Input: React.FC<inputTypes> = ({
     return (
       <div className="search">
         <input
-          className={ (!inputState.isValid && inputState.isTouched) ? `${className} is-invalid` : className}
+          className={
+            !inputState.isValid && inputState.isTouched
+              ? `${className} is-invalid`
+              : className
+          }
           placeholder={placeholder}
           type={type}
           style={style}
@@ -79,17 +83,29 @@ const Input: React.FC<inputTypes> = ({
           onChange={inputHandler}
           onBlur={touchHandler}
         />
-        {!inputState.isValid && inputState.isTouched && <p>{errorText}</p>}
+        {!inputState.isValid && inputState.isTouched && (
+          <p className="text-danger">{errorText}</p>
+        )}
       </div>
     );
   }
   return (
-    <textarea
-      className={className}
-      placeholder={placeholder}
-      value={inputState.value}
-      onBlur={touchHandler}
-    ></textarea>
+    <div>
+      <textarea
+        className={
+          !inputState.isValid && inputState.isTouched
+            ? `${className} is-invalid`
+            : className
+        }
+        placeholder={placeholder}
+        value={inputState.value}
+        onBlur={touchHandler}
+        onChange={inputHandler}
+      ></textarea>
+      {!inputState.isValid && inputState.isTouched && (
+        <p className="text-danger">{errorText}</p>
+      )}
+    </div>
   );
 };
 
