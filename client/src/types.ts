@@ -44,6 +44,11 @@ export interface contextTypes {
   familyMembers: familyMemberTypes["member"][];
 }
 
+export interface inputReducerState {
+  value: string;
+  isValid: boolean;
+}
+
 export interface initialReducerState {
   inputs: {
     email: {
@@ -65,16 +70,17 @@ export interface actionTypes {
 }
 
 export interface formActionTypes {
-  type:string
+  type: string;
   inputId: string;
-  isValid:boolean
+  isValid: boolean;
+  value: string;
 }
 
 export interface reducerType {
   validationReducer: (
-    state: initialReducerState,
+    state: inputReducerState,
     action: actionTypes
-  ) => initialReducerState;
+  ) => inputReducerState;
   FormReducer: (
     state: initialReducerState,
     action: formActionTypes

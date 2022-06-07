@@ -11,7 +11,12 @@ import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
 } from "../../../shared/utils/validators";
-import { actionTypes, formActionTypes, initialReducerState, reducerType } from "../../../types";
+import {
+  actionTypes,
+  formActionTypes,
+  initialReducerState,
+  reducerType,
+} from "../../../types";
 
 const LogIn: React.FC = () => {
   const navigate = useNavigate();
@@ -35,17 +40,21 @@ const LogIn: React.FC = () => {
   ) => {
     switch (action.type) {
       case "INPUT_CHANGE":
-        let formIsValid = false
-        for(const inputId in state.inputs){
-          if (inputId === action.inputId ){
-            formIsValid = formIsValid && action.isValid
-          }
-          else {
-            formIsValid = formIsValid && state.inputs
+        let formIsValid = false;
+        for (const inputId in state.inputs) {
+          if (inputId === action.inputId) {
+            formIsValid = formIsValid && action.isValid;
+          } else {
+            formIsValid = formIsValid && state.inputs;
           }
         }
         return {
           ...state,
+          inputs: {
+            ...state.inputs,
+            [action.inputId]: { value: action.value, isValid: action.isValid },
+          },
+          isValid: formIsValid,
         };
       default:
         return state;

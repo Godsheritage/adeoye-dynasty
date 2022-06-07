@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 import { useReducer } from "react";
 import {
   actionTypes,
-  initialReducerState,
+  inputReducerState,
   inputTypes,
-  reducerType
+  reducerType,
 } from "../../../types";
 import { validate } from "../../utils/validators";
 
@@ -22,8 +22,8 @@ const Input: React.FC<inputTypes> = ({
   id,
   onInput,
 }) => {
-  const validationReducer:reducerType["validationReducer"] = (
-    state: initialReducerState,
+  const validationReducer: reducerType["validationReducer"] = (
+    state: inputReducerState,
     action: actionTypes
   ) => {
     switch (action.type) {
@@ -37,17 +37,8 @@ const Input: React.FC<inputTypes> = ({
     }
   };
 
-  const initialState: initialReducerState = {
-    inputs: {
-      email: {
-        value: "",
-        isValid: false,
-      },
-      password: {
-        value: "",
-        isValid: false,
-      },
-    },
+  const initialState: inputReducerState = {
+    value: "",
     isValid: false,
   };
 
@@ -58,12 +49,8 @@ const Input: React.FC<inputTypes> = ({
   };
 
   useEffect(() => {
-    onInput(id, inputState.inputs.password.value, inputState.isValid);
-  }, [id, inputState.inputs.password.value, inputState.isValid, onInput]);
-
-
-
-
+    onInput(id, inputState.value, inputState.isValid);
+  }, [id, inputState.value, inputState.isValid, onInput]);
 
   if (element === "input") {
     return (
