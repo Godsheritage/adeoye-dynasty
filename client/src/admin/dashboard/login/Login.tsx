@@ -32,19 +32,23 @@ const LogIn: React.FC = () => {
     },
   };
 
+  interface hdhd {
+    inputId: string;
+  }
+
   // Reducer function
   const formReducer: reducerType["FormReducer"] = (
-    state: initialReducerState,
+    state: any,
     action: formActionTypes
   ) => {
     switch (action.type) {
       case "INPUT_CHANGE":
-        let formIsValid = false;
+        let formIsValid = true;
         for (const inputId in state.inputs) {
           if (inputId === action.inputId) {
             formIsValid = formIsValid && action.isValid;
           } else {
-            formIsValid = formIsValid && state.isValid;
+            formIsValid = formIsValid && state.inputs[inputId].isValid;
           }
         }
         return {
@@ -85,9 +89,9 @@ const LogIn: React.FC = () => {
 
   const inputHandler: inputHandlerType["inputHandler"] = useCallback(
     (id: string, value: string, isValid: boolean) => {
-      dispatch({ type: "INPUT_CHANGE", inputId: id, value, isValid });
+      dispatch({ type: "INPUT_CHANGE", inputId: id, value, isValid: isValid });
     },
-    [dispatch]
+    []
   );
 
   return (
@@ -111,7 +115,7 @@ const LogIn: React.FC = () => {
                   errorText="please enter a valid email"
                   validators={[VALIDATOR_EMAIL()]}
                   id="email"
-                  onInput={() => inputHandler}
+                  onInput={inputHandler}
                 />
               </div>
               <div className="mb-3">
@@ -123,7 +127,7 @@ const LogIn: React.FC = () => {
                   errorText="password must be greater than 8 digits"
                   validators={[VALIDATOR_MINLENGTH(8)]}
                   id="password"
-                  onInput={() => inputHandler}
+                  onInput={inputHandler}
                 />
               </div>
             </div>
@@ -131,6 +135,7 @@ const LogIn: React.FC = () => {
               element="button"
               className="btn btn-primary align-self-center mt-3 w-50 "
               disabled={!state.isValid}
+              onClick={() => console.log(state)}
             >
               Sign In
             </Button>

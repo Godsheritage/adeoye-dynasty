@@ -4,6 +4,8 @@ import { VALIDATOR_REQUIRE } from "../../shared/utils/validators";
 import Button from "../../shared/Form Elements/buttons/Buttons";
 
 const FamilyForm = () => {
+  const inputHandler = () => {};
+
   return (
     <div className="mt-5">
       <form className="container d-flex justify-content-evenly flex-column  ">
@@ -17,6 +19,7 @@ const FamilyForm = () => {
             errorText=""
             validators={[VALIDATOR_REQUIRE()]}
             id="firstName"
+            onInput={inputHandler}
           />
           <Input
             placeholder="last name"
@@ -27,6 +30,7 @@ const FamilyForm = () => {
             errorText=""
             validators={[VALIDATOR_REQUIRE()]}
             id="lastName"
+            onInput={inputHandler}
           />
         </div>
         <div className=" d-flex flex-row justify-content-between py-3">
@@ -39,6 +43,7 @@ const FamilyForm = () => {
             errorText=""
             validators={[VALIDATOR_REQUIRE()]}
             id="fatherName"
+            onInput={inputHandler}
           />
           <Input
             placeholder="Mother's name"
@@ -49,6 +54,7 @@ const FamilyForm = () => {
             errorText=""
             validators={[VALIDATOR_REQUIRE()]}
             id="motherName"
+            onInput={inputHandler}
           />
         </div>
         <div className=" d-flex flex-row justify-content-between py-3">
@@ -61,6 +67,7 @@ const FamilyForm = () => {
             errorText=""
             validators={[VALIDATOR_REQUIRE()]}
             id="proffession"
+            onInput={inputHandler}
           />
           <div className="d-flex justify-content-between">
             <Input
@@ -71,6 +78,7 @@ const FamilyForm = () => {
               errorText=""
               validators={[VALIDATOR_REQUIRE()]}
               id="DOB"
+              onInput={inputHandler}
             />
             <div className="d-flex gap-2  ">
               <p>isAlive</p>
@@ -84,6 +92,7 @@ const FamilyForm = () => {
                 errorText=""
                 validators={[VALIDATOR_REQUIRE()]}
                 id="isAlive true"
+                onInput={inputHandler}
               />
               <Input
                 placeholder="Date of Birth"
@@ -95,6 +104,7 @@ const FamilyForm = () => {
                 errorText=""
                 validators={[VALIDATOR_REQUIRE()]}
                 id="isAlive false"
+                onInput={inputHandler}
               />
             </div>
           </div>
@@ -107,6 +117,7 @@ const FamilyForm = () => {
           errorText=""
           validators={[VALIDATOR_REQUIRE()]}
           id="bio"
+          onInput={inputHandler}
         />
         <Button
           className="align-self-center btn btn-primary my-3"

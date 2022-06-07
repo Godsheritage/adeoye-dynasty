@@ -16,13 +16,12 @@ const Input: React.FC<inputTypes> = ({
   type,
   errorText,
   style,
-  value,
+  // value,
   name,
   validators,
   id,
   onInput,
 }) => {
-
   // reducer function
   const validationReducer: reducerType["validationReducer"] = (
     state: inputReducerState,
@@ -50,7 +49,7 @@ const Input: React.FC<inputTypes> = ({
   const initialState: inputReducerState = {
     value: "",
     isValid: false,
-    isTouched:false
+    isTouched: false,
   };
 
   const [inputState, dispatch] = useReducer(validationReducer, initialState);
@@ -60,7 +59,7 @@ const Input: React.FC<inputTypes> = ({
   };
 
   const touchHandler = () => {
-    // dispatch({ type: "TOUCH" });
+    dispatch({ type: "TOUCH", val: "", validators });
   };
 
   useEffect(() => {
@@ -75,12 +74,12 @@ const Input: React.FC<inputTypes> = ({
           placeholder={placeholder}
           type={type}
           style={style}
-          value={value}
+          value={inputState.value}
           name={name}
           onChange={inputHandler}
           onBlur={touchHandler}
         />
-        {inputState.isValid && <p>{errorText}</p>}
+        {!inputState.isValid && inputState.isTouched && <p>{errorText}</p>}
       </div>
     );
   }
@@ -88,6 +87,7 @@ const Input: React.FC<inputTypes> = ({
     <textarea
       className={className}
       placeholder={placeholder}
+      value={inputState.value}
       onBlur={touchHandler}
     ></textarea>
   );

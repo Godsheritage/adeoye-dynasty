@@ -11,6 +11,10 @@ const Main: React.FC = () => {
     subHeading: "Every family has a story",
   };
 
+  const inputHandler = () => {
+
+  }
+
   return (
     <div className="container">
       <div className="main d-flex flex-column justify-content-center align-items-start ">
@@ -25,6 +29,8 @@ const Main: React.FC = () => {
             errorText="you must enter a valid name"
             validators={[VALIDATOR_REQUIRE()]}
             id="search"
+            onInput={inputHandler}
+
           />
           <button className="search-btn">
             <FaSearch className="search-icon" size="1.8rem" />

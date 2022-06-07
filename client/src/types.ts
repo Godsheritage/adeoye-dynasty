@@ -22,7 +22,7 @@ export interface inputTypes {
   name?: string;
   validators: any;
   id: string;
-  onInput?: any;
+  onInput: (id: string, value: string, isValid: boolean) => void;
 }
 
 export interface ButtonTypes {
@@ -69,6 +69,7 @@ export interface actionTypes {
   val: string;
   validators: any;
 }
+
 
 export interface formActionTypes {
   type: string;
