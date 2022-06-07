@@ -70,7 +70,7 @@ const Input: React.FC<inputTypes> = ({
     return (
       <div className="search">
         <input
-          className={className}
+          className={ (!inputState.isValid && inputState.isTouched) ? `${className} is-invalid` : className}
           placeholder={placeholder}
           type={type}
           style={style}

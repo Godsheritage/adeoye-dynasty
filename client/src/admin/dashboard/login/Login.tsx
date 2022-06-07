@@ -32,10 +32,6 @@ const LogIn: React.FC = () => {
     },
   };
 
-  interface hdhd {
-    inputId: string;
-  }
-
   // Reducer function
   const formReducer: reducerType["FormReducer"] = (
     state: any,
