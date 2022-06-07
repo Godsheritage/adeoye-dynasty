@@ -30,6 +30,8 @@ const Input: React.FC<inputTypes> = ({
       case "CHANGE":
         return {
           ...state,
+          value:action.val,
+          isValid:validate(action.val, action.validators )
         };
 
       default:

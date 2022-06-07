@@ -5,8 +5,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../../shared/Form Elements/input/Input";
 import Button from "../../../shared/Form Elements/buttons/Buttons";
-// import { contextTypes, signUpTypes, SIGN_IN_VALIDATION_TYPES } from "../types";
-// import ProductContext from "../context/ProductContext";
+
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
@@ -20,10 +19,8 @@ import {
 
 const LogIn: React.FC = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  // const { signUsersIn } = useContext(ProductContext) as contextTypes;
 
+  // motion variants
   const defaultVariants = {
     hidden: {
       x: "-100vw",
@@ -34,6 +31,7 @@ const LogIn: React.FC = () => {
     },
   };
 
+  // Reducer function
   const formReducer: reducerType["FormReducer"] = (
     state: initialReducerState,
     action: formActionTypes
@@ -61,6 +59,7 @@ const LogIn: React.FC = () => {
     }
   };
 
+  // initial reducer state
   const initialState: initialReducerState = {
     inputs: {
       email: {
@@ -83,12 +82,10 @@ const LogIn: React.FC = () => {
     navigate("/dashboard");
   };
 
-  const emailInputHandler = useCallback(
-    (id: string, value: string, isValid: boolean) => {},
-    []
-  );
-  const passwordInputHandler = useCallback(
-    (id: string, value: string, isValid: boolean) => {},
+  const InputHandler = useCallback(
+    (id: string, value: string, isValid: boolean) => {
+      dispatch({ type: "INPUT_CHANGE", inputId: id, value, isValid });
+    },
     []
   );
 
@@ -113,7 +110,7 @@ const LogIn: React.FC = () => {
                   errorText="please enter a valid email"
                   validators={[VALIDATOR_EMAIL()]}
                   id="email"
-                  onInput={emailInputHandler}
+                  onInput={InputHandler}
                 />
               </div>
               <div className="mb-3">
@@ -125,7 +122,7 @@ const LogIn: React.FC = () => {
                   errorText="password must be greater than 8 digits"
                   validators={[VALIDATOR_MINLENGTH(8)]}
                   id="password"
-                  onInput={passwordInputHandler}
+                  onInput={InputHandler}
                 />
               </div>
             </div>
