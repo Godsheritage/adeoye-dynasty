@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "../../shared/Form Elements/input/Input";
+import { VALIDATOR_REQUIRE } from "../../shared/utils/validators";
 import Button from "../../shared/Form Elements/buttons/Buttons";
 
 const FamilyForm = () => {
@@ -14,6 +15,7 @@ const FamilyForm = () => {
             element="input"
             type="text"
             errorText=""
+            validators={[VALIDATOR_REQUIRE()]}
           />
           <Input
             placeholder="last name"
@@ -22,6 +24,7 @@ const FamilyForm = () => {
             element="input"
             type="text"
             errorText=""
+            validators={[VALIDATOR_REQUIRE()]}
           />
         </div>
         <div className=" d-flex flex-row justify-content-between py-3">
@@ -32,6 +35,7 @@ const FamilyForm = () => {
             element="input"
             type="text"
             errorText=""
+            validators={[VALIDATOR_REQUIRE()]}
           />
           <Input
             placeholder="Mother's name"
@@ -40,6 +44,7 @@ const FamilyForm = () => {
             element="input"
             type="text"
             errorText=""
+            validators={[VALIDATOR_REQUIRE()]}
           />
         </div>
         <div className=" d-flex flex-row justify-content-between py-3">
@@ -50,6 +55,7 @@ const FamilyForm = () => {
             element="input"
             type="text"
             errorText=""
+            validators={[VALIDATOR_REQUIRE()]}
           />
           <div className="d-flex justify-content-between">
             <Input
@@ -58,6 +64,7 @@ const FamilyForm = () => {
               element="input"
               type="date"
               errorText=""
+              validators={[VALIDATOR_REQUIRE()]}
             />
             <div className="d-flex gap-2  ">
               <p>isAlive</p>
@@ -69,6 +76,7 @@ const FamilyForm = () => {
                 type="radio"
                 value="yes"
                 errorText=""
+                validators={[VALIDATOR_REQUIRE()]}
               />
               <Input
                 placeholder="Date of Birth"
@@ -78,6 +86,7 @@ const FamilyForm = () => {
                 value="No"
                 type="radio"
                 errorText=""
+                validators={[VALIDATOR_REQUIRE()]}
               />
             </div>
           </div>
@@ -88,6 +97,7 @@ const FamilyForm = () => {
           element="text area"
           type="text"
           errorText=""
+          validators={[VALIDATOR_REQUIRE()]}
         />
         <Button
           className="align-self-center btn btn-primary my-3"
@@ -95,7 +105,6 @@ const FamilyForm = () => {
         >
           Add Member
         </Button>
-        
       </form>
     </div>
   );

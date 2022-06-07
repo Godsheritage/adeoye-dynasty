@@ -46,6 +46,11 @@ const Input: React.FC<inputTypes> = ({
     isValid: false,
   };
 
+
+// interface dispatch{
+//   dispatch: (value:any) => void
+// }
+
   const [inputState, dispatch] = useReducer(validationReducer, initialState);
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

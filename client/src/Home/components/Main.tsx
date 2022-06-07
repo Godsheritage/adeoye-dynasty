@@ -1,8 +1,9 @@
+import "./main.scss";
 import React from "react";
-import Input from "../../shared/Form Elements/input/Input";
 import { FaSearch } from "react-icons/fa";
 import { MAIN_DETAILS_TYPE } from "../../types";
-import "./main.scss";
+import Input from "../../shared/Form Elements/input/Input";
+import { VALIDATOR_REQUIRE } from "../../shared/utils/validators";
 
 const Main: React.FC = () => {
   const MAIN_DETAILS: MAIN_DETAILS_TYPE = {
@@ -21,7 +22,8 @@ const Main: React.FC = () => {
             placeholder="search for family members"
             element="input"
             type="text"
-            errorText=""
+            errorText="you must enter a valid name"
+            validators={[VALIDATOR_REQUIRE()]}
           />
           <button className="search-btn">
             <FaSearch className="search-icon" size="1.8rem" />
