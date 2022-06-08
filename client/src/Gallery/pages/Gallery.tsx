@@ -19,8 +19,8 @@ const Gallery: React.FC = () => {
 
       <div className="gallery-pictures">
         {familyMembers.map((member, index) => (
-          <div>
-            <img src={member.image} alt={member.name} className="img-fluid" />
+          <div key={index}> 
+            <img src={`images/${member.image}`} alt={member.name} className="img-fluid" />
           </div>
         ))}
       </div>

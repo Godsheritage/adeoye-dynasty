@@ -13,9 +13,10 @@ app.use(express.json());
 app.use(morgan("combined"));
 app.use("/family", familyRoute);
 app.use("/auth", authRoute);
-            
+             
 app.get("/images/:key", (req, res) => {
   const key = req.params.key;
+  console.log(key)
   const readStream = getFileStream(key);
   readStream.pipe(res);
 });
