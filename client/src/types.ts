@@ -23,7 +23,7 @@ export interface inputTypes {
   validators: any;
   id: string;
   onInput: (id: string, value: string, isValid: boolean) => void;
-  divClass? :any
+  divClass?: any;
 }
 
 export interface ButtonTypes {
@@ -43,10 +43,11 @@ export interface MAIN_DETAILS_TYPE {
 
 export interface contextTypes {
   familyMembers: familyMemberTypes["member"][];
+  signIn: () => Promise<any>;
 }
 
 export interface inputReducerState {
-  isTouched:boolean
+  isTouched: boolean;
   value: string;
   isValid: boolean;
 }
@@ -71,7 +72,6 @@ export interface actionTypes {
   validators: any;
 }
 
-
 export interface formActionTypes {
   type: string;
   inputId: string;
@@ -91,7 +91,5 @@ export interface reducerType {
 }
 
 export interface inputHandlerType {
-  inputHandler:(id: string, value: string, isValid: boolean) => void
-
-
+  inputHandler: (id: string, value: string, isValid: boolean) => void;
 }

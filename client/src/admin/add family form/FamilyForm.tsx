@@ -1,6 +1,10 @@
 import React from "react";
 import Input from "../../shared/Form Elements/input/Input";
-import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from "../../shared/utils/validators";
+import {
+  VALIDATOR_REQUIRE,
+  VALIDATOR_MINLENGTH,
+  VALIDATOR_SEX,
+} from "../../shared/utils/validators";
 import Button from "../../shared/Form Elements/buttons/Buttons";
 
 const FamilyForm = () => {
@@ -69,8 +73,7 @@ const FamilyForm = () => {
             id="proffession"
             onInput={inputHandler}
           />
-          <div className="d-flex justify-content-between" style={{ columnGap:'5rem'}}>
-            <label >date of birth</label>
+          <div className="d-flex justify-content-between">
             <Input
               placeholder="Date of Birth"
               className="form-control align-items-center "
@@ -79,37 +82,22 @@ const FamilyForm = () => {
               errorText=""
               validators={[VALIDATOR_REQUIRE()]}
               id="DOB"
-              style={{ width: "20vw", marginRight:'2rem' }}
-              divClass='md-form md-outline input-with-post-icon datepicker'
+              style={{ width: "15rem", marginRight: "2rem" }}
+              // divClass="md-form md-outline input-with-post-icon datepicker"
               onInput={inputHandler}
             />
-            <div className="d-flex">
-              <label>isAlive</label>
-              <Input
-                placeholder="Date of Birth"
-                className=""
-                name="is alive"
-                element="input"
-                type="radio"
-                value="yes"
-                errorText=""
-                validators={[VALIDATOR_REQUIRE()]}
-                id="isAlive true"
-                onInput={inputHandler}
-              />
-              <Input
-                placeholder="Date of Birth"
-                name="is alive"
-                className=""
-                element="input"
-                value="No"
-                type="radio"
-                errorText=""
-                validators={[VALIDATOR_REQUIRE()]}
-                id="isAlive false"
-                onInput={inputHandler}
-              />
-            </div>
+            <Input
+              placeholder="sex"
+              className="form-control align-items-center "
+              element="input"
+              type="text"
+              errorText="must be either male or female"
+              validators={[VALIDATOR_SEX("male", "female")]}
+              id="DOB"
+              style={{ width: "15rem" }}
+              divClass="md-form md-outline input-with-post-icon datepicker"
+              onInput={inputHandler}
+            />
           </div>
         </div>
         <Input

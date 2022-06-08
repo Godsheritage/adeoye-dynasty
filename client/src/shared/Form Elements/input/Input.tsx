@@ -25,7 +25,7 @@ const Input: React.FC<inputTypes> = ({
 }) => {
 
 
-  // reducer function
+  // Reducer function
   const validationReducer: reducerType["validationReducer"] = (
     state: inputReducerState,
     action: actionTypes
@@ -59,13 +59,16 @@ const Input: React.FC<inputTypes> = ({
 
   const [inputState, dispatch] = useReducer(validationReducer, initialState);
 
+
   const inputHandler: any = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: "CHANGE", val: e.target.value, validators });
   };
 
+
   const touchHandler = () => {
     dispatch({ type: "TOUCH", val: "", validators });
   };
+
 
   useEffect(() => {
     onInput(id, inputState.value, inputState.isValid);
