@@ -87,13 +87,15 @@ const LogIn: React.FC = () => {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const response = await signIn(
-      state.inputs.username.value,
+      state.inputs.username.value.toLowerCase(),
       state.inputs.password.value
     );
-    // const {message}
     setLoginMsg(response.message);
-    // console.log(response.error)
-    // navigate("/dashboard");
+    if (response.message === "successfully logged in") {
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000);
+    }
   };
 
   const inputHandler: inputHandlerType["inputHandler"] = useCallback(
@@ -147,7 +149,9 @@ const LogIn: React.FC = () => {
             >
               Sign In
             </Button>
-            {loginMsg.length !== 0 && <p className="text-center text-secondary">{loginMsg}</p>}
+            {loginMsg.length !== 0 && (
+              <p className="text-center text-secondary pt-3">{loginMsg}</p>
+            )}
           </form>
         </div>
       </div>
