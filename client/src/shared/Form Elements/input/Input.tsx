@@ -16,7 +16,7 @@ const Input: React.FC<inputTypes> = ({
   type,
   errorText,
   style,
-  // value,
+  onFocus,
   name,
   validators,
   id,
@@ -90,6 +90,7 @@ const Input: React.FC<inputTypes> = ({
           name={name}
           onChange={inputHandler}
           onBlur={touchHandler}
+          onFocus={onFocus}
         />
         {!inputState.isValid && inputState.isTouched && (
           <p className="text-danger">{errorText}</p>

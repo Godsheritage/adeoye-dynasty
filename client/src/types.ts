@@ -21,6 +21,7 @@ export interface inputTypes {
   value?: string;
   name?: string;
   validators: any;
+  onFocus?:any
   id: string;
   onInput: (id: string, value: string, isValid: boolean) => void;
   divClass?: any;

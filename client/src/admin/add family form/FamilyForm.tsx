@@ -1,13 +1,15 @@
-import React from "react";
-import Input from "../../shared/Form Elements/input/Input";
+import React, { useReducer } from "react";
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
   VALIDATOR_SEX,
 } from "../../shared/utils/validators";
+import Input from "../../shared/Form Elements/input/Input";
 import Button from "../../shared/Form Elements/buttons/Buttons";
 
 const FamilyForm = () => {
+  // useReducer()
+
   const inputHandler = () => {};
 
   return (
@@ -74,18 +76,24 @@ const FamilyForm = () => {
             onInput={inputHandler}
           />
           <div className="d-flex justify-content-between">
-            <Input
-              placeholder="Date of Birth"
-              className="form-control align-items-center "
-              element="input"
-              type="date"
-              errorText=""
-              validators={[VALIDATOR_REQUIRE()]}
-              id="DOB"
-              style={{ width: "15rem", marginRight: "2rem" }}
-              // divClass="md-form md-outline input-with-post-icon datepicker"
-              onInput={inputHandler}
-            />
+            <div className="d-flex flex-column">
+              <label style={{ fontSize: ".8rem", margin: 0 }}>
+                date of birth
+              </label>
+              <Input
+                placeholder="Date of Birth"
+                className="form-control align-items-center "
+                element="input"
+                type="text"
+                errorText=""
+                validators={[VALIDATOR_REQUIRE()]}
+                id="DOB"
+                onFocus="(this.type='date')"
+                style={{ width: "15rem", marginRight: "2rem" }}
+                // divClass="md-form md-outline input-with-post-icon datepicker"
+                onInput={inputHandler}
+              />
+            </div>
             <Input
               placeholder="sex"
               className="form-control align-items-center "
