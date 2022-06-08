@@ -44,7 +44,7 @@ export interface MAIN_DETAILS_TYPE {
 
 export interface contextTypes {
   familyMembers: familyMemberTypes["member"][];
-  signIn: () => Promise<any>;
+  signIn:(username: string, password: string) => Promise<any>;
 }
 
 export interface inputReducerState {
@@ -55,7 +55,7 @@ export interface inputReducerState {
 
 export interface initialReducerState {
   inputs: {
-    email: {
+    username: {
       value: string;
       isValid: boolean;
     };

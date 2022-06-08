@@ -1,5 +1,5 @@
 import "./login.scss";
-import { useCallback,  useReducer } from "react";
+import { useCallback, useReducer } from "react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ import {
 } from "../../../shared/utils/validators";
 import {
   actionTypes,
+  contextTypes,
   formActionTypes,
   initialReducerState,
   inputHandlerType,
@@ -22,6 +23,8 @@ import {
 } from "../../../types";
 
 const LogIn: React.FC = () => {
+  const { signIn } = useContext(FamilyContext) as contextTypes;
+  const [loginMsg, setLoginMsg] = useState<string>("");
   const navigate = useNavigate();
 
   // motion variants
@@ -66,7 +69,7 @@ const LogIn: React.FC = () => {
   // initial reducer state
   const initialState: initialReducerState = {
     inputs: {
-      email: {
+      username: {
         value: "",
         isValid: false,
       },
@@ -83,7 +86,12 @@ const LogIn: React.FC = () => {
   //submit form
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    navigate("/dashboard");
+    const response = await signIn(
+      state.inputs.username.value,
+      state.inputs.password.value
+    );
+    setLoginMsg(response.data.message);
+    // navigate("/dashboard");
   };
 
   const inputHandler: inputHandlerType["inputHandler"] = useCallback(
@@ -108,12 +116,12 @@ const LogIn: React.FC = () => {
               <div className="my-3">
                 <Input
                   element="input"
-                  type="email"
+                  type="text"
                   className="form-control input"
-                  placeholder="Email"
-                  errorText="please enter a valid email"
-                  validators={[VALIDATOR_EMAIL()]}
-                  id="email"
+                  placeholder="Username"
+                  errorText="username must be greater than 5 digits"
+                  validators={[VALIDATOR_MINLENGTH(5)]}
+                  id="username"
                   onInput={inputHandler}
                 />
               </div>
@@ -134,10 +142,10 @@ const LogIn: React.FC = () => {
               element="button"
               className="btn btn-primary align-self-center mt-3 w-50 "
               disabled={!state.isValid}
-              onClick={() => console.log(state)}
             >
               Sign In
             </Button>
+            {loginMsg.length !== 0 && <p>{loginMsg}</p>}
           </form>
         </div>
       </div>

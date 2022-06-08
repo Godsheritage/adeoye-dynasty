@@ -3,6 +3,6 @@ import httpGetUser from './auth.controllers'
 
 const authRoute = express.Router()
 
-authRoute.get('/', httpGetUser )
+authRoute.post('/', httpGetUser )
 
 export default authRoute

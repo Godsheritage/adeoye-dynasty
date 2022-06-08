@@ -16,9 +16,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     setFamilyMembers(response.data);
   };
 
-  const signIn = async () => {
-    const response = await axios.get(`${API_URL}/auth`);
-    return response.data
+  const signIn = async (username: string, password: string) => {
+    const authObject = { username, password };
+    const response = await axios.post(`${API_URL}/auth`, authObject);
+    return response.data;
   };
 
   useEffect(() => {
