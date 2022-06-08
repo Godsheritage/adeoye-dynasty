@@ -6,11 +6,11 @@ export const findUser: findUserTypes["findUser"] = async (
   password
 ) => {
   const user = await authModels.findOne({ username }, { __v: 0 });
-  if (!user) {
-    return { error: "user not found" };
-  }
-  if (user.password !== password) {
-    return { error: "password is incorrect" };
-  }
+//   if (!user) {
+//     return { error: "user not found" };
+//   }
+//   if (user.password !== password) {
+//     return { error: "password is incorrect" };
+//   }
   return user;
 };

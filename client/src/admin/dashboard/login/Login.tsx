@@ -90,7 +90,9 @@ const LogIn: React.FC = () => {
       state.inputs.username.value,
       state.inputs.password.value
     );
-    setLoginMsg(response.data.message);
+    // const {message}
+    setLoginMsg(response.message);
+    // console.log(response.error)
     // navigate("/dashboard");
   };
 
@@ -145,7 +147,7 @@ const LogIn: React.FC = () => {
             >
               Sign In
             </Button>
-            {loginMsg.length !== 0 && <p>{loginMsg}</p>}
+            {loginMsg.length !== 0 && <p className="text-center text-secondary">{loginMsg}</p>}
           </form>
         </div>
       </div>

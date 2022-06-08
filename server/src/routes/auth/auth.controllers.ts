@@ -9,11 +9,16 @@ const httpGetUser: RequestHandler = async (req, res) => {
       .status(404)
       .json({ message: "username or password fields is missing" });
   }
-  const user = await findUser(username, password);
+  const user: any = await findUser(username, password);
   if (!user!) {
     return res.status(404).json({ message: "user not found" });
   }
-  return res.status(200).json({ message: "successfully logged in", user });
+  if (user.password !== password) {
+    return res.status(404).json({ message: "password is incorrect" });
+  }
+  return res
+    .status(200)
+    .json({ message: "successfully logged in", id: user._id });
 };
 
 export default httpGetUser;
