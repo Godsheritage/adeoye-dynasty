@@ -11,12 +11,17 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     familyMemberTypes["member"][] | any
   >();
 
-  //f
+  //fetch family members
   const fetchFamily = async () => {
     const response = await axios.get(`${API_URL}/family/members`);
     setFamilyMembers(response.data);
   };
 
+  useEffect(() => {
+    fetchFamily();
+  }, []);
+
+  // sign users in
   const signIn = async (username: string, password: string) => {
     const authObject = { username, password };
     try {
@@ -26,10 +31,6 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
       return { message: "invalid credentials", err };
     }
   };
-
-  useEffect(() => {
-    fetchFamily();
-  }, []);
 
   return (
     <FamilyContext.Provider value={{ familyMembers, signIn }}>

@@ -21,7 +21,7 @@ export interface inputTypes {
   value?: string;
   name?: string;
   validators: any;
-  onFocus?:any
+  onFocus?: any;
   id: string;
   onInput: (id: string, value: string, isValid: boolean) => void;
   divClass?: any;
@@ -43,8 +43,9 @@ export interface MAIN_DETAILS_TYPE {
 }
 
 export interface contextTypes {
+  // fetchFamily: () => Promise<familyMemberTypes['member'][]>;
   familyMembers: familyMemberTypes["member"][];
-  signIn:(username: string, password: string) => Promise<any>;
+  signIn: (username: string, password: string) => Promise<any>;
 }
 
 export interface inputReducerState {
