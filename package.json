@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "CLIENT_BUILD":"npm run build --prefix client",
-    "deploy":"npm run CLIENT_BUILD && npm start",
-    "start":"npm start --prefix server"
+    "BUILD_CLIENT": "npm run build --prefix client",
+    "CLIENT_INSTALL": "npm install --prefix client",
+    "SERVER_INSTALL": "npm install --prefix server",
+    "INSTALL": "npm run CLIENT_INSTALL &&  npm run SERVER_INSTALL",
+    "deploy": "npm run CLIENT_BUILD && npm start",
+    "start": "npm start --prefix server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run CLIENT_INSTALL && npm run BUILD_CLIENT"
   },
   "repository": {
     "type": "git",

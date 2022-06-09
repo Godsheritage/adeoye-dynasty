@@ -7,7 +7,6 @@ import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 // const FamilyMember = () => {
 // return familyMembers.map((member, index) => (
 // <Gallery key={index} member={member} />
-// ));
 // };
 
 const Gallery: React.FC = () => {
