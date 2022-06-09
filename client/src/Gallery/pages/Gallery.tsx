@@ -4,7 +4,6 @@ import { contextTypes } from "../../types";
 import Footer from "../../shared/UI Elements/footer/Footer";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 
-// const FamilyMember = () => {
 // return familyMembers.map((member, index) => (
 // <Gallery key={index} member={member} />
 
