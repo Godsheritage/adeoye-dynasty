@@ -4,8 +4,6 @@ import { contextTypes } from "../../types";
 import Footer from "../../shared/UI Elements/footer/Footer";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 
-// <Gallery key={index} member={member} />
-
 const Gallery: React.FC = () => {
   const { familyMembers } = useContext(FamilyContext) as contextTypes;
 
