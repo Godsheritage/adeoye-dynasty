@@ -6,4 +6,3 @@ const imageRoutes = express.Router();
 imageRoutes.get("/", httpGetImages);
 
 export default imageRoutes;
- 
