@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("combined"));
 app.use("/auth", authRoute);
-app.get("/images", imageRoutes);
+app.get("/images/:key", imageRoutes);
 app.use("/family", familyRoute);
 
 
