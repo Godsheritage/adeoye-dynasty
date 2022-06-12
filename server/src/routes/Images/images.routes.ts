@@ -4,3 +4,5 @@ import { httpGetImages } from "./images.controllers";
 const imageRoutes = express.Router();
 
 imageRoutes.get("/:key", httpGetImages);
+
+export default imageRoutes;
