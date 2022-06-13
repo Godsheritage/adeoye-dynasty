@@ -12,14 +12,14 @@ const FamilyMembersList: React.FC = () => {
   const [familyMembers, setFamilyMembers] =
     useState<familyMemberTypes["member"][]>();
 
-  useEffect(() => {
-    fetchFamily();
-  });
-
-  const fetchFamily: any = async () => {
-    const response = await axios.get("http://localhost:1234/family/members");
-    setFamilyMembers(response.data);
-  };
+    
+    const fetchFamily: any = async () => {
+      const response = await axios.get("http://localhost:1234/family/members");
+      setFamilyMembers(response.data);
+    };
+    useEffect( () => {
+      fetchFamily();
+    }, [familyMembers]);
 
   return (
     <div
