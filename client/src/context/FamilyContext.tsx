@@ -12,7 +12,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   >();
 
   //fetch family members
-  const fetchFamily = async () => {
+  const fetchFamily:any = async () => {
     const response = await axios.get(`${API_URL}/family/members`);
     setFamilyMembers(response.data);
   };
@@ -33,7 +33,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   };
 
   return (
-    <FamilyContext.Provider value={{ familyMembers, signIn }}>
+    <FamilyContext.Provider value={{ familyMembers, signIn, fetchFamily }}>
       {children}
     </FamilyContext.Provider>
   );
