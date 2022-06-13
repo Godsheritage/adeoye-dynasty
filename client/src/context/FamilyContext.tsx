@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 import { contextTypes, familyMemberTypes } from "../types";
 
 const FamilyContext = createContext<contextTypes | null>(null);
@@ -12,14 +12,16 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   >();
 
   //fetch family members
-  const fetchFamily:any = async () => {
-    const response = await axios.get(`${API_URL}/family/members`);
-    setFamilyMembers(response.data);
-  };
-
-  useEffect(() => {
-    fetchFamily();
+ const fetchFamily:any =  useCallback(() => {
+    const fetchFamily = async () => {
+      const response = await axios.get(`${API_URL}/family/members`);
+      setFamilyMembers(response.data);
+    };
   }, []);
+
+  // useEffect(() => {
+  //   fetchFamily();
+  // }, []);
 
   // sign users in
   const signIn = async (username: string, password: string) => {

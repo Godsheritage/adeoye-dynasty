@@ -2,24 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import FamilyMember from "./FamilyMember";
 import FamilyContext from "../../context/FamilyContext";
 import { contextTypes, familyMemberTypes } from "../../types";
-import axios from "axios";
 
 const FamilyMembersList: React.FC = () => {
-  // const { familyMembers, } = useContext(
-  //   FamilyContext
-  // ) as contextTypes;
-
-  const [familyMembers, setFamilyMembers] =
-    useState<familyMemberTypes["member"][]>();
-
-    
-    const fetchFamily: any = async () => {
-      const response = await axios.get("http://localhost:1234/family/members");
-      setFamilyMembers(response.data);
-    };
-    useEffect( () => {
-      fetchFamily();
-    }, [familyMembers]);
+  const { familyMembers } = useContext(FamilyContext) as contextTypes;
 
   return (
     <div
