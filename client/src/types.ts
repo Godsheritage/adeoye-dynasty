@@ -11,6 +11,19 @@ export interface familyMemberTypes {
   };
 }
 
+export interface familyMemberTypes2 {
+  familyMember: {
+    name: string;
+    DOB: Date;
+    image: string;
+    age: number;
+    sex: string;
+    bio: string;
+    isAlive: true;
+    YearOfDeath: number | null;
+  }[] | undefined
+};
+
 export interface inputTypes {
   className: string;
   placeholder: string;

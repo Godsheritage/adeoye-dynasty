@@ -15,7 +15,7 @@ const Family: React.FC = () => {
 
 
   const [familyMembers, setFamilyMembers] =
-  useState<familyMemberTypes["member"][]>();
+  useState<familyMemberTypes[]>();
 
   
   const fetchFamily: any = async () => {
@@ -33,7 +33,7 @@ const Family: React.FC = () => {
   return (
     <>
       <CustomHeader location="/family" />
-      <FamilyMembersList />
+      <FamilyMembersList familyMember = {familyMembers} />
       <Footer />
     </>
   );
