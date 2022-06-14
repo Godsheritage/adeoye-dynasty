@@ -25,7 +25,7 @@ const Family: React.FC = () => {
 
   useEffect( () => {
     fetchFamily();
-  }, []);
+  });
 
   // useEffect(() => {
   //   fetchFamily()
