@@ -56,7 +56,7 @@ export interface MAIN_DETAILS_TYPE {
 }
 
 export interface contextTypes {
-  fetchFamily?: () => Promise<void>;
+  fetchFamily: () => Promise<void>;
   familyMembers: familyMemberTypes["member"][];
   signIn: (username: string, password: string) => Promise<any>;
 }

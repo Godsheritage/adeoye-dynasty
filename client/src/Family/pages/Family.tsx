@@ -11,21 +11,21 @@ import FamilyContext from "../../context/FamilyContext";
 import { contextTypes } from "../../types";
 
 const Family: React.FC = () => {
-  // const {fetchFamily}  = useContext(FamilyContext) as contextTypes
+  const {fetchFamily}  = useContext(FamilyContext) as contextTypes
 
 
-  const [familyMembers, setFamilyMembers] =
-  useState<familyMemberTypes[]>();
+  // const [familyMembers, setFamilyMembers] =
+  // useState<familyMemberTypes[]>();
 
   
-  const fetchFamily: any = async () => {
-    const response = await axios.get("http://localhost:1234/family/members");
-    setFamilyMembers(response.data);
-  };
+  // const fetchFamily: any = async () => {
+  //   const response = await axios.get("http://localhost:1234/family/members");
+  //   setFamilyMembers(response.data);
+  // };
 
   useEffect( () => {
     fetchFamily();
-  });
+  }, []);
 
   // useEffect(() => {
   //   fetchFamily()
@@ -33,7 +33,7 @@ const Family: React.FC = () => {
   return (
     <>
       <CustomHeader location="/family" />
-      <FamilyMembersList familyMember = {familyMembers} />
+      <FamilyMembersList />
       <Footer />
     </>
   );
