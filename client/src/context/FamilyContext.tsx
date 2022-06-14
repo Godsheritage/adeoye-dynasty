@@ -21,6 +21,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
 
   useEffect(() => {
     fetchFamily();
+    console.log('loaded')
   }, []);
 
   // sign users in
