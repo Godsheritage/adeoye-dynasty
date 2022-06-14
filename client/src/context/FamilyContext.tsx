@@ -19,9 +19,9 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   fetchFamily();
-  // }, []);
+  useEffect(() => {
+    fetchFamily();
+  }, []);
 
   // sign users in
   const signIn = async (username: string, password: string) => {
