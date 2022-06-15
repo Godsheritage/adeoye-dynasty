@@ -11,7 +11,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     familyMemberTypes["member"][] | any
   >();
 
-  //fetch family members
+  // to fetch family members
  const fetchFamily = async () => {
       const response = await axios.get(`${API_URL}/family/members`);
       setFamilyMembers(response.data);
