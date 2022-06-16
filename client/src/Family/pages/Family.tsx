@@ -22,9 +22,7 @@ const Family: React.FC = () => {
     fetchFamily();
   });
 
-  // useEffect(() => {
-  //   fetchFamily()
-  // }, [])
+ 
   return (
     <>
       <CustomHeader location="/family" />
