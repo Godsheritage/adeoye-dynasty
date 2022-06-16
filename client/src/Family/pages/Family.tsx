@@ -18,10 +18,7 @@ const Family: React.FC = () => {
   // useState<familyMemberTypes[]>();
 
   
-  // const fetchFamily: any = async () => {
-  //   const response = await axios.get("http://localhost:1234/family/members");
-  //   setFamilyMembers(response.data);
-  // };
+ 
 
   useEffect( () => {
     fetchFamily();
