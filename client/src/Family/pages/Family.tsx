@@ -14,8 +14,6 @@ const Family: React.FC = () => {
   const {fetchFamily}  = useContext(FamilyContext) as contextTypes
 
 
-  // const [familyMembers, setFamilyMembers] =
-  // useState<familyMemberTypes[]>();
 
   
  
