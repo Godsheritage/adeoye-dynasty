@@ -12,13 +12,15 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   >();
 
   // to fetch family members
-  const fetchFamily = async () => {
+  const fetchFamily = useCallback(async () => {
     const response = await axios.get(`${API_URL}/family/members`);
     setFamilyMembers(response.data);
-  };
-  useEffect(() => {
-    fetchFamily();
+    console.log("searched for fam");
   }, []);
+
+  // useEffect(() => {
+  //   fetchFamily();
+  // }, []);
 
   // sign users in
   const signIn = async (username: string, password: string) => {

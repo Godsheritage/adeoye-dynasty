@@ -6,6 +6,12 @@ import { contextTypes, familyMemberTypes2 } from "../../types";
 const FamilyMembersList: React.FC<any> = ({familyMember}) => {
   const { familyMembers, fetchFamily } = useContext(FamilyContext) as contextTypes;
 
+  
+
+  useEffect(() => {
+    fetchFamily();
+  }, []);
+
   return (
     <div
       className="family-member d-flex flex-wrap justify-content-center align-items-center"
