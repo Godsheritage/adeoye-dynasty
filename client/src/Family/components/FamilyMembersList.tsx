@@ -4,13 +4,13 @@ import FamilyContext from "../../context/FamilyContext";
 import { contextTypes, familyMemberTypes2 } from "../../types";
 
 const FamilyMembersList: React.FC<any> = ({familyMember}) => {
-  const { familyMembers, fetchFamily } = useContext(FamilyContext) as contextTypes;
+  const { familyMembers } = useContext(FamilyContext) as contextTypes;
 
   
 
-  useEffect(() => {
-    fetchFamily();
-  }, []);
+  // useEffect(() => {
+  //   fetchFamily();
+  // }, []);
 
   return (
     <div

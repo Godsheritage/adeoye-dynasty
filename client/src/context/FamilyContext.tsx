@@ -17,10 +17,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     setFamilyMembers(response.data);
     console.log("searched for fam");
   }, []);
-
-  // useEffect(() => {
-  //   fetchFamily();
-  // }, []);
+  
+  useEffect(() => {
+    fetchFamily();
+  }, [ fetchFamily]);
 
   // sign users in
   const signIn = async (username: string, password: string) => {

@@ -10,11 +10,11 @@ import FamilyContext from "../../context/FamilyContext";
 import { contextTypes } from "../../types";
 
 const Family: React.FC = () => {
-  const { fetchFamily } = useContext(FamilyContext) as contextTypes;
+  const { fetchFamily, familyMembers } = useContext(FamilyContext) as contextTypes;
 
-  useEffect(() => {
-    fetchFamily();
-  });
+  // useEffect(() => {
+  //   fetchFamily();
+  // }, [familyMembers]);
 
   return (
     <>
