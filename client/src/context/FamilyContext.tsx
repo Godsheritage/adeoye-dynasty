@@ -12,11 +12,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   >();
 
   // to fetch family members
- const fetchFamily = async () => {
-      const response = await axios.get(`${API_URL}/family/members`);
-      setFamilyMembers(response.data);
-  }
-
+  const fetchFamily = async () => {
+    const response = await axios.get(`${API_URL}/family/members`);
+    setFamilyMembers(response.data);
+  };
 
   // sign users in
   const signIn = async (username: string, password: string) => {
