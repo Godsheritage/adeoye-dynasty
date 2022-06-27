@@ -18,7 +18,7 @@ app.use("/family", familyRoute);
 // app.get("/images/:key", imageRoutes);
 app.get("/images/:key", (req, res) => {
   const key = req.params.key;
-    console.log(key);
+    // console.log(key);
   const readStream = getFileStream(key);
   readStream.pipe(res);
 });
