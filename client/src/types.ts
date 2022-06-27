@@ -58,7 +58,7 @@ export interface MAIN_DETAILS_TYPE {
 }
 
 export interface contextTypes {
-  familyMember: any;
+  singleFamilyMember: any;
   fetchSingleFamilyMember: any;
   fetchFamily: () => Promise<void>;
   familyMembers: familyMemberTypes["member"][];
