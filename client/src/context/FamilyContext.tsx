@@ -14,7 +14,8 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   // to fetch family members
   const fetchFamily = useCallback(async () => {
     const response = await axios.get(`${API_URL}/family/members`);
-    const 
+    // const familyMemberSort = response.data
+    // familyMemberSort.
     setFamilyMembers(response.data);
     console.log("searched for fam");
   }, []);

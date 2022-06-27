@@ -114,7 +114,7 @@ const addFamilyMembers = async () => {
 };
 // addFamilyMembers();
 const fetchFamilyMembers = async () => {
-    return await family_mongo_1.familyModel.find({}, { __v: 0 });
+    return await family_mongo_1.familyModel.find({}, { __v: 0 }).sort({ "age": -1 });
 };
 exports.fetchFamilyMembers = fetchFamilyMembers;
 exports.default = familyMembers;

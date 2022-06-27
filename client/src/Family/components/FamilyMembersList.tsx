@@ -5,6 +5,7 @@ import { contextTypes, familyMemberTypes2 } from "../../types";
 
 const FamilyMembersList: React.FC<any> = ({familyMember}) => {
   const { familyMembers } = useContext(FamilyContext) as contextTypes;
+  // familyMembers.sort((a,b) => a-b )
 
   
 
