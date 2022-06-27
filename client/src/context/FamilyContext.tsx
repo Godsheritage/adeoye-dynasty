@@ -1,16 +1,27 @@
 import axios from "axios";
-import { createContext, useEffect, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { contextTypes, familyMemberTypes } from "../types";
+import { createContext, useEffect, useState, useCallback } from "react";
 
 const FamilyContext = createContext<contextTypes | null>(null);
 
 const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
+  const navigate = useNavigate();
+
   const [familyMembers, setFamilyMembers] = useState<
     familyMemberTypes["member"][] | any
   >();
 
+  const [familyMember, setFamilyMember] = useState("");
+
+  // fetch single family member
+  const fetchSingleFamilyMember = async (member:any) => {
+    const response = await axios.get(`${API_URL}/family/${member.name}`);
+    setFamilyMember(response.data);
+    navigate(`/family/${member.name}`);
+  };
 
   // to fetch family members
   const fetchFamily = useCallback(async () => {
@@ -18,11 +29,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     setFamilyMembers(response.data);
     console.log("searched for fam");
   }, []);
-  
+
   useEffect(() => {
     fetchFamily();
-  }, [ fetchFamily]);
-
+  }, [fetchFamily]);
 
   // sign users in
   const signIn = async (username: string, password: string) => {
@@ -35,9 +45,8 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     }
   };
 
-  
   return (
-    <FamilyContext.Provider value={{ familyMembers, signIn, fetchFamily }}>
+    <FamilyContext.Provider value={{ familyMembers, signIn, fetchFamily, fetchSingleFamilyMember, familyMember }}>
       {children}
     </FamilyContext.Provider>
   );

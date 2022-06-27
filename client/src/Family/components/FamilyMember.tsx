@@ -1,14 +1,17 @@
 import React from "react";
+import { useContext } from "react";
+import { contextTypes } from "../../types";
 import { familyMemberTypes } from "../../types";
-import { useNavigate } from "react-router-dom";
 import Card from "../../shared/UI Elements/card/Card";
 
 const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
-  const navigate = useNavigate();
+  
+
 
   const singleFamilyMember = () => {
     
-    navigate(`/family/${member.name}`)
+
+    
   }
 
   return (

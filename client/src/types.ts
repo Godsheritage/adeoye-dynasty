@@ -12,17 +12,19 @@ export interface familyMemberTypes {
 }
 
 export interface familyMemberTypes2 {
-  familyMember: {
-    name: string;
-    DOB: Date;
-    image: string;
-    age: number;
-    sex: string;
-    bio: string;
-    isAlive: true;
-    YearOfDeath: number | null;
-  }[] | undefined
-};
+  familyMember:
+    | {
+        name: string;
+        DOB: Date;
+        image: string;
+        age: number;
+        sex: string;
+        bio: string;
+        isAlive: true;
+        YearOfDeath: number | null;
+      }[]
+    | undefined;
+}
 
 export interface inputTypes {
   className: string;
@@ -56,6 +58,8 @@ export interface MAIN_DETAILS_TYPE {
 }
 
 export interface contextTypes {
+  familyMember: any;
+  fetchSingleFamilyMember: any;
   fetchFamily: () => Promise<void>;
   familyMembers: familyMemberTypes["member"][];
   signIn: (username: string, password: string) => Promise<any>;
