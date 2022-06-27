@@ -15,6 +15,7 @@ app.use(morgan("combined"));
 app.use("/auth", authRoute);
 app.use("/family", familyRoute);
 
+// app.get("/images/:key", imageRoutes);
 app.get("/images/:key", imageRoutes);
 
 app.use(express.static(path.join(__dirname, "..", "public ")));
