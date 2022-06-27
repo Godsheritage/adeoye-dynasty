@@ -120,7 +120,7 @@ const fetchFamilyMembers = async () => {
 exports.fetchFamilyMembers = fetchFamilyMembers;
 // to find an individual family meber
 const fetchSingleFamilyMember = async (name) => {
-    return await family_mongo_1.familyModel.find({ name }, { __v: 0 }).sort({ age: -1 });
+    return await family_mongo_1.familyModel.findOne({ name }, { __v: 0 });
 };
 exports.fetchSingleFamilyMember = fetchSingleFamilyMember;
 exports.default = familyMembers;

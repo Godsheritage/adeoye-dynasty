@@ -124,7 +124,7 @@ export const fetchFamilyMembers = async () => {
 
 // to find an individual family meber
 export const fetchSingleFamilyMember = async (name: string) => {
-  return await familyModel.find({ name }, { __v: 0 }).sort({ age: -1 });
+  return await familyModel.findOne({ name }, { __v: 0 });
 };
 
 export default familyMembers;
