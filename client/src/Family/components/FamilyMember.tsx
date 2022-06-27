@@ -5,13 +5,19 @@ import Card from "../../shared/UI Elements/card/Card";
 
 const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
   const navigate = useNavigate();
+
+  const singleFamilyMember = () => {
+    
+    navigate(`/family/${member.name}`)
+  }
+
   return (
     <div className="family-member">
       <Card>
         <img
           src={`/images/${member.image}`} 
           alt={member.name}
-          onClick={() => navigate(`/family/${member.name}`)}
+          onClick={singleFamilyMember}
         /> 
         <div className="d-flex flex-column pt-2 justify-content-around align-items-around">
           <p className=" text-dark">{member.name}</p>
