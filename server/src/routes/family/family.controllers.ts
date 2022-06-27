@@ -5,3 +5,8 @@ export const httpFetchFamilyMembers: RequestHandler = async (req, res) => {
   return res.status(200).json(await fetchFamilyMembers());
 };
   
+
+export const httpFetchSingleFamilyMember: RequestHandler = async (req, res) => {
+  return res.status(200).json(await fetchFamilyMembers());
+};
+  
