@@ -7,6 +7,6 @@ const httpFetchFamilyMembers = async (req, res) => {
 };
 exports.httpFetchFamilyMembers = httpFetchFamilyMembers;
 const httpFetchSingleFamilyMember = async (req, res) => {
-    return res.status(200).json(await (0, family_models_1.fetchFamilyMembers)());
+    return res.status(200).json(await (0, family_models_1.fetchSingleFamilyMember)(req.params.name));
 };
 exports.httpFetchSingleFamilyMember = httpFetchSingleFamilyMember;

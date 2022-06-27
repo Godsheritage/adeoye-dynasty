@@ -12,7 +12,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Tunde Adeoye",
     DOB: new Date("26 May 1971"),
-    image:"Tunde.jpg",
+    image: "Tunde.jpg",
     sex: "male",
     bio: "just there",
     age: age(new Date("26 May 1971")),
@@ -22,7 +22,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Ruth Adeoye",
     DOB: new Date("21 September 1976"),
-    image:"Ruth.jpg",
+    image: "Ruth.jpg",
     sex: "female",
     bio: "just there",
     age: age(new Date("21 September 1976")),
@@ -32,7 +32,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Crownfit Adeoye",
     DOB: new Date("28 August 2002"),
-    image:"Crownfit.jpg",
+    image: "Crownfit.jpg",
     sex: "male",
     bio: "just there",
     age: age(new Date("28 August 2002")),
@@ -42,7 +42,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Godsheritage Adeoye",
     DOB: new Date("30 march 2004"),
-    image:"Godsheritage.JPG",
+    image: "Godsheritage.JPG",
     sex: "male",
     bio: "just there",
     age: age(new Date("30 march 2004")),
@@ -52,7 +52,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Mojola Adeoye",
     DOB: new Date("16 November 2007"),
-    image:"Mojola.JPG",
+    image: "Mojola.JPG",
     sex: "male",
     bio: "just there",
     age: age(new Date("16 November 2007")),
@@ -62,7 +62,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Tunde Adeoye",
     DOB: new Date("26 May 1971"),
-    image:"Tunde.jpg",
+    image: "Tunde.jpg",
     sex: "male",
     bio: "just there",
     age: age(new Date("26 May 1971")),
@@ -72,7 +72,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Ruth Adeoye",
     DOB: new Date("21 September 1976"),
-    image:"Ruth.jpg",
+    image: "Ruth.jpg",
     sex: "female",
     bio: "just there",
     age: age(new Date("21 September 1976")),
@@ -82,7 +82,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Crownfit Adeoye",
     DOB: new Date("28 August 2002"),
-    image:"Crownfit.jpg",
+    image: "Crownfit.jpg",
     sex: "male",
     bio: "just there",
     age: age(new Date("28 August 2002")),
@@ -92,7 +92,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Godsheritage Adeoye",
     DOB: new Date("30 march 2004"),
-    image:"Godsheritage.JPG",
+    image: "Godsheritage.JPG",
     sex: "male",
     bio: "just there",
     age: age(new Date("30 march 2004")),
@@ -102,7 +102,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   {
     name: "Mojola Adeoye",
     DOB: new Date("16 November 2007"),
-    image:"Mojola.JPG",
+    image: "Mojola.JPG",
     sex: "male",
     bio: "just there",
     age: age(new Date("16 November 2007")),
@@ -119,14 +119,12 @@ const addFamilyMembers = async () => {
 
 // to find all family members
 export const fetchFamilyMembers = async () => {
-  return await familyModel.find({}, {__v:0}).sort({"age":-1});
+  return await familyModel.find({}, { __v: 0 }).sort({ age: -1 });
 };
 
 // to find an individual family meber
-export const fetchSingleFamilyMembers = async () => {
-  return await familyModel.find({}, {__v:0}).sort({"age":-1});
+export const fetchSingleFamilyMember = async (name: string) => {
+  return await familyModel.find({ name }, { __v: 0 }).sort({ age: -1 });
 };
 
-
 export default familyMembers;
- 
