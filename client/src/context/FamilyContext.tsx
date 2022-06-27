@@ -23,6 +23,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     navigate(`/family/${member.name}`);
   };
 
+  
   // to fetch family members
   const fetchFamily = useCallback(async () => {
     const response = await axios.get(`${API_URL}/family/members`);
