@@ -5,17 +5,12 @@ import FamilyMembersList from "../components/FamilyMembersList";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 // import axios from "axios";
 
-import { useContext } from "react";
-import FamilyContext from "../../context/FamilyContext";
-import { contextTypes } from "../../types";
+// import { useContext } from "react";
+// import FamilyContext from "../../context/FamilyContext";
+// import { contextTypes } from "../../types";
 
 const Family: React.FC = () => {
-  const { fetchFamily, familyMembers } = useContext(FamilyContext) as contextTypes;
-
-  // useEffect(() => {
-  //   fetchFamily();
-  // }, [familyMembers]);
-
+  // const { fetchFamily, familyMembers } = useContext(FamilyContext) as contextTypes;
   return (
     <>
       <CustomHeader location="/family" />
