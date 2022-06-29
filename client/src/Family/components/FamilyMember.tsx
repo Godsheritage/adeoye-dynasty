@@ -8,15 +8,13 @@ import Card from "../../shared/UI Elements/card/Card";
 const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
   const { fetchSingleFamilyMember } = useContext(FamilyContext) as contextTypes;
 
-  const singleFamilyMember = () => {};
-
   return (
     <div className="family-member">
       <Card>
         <img
           src={`/images/${member.image}`}
           alt={member.name}
-          onClick={fetchSingleFamilyMember(member)}
+          onClick={fetchSingleFamilyMember(member.name)}
         />
         <div className="d-flex flex-column pt-2 justify-content-around align-items-around">
           <p className=" text-dark">{member.name}</p>

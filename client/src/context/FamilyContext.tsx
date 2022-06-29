@@ -17,10 +17,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const [singleFamilyMember, setSingleFamilyMember] = useState("");
 
   // fetch single family member
-  const fetchSingleFamilyMember = async (member:any) => {
-    const response = await axios.get(`${API_URL}/family/member/${member.name}`);
+  const fetchSingleFamilyMember = async (name:string) => {
+    const response = await axios.get(`${API_URL}/family/member/${name}`);
     setSingleFamilyMember(response.data);
-    navigate(`/family/${member.name}`);
+    navigate(`/family/${name}`);
   };
 
 
