@@ -1,9 +1,9 @@
 import "./singleMemberPage.scss";
+import { useContext } from "react";
+import { contextTypes } from "../../types";
+import FamilyContext from "../../context/FamilyContext";
 import Footer from "../../shared/UI Elements/footer/Footer";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
-import { useContext } from "react";
-import FamilyContext from "../../context/FamilyContext";
-import { contextTypes } from "../../types";
 
 const SingleMemberPage: React.FC = () => {
   const { singleFamilyMember } = useContext(FamilyContext) as contextTypes;
