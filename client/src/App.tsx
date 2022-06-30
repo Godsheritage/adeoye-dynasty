@@ -12,25 +12,25 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <FamilyContextProvider>
-      <Router>
+    <Router>
+      <FamilyContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<LogIn />} />
           <Route path="/family" element={<Family />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/addfamilymember" element={<AddFamily/>} />
-          <Route path="/viewfamily" element={<ViewFamily/>} />
-          <Route path="/family/:name" element={<SingleMemberPage/>} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/addfamilymember" element={<AddFamily />} />
+          <Route path="/viewfamily" element={<ViewFamily />} />
+          <Route path="/family/:name" element={<SingleMemberPage />} />
         </Routes>
-      </Router>
-    </FamilyContextProvider>
+      </FamilyContextProvider>
+    </Router>
   );
 }
 
 export default App;
 
-//todo  work on the backend 
+//todo  work on the backend
 //todo  work on the single page
 //todo  work on the gllery page

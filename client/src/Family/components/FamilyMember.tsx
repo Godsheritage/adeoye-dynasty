@@ -24,5 +24,5 @@ const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
     </div>
   );
 };
-
+ 
 export default FamilyMember;
