@@ -17,23 +17,22 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const [singleFamilyMember, setSingleFamilyMember] = useState("");
 
   // fetch single family member
-  const fetchSingleFamilyMember = async (name:string) => {
+  const fetchSingleFamilyMember = async (name: string) => {
     const response = await axios.get(`${API_URL}/family/member/${name}`);
     setSingleFamilyMember(response.data);
     navigate(`/family/${name}`);
   };
 
-
   // to fetch family members
-  const fetchFamily = useCallback(async () => {
+  const fetchFamily = async () => {
     const response = await axios.get(`${API_URL}/family/members`);
     setFamilyMembers(response.data);
     console.log("searched for fam");
-  }, []);
+  };
 
   useEffect(() => {
     fetchFamily();
-  }, [fetchFamily]);
+  });
 
   // sign users in
   const signIn = async (username: string, password: string) => {
@@ -47,7 +46,15 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   };
 
   return (
-    <FamilyContext.Provider value={{ familyMembers, signIn, fetchFamily, fetchSingleFamilyMember, singleFamilyMember }}>
+    <FamilyContext.Provider
+      value={{
+        familyMembers,
+        signIn,
+        fetchFamily,
+        fetchSingleFamilyMember,
+        singleFamilyMember,
+      }}
+    >
       {children}
     </FamilyContext.Provider>
   );
