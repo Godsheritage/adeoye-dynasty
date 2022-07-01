@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import { contextTypes } from "../../types";
-import FamilyContext from "../../context/FamilyContext";
 import { familyMemberTypes } from "../../types";
 import Card from "../../shared/UI Elements/card/Card";
+import FamilyContext from "../../context/FamilyContext";
 
 const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
   const { fetchSingleFamilyMember } = useContext(FamilyContext) as contextTypes;
