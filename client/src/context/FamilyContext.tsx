@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { contextTypes, familyMemberTypes } from "../types";
-import { createContext, useEffect, useState, useCallback } from "react";
+import { createContext, useEffect, useState, useCallback, useMemo } from "react";
 import FamilyMembersList from "../Family/components/FamilyMembersList";
 import FamilyMember from "../Family/components/FamilyMember";
 
@@ -26,16 +26,16 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   // }, [])
 
   // fetch single family member
-  const fetchSingleFamilyMember = useCallback(async (name: string) => {
+  const fetchSingleFamilyMember = async (name: string) => {
     setSingleFamilyMembers(name);
     // const response = await axios.get(`${API_URL}/family/member/${name}`);
     // setSingleFamilyMember(response.data);
     // navigate(`/family/${name}`);
-  }, []);
+  }
 
-  const singleFamilyMember = familyMembers.find(
+  const singleFamilyMember = useMemo( () => familyMembers.find(
     (member: any) => member.name === singleFamilyMembers
-  );
+  ), [familyMembers, singleFamilyMembers])
 
   // to fetch family members
   const fetchFamily = async () => {
