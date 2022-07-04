@@ -9,6 +9,7 @@ const FamilyContext = createContext<contextTypes | null>(null);
 const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
+
   const navigate = useNavigate();
 
   const [familyMembers, setFamilyMembers] = useState<
@@ -30,6 +31,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     navigate(`/family/${name}`);
   };
 
+
   // to fetch family members
   const fetchFamily = async () => {
     const response = await axios.get(`${API_URL}/family/members`);
@@ -39,7 +41,8 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
 
   useEffect(() => {
     fetchFamily();
-  });
+  }, []);
+
 
   // sign users in
   const signIn = async (username: string, password: string) => {
