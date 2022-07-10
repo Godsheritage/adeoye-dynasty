@@ -13,7 +13,7 @@ const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
       <Card>
         <img
           src={`/images/${member.image}`}
-          alt={member.name}
+          alt={member.name} 
           onClick={fetchSingleFamilyMember(member.name)}
         />
         <div className="d-flex flex-column pt-2 justify-content-around align-items-around">
