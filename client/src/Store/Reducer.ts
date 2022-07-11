@@ -1,3 +1,7 @@
+//action types
+const 
+
+
 const reducer = (state = [], action: any) => {
   switch (action.type) {
     case "FETCH_FAM":
@@ -8,4 +12,4 @@ const reducer = (state = [], action: any) => {
 };
 
 export default reducer;
- 
+  
