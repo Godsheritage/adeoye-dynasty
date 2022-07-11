@@ -1,5 +1,5 @@
 //action types
-const 
+ 
 
 
 const reducer = (state = [], action: any) => {
