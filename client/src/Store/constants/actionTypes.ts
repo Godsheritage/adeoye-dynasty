@@ -1,0 +1,7 @@
+const ActionTypes = {
+  ADD_FAMILY: "ADD_FAMILY",
+  SELECTED_FAMILY: "SELECTED_FAMILY",
+  REMOVE_SELECTED_FAMILY: "REMOVE_SELECTED_FAMILY",
+};
+
+export default ActionTypes;
