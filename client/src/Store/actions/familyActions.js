@@ -1,9 +1,16 @@
 // import AddFamily
-import ActionTypes from "../constants/actionTypes";
+import actionTypes from "../constants/actionTypes";
 
-const AddFamily = (member) => {
+const AddFamilyMember = (familyMember) => {
   return {
-    type: ActionTypes.ADD_FAMILY,
-    payload: {},
+    type: actionTypes.ADD_FAMILY,
+    payload: familyMember,
+  };
+};
+
+const selectedFamilyMember = (member) => {
+  return {
+    type: actionTypes.SELECTED_FAMILY,
+    payload: member,
   };
 };

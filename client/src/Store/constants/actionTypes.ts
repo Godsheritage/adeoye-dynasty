@@ -1,7 +1,7 @@
-const ActionTypes = {
+const actionTypes = {
   ADD_FAMILY: "ADD_FAMILY",
   SELECTED_FAMILY: "SELECTED_FAMILY",
   REMOVE_SELECTED_FAMILY: "REMOVE_SELECTED_FAMILY",
 };
 
-export default ActionTypes;
+export default actionTypes;
