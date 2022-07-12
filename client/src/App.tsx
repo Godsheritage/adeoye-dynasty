@@ -8,23 +8,27 @@ import ViewFamily from "./admin/view family/ViewFamily";
 import AddFamily from "./admin/add family form/AddFamily";
 import { FamilyContextProvider } from "./context/FamilyContext";
 import SingleMemberPage from "./Family/pages/SingleMemberPage";
+import { Provider } from "react-redux";
+import store from "./Store/store";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <FamilyContextProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<LogIn />} />
-          <Route path="/family" element={<Family />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/addfamilymember" element={<AddFamily />} />
-          <Route path="/viewfamily" element={<ViewFamily />} />
-          <Route path="/family/:name" element={<SingleMemberPage />} />
-        </Routes>
-      </FamilyContextProvider>
+        <FamilyContextProvider>
+      <Provider store={store}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/admin" element={<LogIn />} />
+            <Route path="/family" element={<Family />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/addfamilymember" element={<AddFamily />} />
+            <Route path="/viewfamily" element={<ViewFamily />} />
+            <Route path="/family/:name" element={<SingleMemberPage />} />
+          </Routes>
+      </Provider>
+        </FamilyContextProvider>
     </Router>
   );
 }

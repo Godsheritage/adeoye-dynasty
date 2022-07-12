@@ -10,7 +10,7 @@ const initialState = {
   ],
 };
 
-const familyReducer:any = (state: any, action: any) => {
+const familyReducer:any = (state = initialState, action: any) => {
   switch (action.types) {
     case actionTypes.ADD_FAMILY:
       return state;
