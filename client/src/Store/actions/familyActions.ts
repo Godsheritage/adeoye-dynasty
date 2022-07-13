@@ -1,5 +1,9 @@
 // import AddFamily
 import actionTypes from "../constants/actionTypes";
+import { createAction } from "@reduxjs/toolkit";
+
+const addMember = createAction(actionTypes.ADD_FAMILY)
+const selectedMember = createAction(actionTypes.SELECTED_FAMILY)
 
 const AddFamilyMember = (familyMember:any) => {
   return {
