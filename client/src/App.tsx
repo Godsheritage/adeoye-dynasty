@@ -9,7 +9,7 @@ import AddFamily from "./admin/add family form/AddFamily";
 import { FamilyContextProvider } from "./context/FamilyContext";
 import SingleMemberPage from "./Family/pages/SingleMemberPage";
 import { Provider } from "react-redux";
-import store from "./Store/store";
+import store from "./Store/configureStore";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
