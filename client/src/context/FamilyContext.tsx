@@ -33,9 +33,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     // navigate(`/family/${name}`);
   }
 
-  const singleFamilyMember = useMemo( () => familyMembers.find(
-    (member: any) => member.name === singleFamilyMembers
-  ), [familyMembers, singleFamilyMembers])
+  const singleFamilyMember = () => {}
+  // useMemo( () => familyMembers.find(
+  //   (member: any) => member.name === singleFamilyMembers
+  // ), [familyMembers, singleFamilyMembers])
 
   // to fetch family members
   const fetchFamily = async () => {

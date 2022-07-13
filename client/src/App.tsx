@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
         <FamilyContextProvider>
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<LogIn />} />
@@ -27,7 +27,7 @@ function App() {
             <Route path="/viewfamily" element={<ViewFamily />} />
             <Route path="/family/:name" element={<SingleMemberPage />} />
           </Routes>
-      </Provider>
+      {/* </Provider> */}
         </FamilyContextProvider>
     </Router>
   );

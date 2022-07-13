@@ -1,5 +1,11 @@
-import actionTypes from "../constants/actionTypes";
+import { createAction } from "@reduxjs/toolkit";
 
+
+// action creators
+const addMember = createAction("ADD_FAMILY")
+const selectedMember = createAction("SELECTED_FAMILY")
+
+// initial reducer state
 const initialState = {
   familyMembers: [
     {
@@ -10,9 +16,13 @@ const initialState = {
   ],
 };
 
+
+// Reducer function
 const familyReducer:any = (state = initialState, action: any) => {
   switch (action.types) {
-    case actionTypes.ADD_FAMILY:
+    case addMember.type:
+      return state;
+    case selectedMember.type:
       return state;
     default:
       return state;
