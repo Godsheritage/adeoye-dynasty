@@ -12,13 +12,13 @@ const Gallery: React.FC = () => {
       <CustomHeader location="/gallery" />
 
       <div className="gallery-pictures">
-        {familyMembers.map((member:any, index:any) => (
+        {familyMembers.map((member:any, index:number) => (
           <div key={index}>
             <img
               src={`images/${member.image}`}
               alt={member.name}
               className="img-fluid"
-            />
+              />
           </div>
         ))}
       </div>

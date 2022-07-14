@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { contextTypes } from "../types";
+import { contextTypes, familyMemberTypes } from "../types";
 import { createContext, useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addMember } from "../Store/reducers/familyReducers";
@@ -34,9 +34,9 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     fetchFamily();
   }, [fetchFamily]);
 
-  
-  const familyMembers = useSelector((state) => state);
-
+  const familyMembers: familyMemberTypes["member"][] = useSelector(
+    (state: familyMemberTypes["member"][]) => state
+  );
 
   // sign users in
   const signIn = async (username: string, password: string) => {
