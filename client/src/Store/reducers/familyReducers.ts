@@ -1,30 +1,15 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 // action creators
-const addMember = createAction("ADD_FAMILY");
-const selectedMember = createAction("SELECTED_FAMILY");
+export const addMember:any = createAction("ADD_FAMILY");
+export const selectedMember = createAction("SELECTED_FAMILY");
 
-// initial reducer state
-const initialState = {
-  familyMembers: [
-    {
-      name: "Crownfit Adeoye",
-      age: 19,
-      sex: "male",
-    },
-    {
-      name: "Godsheritage Adeoye",
-      age: 18,
-      sex: "male",
-    },
-  ],
-};
 
-const familyReducer = createReducer(initialState, {
+const familyReducer = createReducer([], {
   //key value pair
   //action : action handler pair
-  [addMember.type]: (state: any, action: any) => {
-    return state;
+  [addMember.type]: (familyMembers: any, action: any) => {
+    return familyMembers = action.payload
   },
   [selectedMember.type]: (state: any, action: any) => {
     return state;
@@ -32,10 +17,12 @@ const familyReducer = createReducer(initialState, {
 });
 
 // Reducer function
-// const familyReducer: any = (state = initialState, action: any) => {
+// const familyReducer: any = (state = [], action: any) => {
 //   switch (action.types) {
 //     case addMember.type:
-//       return state;
+//       return {
+//         ...state, members:action.payload
+//       };
 //     case selectedMember.type:
 //       return state;
 //     default:

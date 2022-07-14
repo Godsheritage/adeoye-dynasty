@@ -4,9 +4,11 @@ import { contextTypes, familyMemberTypes } from "../types";
 import { createContext, useEffect, useState, useMemo } from "react";
 import FamilyMembersList from "../Family/components/FamilyMembersList";
 import FamilyMember from "../Family/components/FamilyMember";
+import { useDispatch, useSelector } from "react-redux";
+import { addMember } from "../Store/reducers/familyReducers";
 
 const FamilyContext = createContext<contextTypes | null>(null);
-  
+
 const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
@@ -31,21 +33,21 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     // const response = await axios.get(`${API_URL}/family/member/${name}`);
     // setSingleFamilyMember(response.data);
     // navigate(`/family/${name}`);
-  }
+  };
 
-  const singleFamilyMember = () => {}
+  const singleFamilyMember = () => {};
   // useMemo( () => familyMembers.find(
   //   (member: any) => member.name === singleFamilyMembers
   // ), [familyMembers, singleFamilyMembers])
-
+  const dispatch = useDispatch();
   // to fetch family members
+// const members = useSelector((state) => state)
+
   const fetchFamily = async () => {
     const response = await axios.get(`${API_URL}/family/members`);
-    setFamilyMembers(response.data);
-    console.log("searched for fam");
+    dispatch(addMember(response.data));
   };
 
-  
   // const fetchFamily = async () => {
   //   const response = await axios.get(`${API_URL}/family/members`);
   //   setFamilyMembers(response.data);

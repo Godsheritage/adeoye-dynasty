@@ -8,16 +8,12 @@ import ViewFamily from "./admin/view family/ViewFamily";
 import AddFamily from "./admin/add family form/AddFamily";
 import { FamilyContextProvider } from "./context/FamilyContext";
 import SingleMemberPage from "./Family/pages/SingleMemberPage";
-import configureAppStore from "./Store/configureStore";
-import { Provider } from "react-redux";
-import store from "./Store/configureStore";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <FamilyContextProvider>
-        <Provider store={configureAppStore}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<LogIn />} />
@@ -28,7 +24,6 @@ function App() {
             <Route path="/viewfamily" element={<ViewFamily />} />
             <Route path="/family/:name" element={<SingleMemberPage />} />
           </Routes>
-        </Provider>
       </FamilyContextProvider>
     </Router>
   );
