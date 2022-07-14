@@ -1,9 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { contextTypes, familyMemberTypes } from "../types";
-import { createContext, useEffect, useState, useMemo } from "react";
-import FamilyMembersList from "../Family/components/FamilyMembersList";
-import FamilyMember from "../Family/components/FamilyMember";
+import { contextTypes } from "../types";
+import { createContext, useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addMember } from "../Store/reducers/familyReducers";
 
@@ -13,19 +11,9 @@ const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [familyMembers, setFamilyMembers] = useState<
-    familyMemberTypes["member"][] | any
-  >();
-
-  const [singleFamilyMembers, setSingleFamilyMembers] = useState("");
-
-  // fetch single family member
-  // const fetchSingleFamilyMember =useCallback( async (name: string) => {
-  //   const response = await axios.get(`${API_URL}/family/member/${name}`);
-  //   setSingleFamilyMember(response.data);
-  //   navigate(`/family/${name}`);
-  // }, [])
+  const [singleFamilyMember, setSingleFamilyMembers] = useState("");
 
   // fetch single family member
   const fetchSingleFamilyMember = async (name: string) => {
@@ -35,28 +23,20 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     // navigate(`/family/${name}`);
   };
 
-  const singleFamilyMember = () => {};
-  // useMemo( () => familyMembers.find(
-  //   (member: any) => member.name === singleFamilyMembers
-  // ), [familyMembers, singleFamilyMembers])
-  const dispatch = useDispatch();
   // to fetch family members
-// const members = useSelector((state) => state)
 
-  const fetchFamily = async () => {
+  const fetchFamily = useCallback(async () => {
     const response = await axios.get(`${API_URL}/family/members`);
     dispatch(addMember(response.data));
-  };
-
-  // const fetchFamily = async () => {
-  //   const response = await axios.get(`${API_URL}/family/members`);
-  //   setFamilyMembers(response.data);
-  //   console.log("searched for fam");
-  // };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchFamily();
-  }, []);
+  }, [fetchFamily]);
+
+  
+  const familyMembers = useSelector((state) => state);
+
 
   // sign users in
   const signIn = async (username: string, password: string) => {

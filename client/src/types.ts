@@ -61,7 +61,8 @@ export interface contextTypes {
   singleFamilyMember: any;
   fetchSingleFamilyMember: any;
   fetchFamily: () => Promise<void>;
-  familyMembers: familyMemberTypes["member"][];
+  familyMembers: any;
+  // familyMembers: familyMemberTypes["member"][];
   signIn: (username: string, password: string) => Promise<any>;
 }
 

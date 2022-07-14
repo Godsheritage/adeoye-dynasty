@@ -16,18 +16,5 @@ const familyReducer = createReducer([], {
   },
 });
 
-// Reducer function
-// const familyReducer: any = (state = [], action: any) => {
-//   switch (action.types) {
-//     case addMember.type:
-//       return {
-//         ...state, members:action.payload
-//       };
-//     case selectedMember.type:
-//       return state;
-//     default:
-//       return state;
-//   }
-// };
 
 export default familyReducer;
