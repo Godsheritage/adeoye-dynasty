@@ -45,6 +45,13 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     console.log("searched for fam");
   };
 
+  
+  // const fetchFamily = async () => {
+  //   const response = await axios.get(`${API_URL}/family/members`);
+  //   setFamilyMembers(response.data);
+  //   console.log("searched for fam");
+  // };
+
   useEffect(() => {
     fetchFamily();
   }, []);

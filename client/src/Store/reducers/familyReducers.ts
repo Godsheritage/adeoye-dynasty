@@ -8,6 +8,11 @@ const selectedMember = createAction("SELECTED_FAMILY");
 const initialState = {
   familyMembers: [
     {
+      name: "Crownfit Adeoye",
+      age: 19,
+      sex: "male",
+    },
+    {
       name: "Godsheritage Adeoye",
       age: 18,
       sex: "male",
@@ -15,7 +20,7 @@ const initialState = {
   ],
 };
 
-createReducer(initialState, {
+const familyReducer = createReducer(initialState, {
   //key value pair
   //action : action handler pair
   [addMember.type]: (state: any, action: any) => {
@@ -38,4 +43,4 @@ createReducer(initialState, {
 //   }
 // };
 
-// export default familyReducer;
+export default familyReducer;
