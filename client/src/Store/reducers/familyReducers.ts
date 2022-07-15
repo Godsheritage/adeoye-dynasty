@@ -6,8 +6,7 @@ export const selectedMember = createAction("SELECTED_FAMILY");
 
 
 const familyReducer = createReducer([], {
-  //key value pair
-  //action : action handler pair
+  //action : action handler 
   [addMember.type]: (familyMembers: any, action: any) => {
     return familyMembers = action.payload
   },
