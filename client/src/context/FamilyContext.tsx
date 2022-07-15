@@ -3,7 +3,7 @@ import axios from "axios";
 import { contextTypes, familyMemberTypes } from "../types";
 import { createContext, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addMember } from "../Store/reducers/familyReducers";
+import { addMember, selectedMember } from "../Store/reducers/familyReducers";
 
 const FamilyContext = createContext<contextTypes | null>(null);
 
@@ -29,7 +29,9 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   );
 
   const fetchSingleFamilyMember = (name: string) => {
-    return familyMembers.find((member) => name === member.name);
+    const member = familyMembers.find((member) => name === member.name);
+    return member
+    // dispatch(selectedMember(member))
   };
 
   // sign users in
