@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 import { contextTypes, familyMemberTypes } from "../types";
 import { createContext, useEffect, useCallback, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,15 +9,13 @@ const FamilyContext = createContext<contextTypes | null>(null);
 const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
-  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // to fetch family members
-
   const fetchFamily = useCallback(async () => {
     const response = await axios.get(`${API_URL}/family/members`);
-    console.log("API CALLED")
     dispatch(addMember(response.data));
+    console.log("API CALLED");
   }, [dispatch]);
 
   useEffect(() => {
@@ -28,7 +25,6 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const familyMembers: familyMemberTypes["member"][] = useSelector(
     (state: any) => state.familyMembers
   );
-
 
   // sign users in
   const signIn = async (username: string, password: string) => {
@@ -47,7 +43,6 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
         familyMembers,
         signIn,
         fetchFamily,
-        
       }}
     >
       {children}
