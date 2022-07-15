@@ -6,16 +6,16 @@ import Footer from "../../shared/UI Elements/footer/Footer";
 import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 
 const SingleMemberPage: React.FC = () => {
-  const { singleFamilyMember } = useContext(FamilyContext) as contextTypes;
+  // const { singleFamilyMember } = useContext(FamilyContext) as contextTypes;
   return (
     <div>
       <CustomHeader location="/family" />
       <div className="d-flex justify-content-apart">
         <div className="img-fluid"></div>
         <div className="member-details">
-          <h1>{singleFamilyMember.name}</h1>
+          {/* <h1>{singleFamilyMember.name}</h1>
           <p>{singleFamilyMember.name}</p>
-          <p>{singleFamilyMember.name}</p>
+          <p>{singleFamilyMember.name}</p> */}
         </div>
       </div>
       <Footer />

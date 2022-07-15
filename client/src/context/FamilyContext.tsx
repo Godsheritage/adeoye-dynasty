@@ -13,16 +13,6 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [singleFamilyMember, setSingleFamilyMembers] = useState("");
-
-  // fetch single family member
-  const fetchSingleFamilyMember = async (name: string) => {
-    setSingleFamilyMembers(name);
-    // const response = await axios.get(`${API_URL}/family/member/${name}`);
-    // setSingleFamilyMember(response.data);
-    // navigate(`/family/${name}`);
-  };
-
   // to fetch family members
 
   const fetchFamily = useCallback(async () => {
@@ -37,6 +27,10 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const familyMembers: familyMemberTypes["member"][] = useSelector(
     (state: familyMemberTypes["member"][]) => state
   );
+
+  const fetchSingleFamilyMember = (name: string) => {
+    return familyMembers.find((member) => name === member.name);
+  };
 
   // sign users in
   const signIn = async (username: string, password: string) => {
@@ -56,7 +50,6 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
         signIn,
         fetchFamily,
         fetchSingleFamilyMember,
-        singleFamilyMember,
       }}
     >
       {children}
