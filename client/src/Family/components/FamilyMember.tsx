@@ -7,7 +7,6 @@ import Card from "../../shared/UI Elements/card/Card";
 import FamilyContext from "../../context/FamilyContext";
 
 const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
-  const { fetchSingleFamilyMember } = useContext(FamilyContext) as contextTypes;
 
   return (
     <div className="family-member">

@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { contextTypes, familyMemberTypes } from "../types";
-import { createContext, useEffect, useState, useCallback } from "react";
+import { createContext, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addMember } from "../Store/reducers/familyReducers";
 
@@ -10,7 +10,7 @@ const FamilyContext = createContext<contextTypes | null>(null);
 const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // to fetch family members
