@@ -16,7 +16,6 @@ const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
           <img
             src={`/images/${member.image}`}
             alt={member.name}
-            onClick={fetchSingleFamilyMember(member.name)}
           />
           <div className="d-flex flex-column pt-2 justify-content-around align-items-around">
             <p className=" text-dark">{member.name}</p>
