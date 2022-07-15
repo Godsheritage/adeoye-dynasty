@@ -7,11 +7,12 @@ export const selectedMember:any = createAction("SELECTED_FAMILY");
 
 const familyReducer = createReducer([], {
   //action : action handler 
-  [addMember.type]: (familyMembers: any, action: any) => {
-    return familyMembers = action.payload
+  [addMember.type]: (state: any, action: any) => {
+    return {...state, familyMembers:action.payload }
   },
-  [selectedMember.type]: (selectedMember: any, action: any) => {
-    return selectedMember = action.payload;
+  [selectedMember.type]: (state: any, action: any) => {
+    return {...state, member:action.payload }
+
   },
 });
 

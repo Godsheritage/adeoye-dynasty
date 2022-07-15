@@ -1,7 +1,7 @@
 import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 import { contextTypes, familyMemberTypes } from "../types";
-import { createContext, useEffect, useCallback } from "react";
+import { createContext, useEffect, useCallback, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addMember, selectedMember } from "../Store/reducers/familyReducers";
 
@@ -25,13 +25,13 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   }, [fetchFamily]);
 
   const familyMembers: familyMemberTypes["member"][] = useSelector(
-    (state: familyMemberTypes["member"][]) => state
+    (state: any) => state.familyMembers
   );
 
+  // console.log(familyMembers);
   const fetchSingleFamilyMember = (name: string) => {
     const member = familyMembers.find((member) => name === member.name);
-    return member
-    // dispatch(selectedMember(member))
+    dispatch(selectedMember(member));
   };
 
   // sign users in

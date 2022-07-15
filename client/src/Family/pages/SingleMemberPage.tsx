@@ -8,12 +8,16 @@ import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 import { useSelector } from "react-redux";
 
 const SingleMemberPage: React.FC = () => {
-  const { fetchSingleFamilyMember } = useContext(FamilyContext) as contextTypes;
+  const { fetchSingleFamilyMember, familyMembers } = useContext(FamilyContext) as contextTypes;
 
   const {name} = useParams()
-  const member = fetchSingleFamilyMember(name)
+  const members = familyMembers.find((member:any) => name === member.name);
+  console.log(members)
+
+  // fetchSingleFamilyMember(name)
+  // const member = useSelector((state:any) => state.member)
   // const stateMember = useSelector((state)=> state )
-  console.log(member)
+  // console.log(member)
   // const member = members[0] 
   // console.log(members) 
   return (
@@ -22,9 +26,9 @@ const SingleMemberPage: React.FC = () => {
       <div className="d-flex justify-content-apart">
         <div className="img-fluid"></div>
         <div className="member-details">
-          {/* <h1>{member.name}</h1>
+          {/* <h1>{member.name}</h1> 
           <p>{member.name}</p>
-          <p>{member.name}</p> */}
+           <p>{member.name}</p>  */}
         </div>
       </div>
       <Footer />
