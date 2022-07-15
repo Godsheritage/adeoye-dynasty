@@ -17,6 +17,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
 
   const fetchFamily = useCallback(async () => {
     const response = await axios.get(`${API_URL}/family/members`);
+    console.log("API CALLED")
     dispatch(addMember(response.data));
   }, [dispatch]);
 
@@ -28,11 +29,6 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     (state: any) => state.familyMembers
   );
 
-  // console.log(familyMembers);
-  const fetchSingleFamilyMember = (name: string) => {
-    const member = familyMembers.find((member) => name === member.name);
-    dispatch(selectedMember(member));
-  };
 
   // sign users in
   const signIn = async (username: string, password: string) => {
@@ -51,7 +47,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
         familyMembers,
         signIn,
         fetchFamily,
-        fetchSingleFamilyMember,
+        
       }}
     >
       {children}

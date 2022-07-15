@@ -8,18 +8,12 @@ import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 import { useSelector } from "react-redux";
 
 const SingleMemberPage: React.FC = () => {
-  const { fetchSingleFamilyMember, familyMembers } = useContext(FamilyContext) as contextTypes;
+  const {  familyMembers } = useContext(FamilyContext) as contextTypes;
 
-  const {name} = useParams()
-  const members = familyMembers.find((member:any) => name === member.name);
-  console.log(members)
-
-  // fetchSingleFamilyMember(name)
-  // const member = useSelector((state:any) => state.member)
-  // const stateMember = useSelector((state)=> state )
+  // const {name} = useParams()
+  // const member = familyMembers.find((member:any) => name === member.name);
   // console.log(member)
-  // const member = members[0] 
-  // console.log(members) 
+
   return (
     <div>
       <CustomHeader location="/family" />
