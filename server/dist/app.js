@@ -16,7 +16,6 @@ app.use(express_1.default.json());
 app.use((0, morgan_1.default)("combined"));
 app.use("/auth", auth_routes_1.default);
 app.use("/family", family_routes_1.default);
-// app.get("/images/:key", imageRoutes);
 app.get("/images/:key", (req, res) => {
     const key = req.params.key;
     const readStream = (0, s3_1.getFileStream)(key);

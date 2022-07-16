@@ -5,7 +5,6 @@ import express from "express";
 import { uploadFile, getFileStream } from "./s3";
 import authRoute from "./routes/auth/auth.routes";
 import familyRoute from "./routes/family/family.routes";
-import imageRoutes from "./routes/Images/images.routes";
 
 const app = express();
 
@@ -15,7 +14,6 @@ app.use(morgan("combined"));
 app.use("/auth", authRoute);
 app.use("/family", familyRoute);
 
-// app.get("/images/:key", imageRoutes);
 app.get("/images/:key", (req, res) => {
   const key = req.params.key;
   const readStream = getFileStream(key);
