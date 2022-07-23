@@ -1,13 +1,13 @@
 import "./index.scss";
-import LogIn from "./admin/dashboard/login/Login";
 import Home from "./Home/pages/Home";
 import Family from "./Family/pages/Family";
 import Gallery from "./Gallery/pages/Gallery";
+import LogIn from "./admin/dashboard/login/Login";
 import Dashboard from "./admin/dashboard/Dashboard";
 import ViewFamily from "./admin/view family/ViewFamily";
 import AddFamily from "./admin/add family form/AddFamily";
-import { FamilyContextProvider } from "./context/FamilyContext";
 import SingleMemberPage from "./Family/pages/SingleMemberPage";
+import { FamilyContextProvider } from "./context/FamilyContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
