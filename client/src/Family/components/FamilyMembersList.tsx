@@ -1,7 +1,7 @@
-import React, { useContext,  } from "react";
-import FamilyMember from "./FamilyMember";
-import FamilyContext from "../../context/FamilyContext";
 import { contextTypes } from "../../types";
+import FamilyMember from "./FamilyMember";
+import React, { useContext,  } from "react";
+import FamilyContext from "../../context/FamilyContext";
 
 const FamilyMembersList: React.FC<any> = ({familyMember}) => {
   const { familyMembers } = useContext(FamilyContext) as contextTypes;

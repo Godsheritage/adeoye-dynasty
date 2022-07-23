@@ -1,16 +1,13 @@
 import React from "react";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { contextTypes } from "../../types";
 import { familyMemberTypes } from "../../types";
-import Card from "../../shared/UI Elements/card/Card";
-import FamilyContext from "../../context/FamilyContext";
 import img from "../../shared/pictures/Crownfit.jpg";
+import Card from "../../shared/UI Elements/card/Card";
 
 const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
   return (
     <div className="family-member">
-      <Card className = "m-3">
+      <Card className="m-3">
         <Link to={`/family/${member.name}`}>
           {/* <img src={`/images/${member.image}`} alt={member.name} />  */}
           <img src={img} alt={member.name} className="img-fluid" />
@@ -24,4 +21,4 @@ const FamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
   );
 };
 
-export default FamilyMember;  
+export default FamilyMember;

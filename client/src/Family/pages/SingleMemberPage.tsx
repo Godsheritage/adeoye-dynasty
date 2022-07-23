@@ -15,17 +15,17 @@ const SingleMemberPage: React.FC = () => {
   const member = familyMembers.find((member: any) => name === member.name);
   console.log(member);
 
-  const API_URL = "http://localhost:1234";
+  // const API_URL = "http://localhost:1234";
 
-  const fetchFamily = async () => {
-    const response = await axios.get(`${API_URL}/family/members`);
+  // const fetchFamily = async () => {
+  //   const response = await axios.get(`${API_URL}/family/members`);
 
-    // dispatch(addMember(response.data));
-  };
+  //   // dispatch(addMember(response.data));
+  // };
 
-  useEffect(() => {
-    fetchFamily();
-  }, []);
+  // useEffect(() => {
+  //   fetchFamily();
+  // }, []);
 
   return (
     <div>
