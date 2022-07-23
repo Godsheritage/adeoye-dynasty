@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { contextTypes, familyMemberTypes } from "../types";
-import { createContext, useEffect, useCallback, useMemo } from "react";
+import { createContext, useEffect, useCallback, useState } from "react";
 import { addMember, selectedMember } from "../Store/reducers/familyReducers";
 
 const FamilyContext = createContext<contextTypes | null>(null);
@@ -10,6 +10,8 @@ const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const dispatch = useDispatch();
+
+  const [isLoggedInMode, setIsLoggedInMode] = useState<boolean>(false)
 
   // const [singleFamilyMember, setSingleFamilyMembers] = useState("");
 
@@ -37,6 +39,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     } catch (err: any) {
       return { message: "invalid credentials", err };
     }
+    setIsLoggedInMode(true)
   };
 
   return (
@@ -45,6 +48,7 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
         familyMembers,
         signIn,
         fetchFamily,
+        isLoggedInMode
       }}
     >
       {children}
