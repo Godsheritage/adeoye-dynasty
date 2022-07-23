@@ -11,11 +11,8 @@ const API_URL = "http://localhost:1234";
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const dispatch = useDispatch();
 
-<<<<<<< HEAD
-  const [singleFamilyMember, setSingleFamilyMembers] = useState("");
+  // const [singleFamilyMember, setSingleFamilyMembers] = useState("");
 
-=======
->>>>>>> 968c0ff34b100adf5a9b9bdc46f6e7722d1abcc6
   // to fetch family members
   const fetchFamily = useCallback(async () => {
     const response = await axios.get(`${API_URL}/family/members`);
