@@ -35,11 +35,11 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
     const authObject = { username, password };
     try {
       const response = await axios.post(`${API_URL}/auth`, authObject);
+      setIsLoggedInMode(true)
       return response.data;
     } catch (err: any) {
       return { message: "invalid credentials", err };
     }
-    setIsLoggedInMode(true)
   };
 
   return (

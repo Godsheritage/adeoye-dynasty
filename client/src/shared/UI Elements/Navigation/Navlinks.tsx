@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import FamilyContext from "../../../context/FamilyContext";
+import { contextTypes } from "../../../types";
 
 const Navlinks: React.FC<any> = ({ className, navStyles }) => {
+  const { isLoggedInMode } = useContext(FamilyContext) as contextTypes;
   return (
     <ul className={className}>
       <li>
-        <NavLink  to="/" className={`text-decoration-none ${navStyles} `}>
+        <NavLink to="/" className={`text-decoration-none ${navStyles} `}>
           Home
         </NavLink>
       </li>
@@ -19,6 +22,16 @@ const Navlinks: React.FC<any> = ({ className, navStyles }) => {
           Gallery
         </NavLink>
       </li>
+      {!isLoggedInMode && (
+        <li className="">
+          <NavLink
+            to="/login"
+            className={`text-decoration-none ${navStyles} `}
+          >
+            Log In
+          </NavLink>
+        </li>
+      )}
     </ul>
   );
 };

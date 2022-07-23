@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import FamilyContext from "../../../context/FamilyContext";
 import Family from "../../../Family/pages/Family";
 import Input from "../../../shared/Form Elements/input/Input";
@@ -152,6 +153,9 @@ const LogIn: React.FC = () => {
             {loginMsg.length !== 0 && (
               <p className="text-center text-secondary pt-3">{loginMsg}</p>
             )}
+            <Link to="/">
+              <p>return to home</p>
+            </Link>
           </form>
         </div>
       </div>

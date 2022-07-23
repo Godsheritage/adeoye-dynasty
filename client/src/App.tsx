@@ -16,7 +16,7 @@ function App() {
       <FamilyContextProvider>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/admin" element={<LogIn />} />
+            <Route path="/login" element={<LogIn />} />
             <Route path="/family" element={<Family />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/dashboard" element={<Dashboard />} />
