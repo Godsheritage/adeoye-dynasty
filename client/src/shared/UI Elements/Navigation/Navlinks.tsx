@@ -32,6 +32,16 @@ const Navlinks: React.FC<any> = ({ className, navStyles }) => {
           </NavLink>
         </li>
       )}
+      {isLoggedInMode && (
+        <li className="">
+          <NavLink
+            to="/dashboard"
+            className={`text-decoration-none ${navStyles} `}
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
     </ul>
   );
 };
