@@ -1,4 +1,5 @@
-import FamilyMember from "./FamilyMember";
+// import FamilyMember from "./FamilyMember"
+import ViewFamilyMember from "./ViewFamilyMember";
 
 const FamilyMembersList: React.FC<any> = ({ familyMembers }) => {
   return (
@@ -7,7 +8,7 @@ const FamilyMembersList: React.FC<any> = ({ familyMembers }) => {
       style={{ backgroundColor: "#EDF1F4" }}
     >
       {familyMembers.map((member: any, index: number) => (
-        <FamilyMember key={index} member={member} />
+        <ViewFamilyMember key={index} member={member} />
       ))}
     </div>
   );
