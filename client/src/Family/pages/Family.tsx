@@ -7,7 +7,6 @@ import CustomHeader from "../../shared/UI Elements/custom header/CustomHeader";
 
 const Family: React.FC = () => {
   const { familyMembers } = useContext(FamilyContext) as contextTypes;
-  // console.log(familyMembers)
   return (
     <>
       <CustomHeader location="/family" />

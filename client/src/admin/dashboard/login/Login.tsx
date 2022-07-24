@@ -154,7 +154,7 @@ const LogIn: React.FC = () => {
               <p className="text-center text-secondary pt-3">{loginMsg}</p>
             )}
             <Link to="/">
-              <p>return to home</p>
+              <p className="text-center text-decoration-none pt-2" >return to home</p>
             </Link>
           </form>
         </div>
