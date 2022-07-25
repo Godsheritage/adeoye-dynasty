@@ -20,7 +20,7 @@ function App() {
             <Route path="/family" element={<Family />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/addfamilymember" element={<AddFamily />} />
+            <Route path="/addfamilymember/:name" element={<AddFamily />} />
             <Route path="/viewfamily" element={<ViewFamily />} />
             <Route path="/family/:name" element={<SingleMemberPage />} />
           </Routes>

@@ -13,7 +13,6 @@ const SingleMemberPage: React.FC = () => {
 
   const { name } = useParams();
   const member = familyMembers.find((member: any) => name === member.name);
-  console.log(member);
 
 
   return (
