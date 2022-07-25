@@ -57,13 +57,14 @@ export interface MAIN_DETAILS_TYPE {
   subHeading: string;
 }
 
-
 // application context types
 export interface contextTypes {
   fetchFamily: () => Promise<void>;
   familyMembers: any;
+  setIsDashboard: any;
+  isDashboard: any;
   // familyMembers: familyMemberTypes["member"][];
-  isLoggedInMode: boolean
+  isLoggedInMode: boolean;
   signIn: (username: string, password: string) => Promise<any>;
 }
 

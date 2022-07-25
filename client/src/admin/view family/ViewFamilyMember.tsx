@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { familyMemberTypes } from "../../types";
 import img from "../../shared/pictures/Crownfit.jpg";
-// import img from "../../shared/pictures/Crownfit.jpg";
 import Card from "../../shared/UI Elements/card/Card";
-
 const ViewFamilyMember: React.FC<familyMemberTypes> = ({ member }) => {
     const setFormHandler = () => {
         
