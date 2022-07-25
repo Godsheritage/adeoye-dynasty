@@ -11,7 +11,7 @@ const FamilyMembersList: React.FC<any> = ({ familyMembers }) => {
       style={{ backgroundColor: "#EDF1F4" }}
     >
       {familyMembers.map((member: any, index: number) => (
-        <FamilyMember key={index} member={member} link = {}/>
+        <FamilyMember key={index} member={member} link = {isDashboardMode? `/addfamilymember/${member.name}` : `/family/${member.name}`}/>
       ))}
     </div>
   );

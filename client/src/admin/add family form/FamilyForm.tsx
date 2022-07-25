@@ -1,4 +1,3 @@
-import React, { useReducer } from "react";
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,

@@ -40,6 +40,7 @@ export interface inputTypes {
   id: string;
   onInput: (id: string, value: string, isValid: boolean) => void;
   divClass?: any;
+  
 }
 
 export interface ButtonTypes {

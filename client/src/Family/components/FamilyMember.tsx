@@ -8,7 +8,7 @@ const FamilyMember: React.FC<any> = ({ member, link }) => {
   return (
     <div className="family-member">
       <Card className="m-3">
-        <Link to={`/family/${member.name}`}>
+        <Link to={link}>
           {/* <img src={`/images/${member.image}`} alt={member.name} />  */}
           <img src={img} alt={member.name} className="img-fluid" />
           <div className="d-flex flex-column pt-2 justify-content-around align-items-around">

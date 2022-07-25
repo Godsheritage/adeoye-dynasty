@@ -21,7 +21,8 @@ const Input: React.FC<inputTypes> = ({
   validators,
   id,
   onInput,
-  divClass
+  divClass,
+  value
 }) => {
 
 
@@ -86,11 +87,12 @@ const Input: React.FC<inputTypes> = ({
           placeholder={placeholder}
           type={type}
           style={style}
-          value={inputState.value}
+          value={inputState.value || value}
           name={name}
           onChange={inputHandler}
           onBlur={touchHandler}
           onFocus={onFocus}
+          
         />
         {!inputState.isValid && inputState.isTouched && (
           <p className="text-danger">{errorText}</p>
@@ -107,7 +109,7 @@ const Input: React.FC<inputTypes> = ({
             : className
         }
         placeholder={placeholder}
-        value={inputState.value}
+        value={inputState.value || value}
         onBlur={touchHandler}
         onChange={inputHandler}
       ></textarea>
