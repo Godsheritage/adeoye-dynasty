@@ -10,7 +10,7 @@ import { contextTypes } from "../../types";
 
 
 const Dashboard: React.FC<any> = () => {
-  const {setIsDashboard} = useContext(FamilyContext) as contextTypes
+  // const {setIsDashboard} = useContext(FamilyContext) as contextTypes
   return (
     <div>
       <CustomHeader location="/dashboard" />
@@ -23,7 +23,7 @@ const Dashboard: React.FC<any> = () => {
         </div>
         <div className="d-flex members bg-white align-items-center justify-content-around">
           <Link to="/viewfamily">
-            <img className="add-svg" src={EditImage} alt="edit-icon" onClick={() => setIsDashboard(true)}/>
+            <img className="add-svg" src={EditImage} alt="edit-icon" />
           </Link>
           <h3 className="p-2">View family members</h3>
         </div>

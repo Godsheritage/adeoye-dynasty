@@ -61,8 +61,8 @@ export interface MAIN_DETAILS_TYPE {
 export interface contextTypes {
   fetchFamily: () => Promise<void>;
   familyMembers: any;
-  setIsDashboard: any;
-  isDashboard: any;
+  setIsDashboardMode: any;
+  isDashboardMode: any;
   // familyMembers: familyMemberTypes["member"][];
   isLoggedInMode: boolean;
   signIn: (username: string, password: string) => Promise<any>;

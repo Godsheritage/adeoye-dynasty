@@ -20,7 +20,7 @@ const API_URL = "http://localhost:1234";
 
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const dispatch = useDispatch();
-  const [isDashboard, setIsDashboard] = useState<boolean>(false)
+  const [isDashboardMode, setIsDashboardMode] = useState<boolean>(false)
 
   const [isLoggedInMode, setIsLoggedInMode] = useState<boolean>(false);
 
@@ -70,8 +70,8 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
         signIn,
         fetchFamily,
         isLoggedInMode,
-        setIsDashboard, 
-        isDashboard
+        setIsDashboardMode, 
+        isDashboardMode
       }}
     >
       {children}
