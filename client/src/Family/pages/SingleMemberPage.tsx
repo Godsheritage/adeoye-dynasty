@@ -15,18 +15,19 @@ const SingleMemberPage: React.FC = () => {
   const member = familyMembers.find((member: any) => name === member.name);
 
 
+
   return (
     <div>
       <CustomHeader location="/family" />
       <div className="d-flex justify-content-apart">
         <div className="img-fluid"></div>
         <div className="member-details">
-          <h1>{member.name}</h1>
-          <p>{member.name}</p>
-          <p>{member.name}</p>
-          <h1>{member.name}</h1>
-          <p>{member.name}</p>
-          <p>{member.name}</p>
+          <h1>{member!.name}</h1>
+          <p>{member!.name}</p>
+          <p>{member!.name}</p>
+          <h1>{member!.name}</h1>
+          <p>{member!.name}</p>
+          <p>{member!.name}</p>
         </div>
       </div>
       <Footer />

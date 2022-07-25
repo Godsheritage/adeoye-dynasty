@@ -61,7 +61,7 @@ export interface MAIN_DETAILS_TYPE {
 // application context types
 export interface contextTypes {
   fetchFamily: () => Promise<void>;
-  familyMembers: any;
+  familyMembers: familyMemberTypes["member"][];
   setIsDashboardMode: any;
   isDashboardMode: any;
   // familyMembers: familyMemberTypes["member"][];

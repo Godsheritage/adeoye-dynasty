@@ -5,8 +5,18 @@ import {
 } from "../../shared/utils/validators";
 import Input from "../../shared/Form Elements/input/Input";
 import Button from "../../shared/Form Elements/buttons/Buttons";
+import { contextTypes, familyMemberTypes } from "../../types";
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import FamilyContext from "../../context/FamilyContext";
 
 const FamilyForm = () => {
+  const { familyMembers , isDashboardMode } = useContext(FamilyContext) as contextTypes;
+  const { name } = useParams();
+  const selected = familyMembers.find(
+    (member: familyMemberTypes["member"]) => name === member.name
+  );
+  
   // useReducer()
 
   const inputHandler = () => {};
@@ -15,6 +25,7 @@ const FamilyForm = () => {
     <div className="mt-5">
       <form className="container d-flex justify-content-evenly flex-column  ">
         <div className=" d-flex flex-row justify-content-between py-3">
+
           <Input
             placeholder="first name"
             className="form-control"
@@ -25,6 +36,7 @@ const FamilyForm = () => {
             validators={[VALIDATOR_REQUIRE()]}
             id="firstName"
             onInput={inputHandler}
+            value= {selected!.name}
           />
           <Input
             placeholder="last name"
@@ -36,6 +48,8 @@ const FamilyForm = () => {
             validators={[VALIDATOR_REQUIRE()]}
             id="lastName"
             onInput={inputHandler}
+            value= {selected!.name}
+
           />
         </div>
         <div className=" d-flex flex-row justify-content-between py-3">
@@ -49,6 +63,8 @@ const FamilyForm = () => {
             validators={[VALIDATOR_REQUIRE()]}
             id="fatherName"
             onInput={inputHandler}
+            value= {selected!.name}
+
           />
           <Input
             placeholder="Mother's name"
@@ -60,6 +76,8 @@ const FamilyForm = () => {
             validators={[VALIDATOR_REQUIRE()]}
             id="motherName"
             onInput={inputHandler}
+            value= {selected!.name}
+
           />
         </div>
         <div className=" d-flex flex-row justify-content-between py-3">
@@ -104,6 +122,8 @@ const FamilyForm = () => {
               style={{ width: "15rem" }}
               divClass="md-form md-outline input-with-post-icon datepicker"
               onInput={inputHandler}
+            value= {selected!.sex}
+
             />
           </div>
         </div>
