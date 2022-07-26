@@ -143,7 +143,7 @@ const FamilyForm = () => {
           element="text area"
           type="text"
           errorText="bio must be at least 10 characters"
-          validators={[VALIDATOR_MINLENGTH(10)]}
+          validators={[VALIDATOR_MINLENGTH(10)]} 
           id="bio"
           onInput={inputHandler}
         />
@@ -151,7 +151,7 @@ const FamilyForm = () => {
           className="align-self-center btn btn-primary my-3"
           element="button"
         >
-          Add Member
+          Add Member 
         </Button>
       </form>
     </div>

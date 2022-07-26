@@ -14,16 +14,16 @@ function App() {
   return (
     <Router>
       <FamilyContextProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LogIn />} />
-            <Route path="/family" element={<Family />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/addfamilymember/" element={<AddFamily />} />
-            <Route path="/edit/:name" element={<EditFamily />} />
-            <Route path="/family/:name" element={<SingleMemberPage />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/family" element={<Family />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/addfamilymember/" element={<AddFamily />} />
+          <Route path="/edit/:name" element={<EditFamily />} />
+          <Route path="/family/:name" element={<SingleMemberPage />} />
+        </Routes>
       </FamilyContextProvider>
     </Router>
   );
