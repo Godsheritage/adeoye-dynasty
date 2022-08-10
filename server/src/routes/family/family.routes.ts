@@ -3,10 +3,11 @@ import { httpFetchFamilyMembers, httpFetchSingleFamilyMember } from "./family.co
 
 const familyRoute = express.Router()
 
-// to get all the family members
+// GET ALL THE FAMILY MEMBERS
 familyRoute.get('/members', httpFetchFamilyMembers)
 
-familyRoute.get('/member/:name', httpFetchSingleFamilyMember)
+//GET ALL THE FAMILY MEMBERS BY NAME
+familyRoute.get('/members/:name', httpFetchSingleFamilyMember)
 
 export default familyRoute
  

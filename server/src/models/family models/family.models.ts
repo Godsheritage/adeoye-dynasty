@@ -117,7 +117,7 @@ const addFamilyMembers = async () => {
 
 // addFamilyMembers();
 
-// to find all family members
+// FETCH ALL THE FAMILY MEMBERS
 export const fetchFamilyMembers = async () => {
   return await familyModel.find({}, { __v: 0 }).sort({ age: -1 });
 };

@@ -113,7 +113,7 @@ const addFamilyMembers = async () => {
     await family_mongo_1.familyModel.create(familyMembers);
 };
 // addFamilyMembers();
-// to find all family members
+// FETCH ALL THE FAMILY MEMBERS
 const fetchFamilyMembers = async () => {
     return await family_mongo_1.familyModel.find({}, { __v: 0 }).sort({ age: -1 });
 };
