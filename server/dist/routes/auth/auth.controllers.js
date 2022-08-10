@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const auth_models_1 = require("../../models/auth models/auth.models");
-const httpGetUser = async (req, res) => {
+//TO LOGIN USERS
+const httpSignInUsers = async (req, res) => {
     const { username, password } = req.body;
     if (!username || !password) {
         return res
@@ -19,4 +20,4 @@ const httpGetUser = async (req, res) => {
         .status(200)
         .json({ message: "successfully logged in", id: user._id });
 };
-exports.default = httpGetUser;
+exports.default = httpSignInUsers;
