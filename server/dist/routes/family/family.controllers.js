@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.httpFetchSingleFamilyMember = exports.httpFetchFamilyMembers = void 0;
+exports.unknownRouteHandler = exports.httpFetchSingleFamilyMember = exports.httpFetchFamilyMembers = void 0;
 const family_models_1 = require("../../models/family models/family.models");
 //CONTROLLER TO FETCH FAMILYL MEMBERS FROM THE DATABASE(MODEL FILE)
 const httpFetchFamilyMembers = async (req, res) => {
@@ -12,3 +12,8 @@ const httpFetchSingleFamilyMember = async (req, res) => {
     return res.status(200).json(await (0, family_models_1.fetchSingleFamilyMember)(req.params.name));
 };
 exports.httpFetchSingleFamilyMember = httpFetchSingleFamilyMember;
+//CONTROLLER THAT WILL BE ACCESSED IF THERE IS NO ROUTES
+const unknownRouteHandler = (req, res) => {
+    res.status(404).json({ message: "unknown route" });
+};
+exports.unknownRouteHandler = unknownRouteHandler;

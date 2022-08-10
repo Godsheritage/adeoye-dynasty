@@ -122,7 +122,7 @@ export const fetchFamilyMembers = async () => {
   return await familyModel.find({}, { __v: 0 }).sort({ age: -1 });
 };
 
-// to find an individual family meber
+// FETCH FAMILY MEMBER BY NAME
 export const fetchSingleFamilyMember = async (name: string) => {
   return await familyModel.findOne({ name }, { __v: 0 });
 };

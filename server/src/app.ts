@@ -5,6 +5,7 @@ import express from "express";
 import { uploadFile, getFileStream } from "./s3";
 import authRoute from "./routes/auth/auth.routes";
 import familyRoute from "./routes/family/family.routes";
+import { unknownRouteHandler } from "./routes/family/family.controllers";
 
 const app = express();
 
@@ -21,6 +22,9 @@ app.get("/images/:key", (req, res) => {
   const readStream = getFileStream(key);
   readStream.pipe(res);
 });
+
+//IF THE ROUTE ISNT FOUND
+app.get(unknownRouteHandler)
 
 app.use(express.static(path.join(__dirname, "..", "public ")));
 
