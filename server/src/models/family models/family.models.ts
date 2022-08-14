@@ -111,6 +111,8 @@ const familyMembers: familyMemberTypes["member"][] = [
   },
 ];
 
+
+//ADD A FAMILY MEMBER
 export const addFamilyMembers = async (member:familyMemberTypes["member"]) => {
   const newMember = {
     name: member.name,
