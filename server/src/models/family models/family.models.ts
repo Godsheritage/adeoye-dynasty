@@ -139,4 +139,4 @@ export const fetchSingleFamilyMember = async (name: string) => {
   return await familyModel.findOne({ name }, { __v: 0 });
 };
 
-export default familyMembers;
+// export default familyMembers;

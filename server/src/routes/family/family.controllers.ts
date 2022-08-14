@@ -19,7 +19,7 @@ export const httpFetchSingleFamilyMember: RequestHandler = async (req, res) => {
 //CONTROLLER TO ADD FAMILY MEMBER TO THE DATABASE//
 export const httpAddFamilyMember: RequestHandler = async (req, res) => {
   let errors = validationResult(req)
-  if(!errors.isEmpty){
+  if(!errors.isEmpty()){
     return res.status(422).json(errors.array())
   }
   return res.status(201).json(await addFamilyMembers(req.body));
