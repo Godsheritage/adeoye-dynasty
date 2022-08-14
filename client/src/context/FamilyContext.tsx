@@ -1,34 +1,22 @@
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { contextTypes, familyMemberTypes } from "../types";
-import {
-  createContext,
-  useEffect,
-  useCallback,
-  useState,
-  useMemo,
-} from "react";
-import { addMember, selectedMember } from "../Store/reducers/familyReducers";
+import { createContext, useEffect, useState } from "react";
+import { addMember } from "../Store/reducers/familyReducers";
 
 const FamilyContext = createContext<contextTypes | null>(null);
 
 const API_URL = "http://localhost:1234";
 
-
-
-
-
 export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const dispatch = useDispatch();
-  const [isDashboardMode, setIsDashboardMode] = useState<boolean>(false)
+  const [isDashboardMode, setIsDashboardMode] = useState<boolean>(false);
 
   const [isLoggedInMode, setIsLoggedInMode] = useState<boolean>(false);
 
-  // const [singleFamilyMember, setSingleFamilyMembers] = useState("");
-
-  // to fetch family members
+  // FETCH FAMILY MEMBERS
   const fetchFamily = async () => {
-    const response = await axios.get(`${API_URL}/family/members`);
+    const response = await axios.get(`${API_URL}api/family/members`);
     dispatch(addMember(response.data));
     console.log("API CALLED");
   };
@@ -45,17 +33,17 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   // useEffect(() => {
   //   fetchFamily();
   // }, [fetchFamily]);
-// console.log(getstat)
+  // console.log(getstat)
 
   let familyMembers: familyMemberTypes["member"][] = useSelector(
     (state: any) => state.familyMembers
   );
 
-  // sign users in
+  // SIGN USERS IN
   const signIn = async (username: string, password: string) => {
     const authObject = { username, password };
     try {
-      const response = await axios.post(`${API_URL}/auth`, authObject);
+      const response = await axios.post(`${API_URL}/api/auth`, authObject);
       setIsLoggedInMode(true);
       return response.data;
     } catch (err: any) {
@@ -70,8 +58,8 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
         signIn,
         fetchFamily,
         isLoggedInMode,
-        setIsDashboardMode, 
-        isDashboardMode
+        setIsDashboardMode,
+        isDashboardMode,
       }}
     >
       {children}
