@@ -15,6 +15,5 @@ export const httpFetchSingleFamilyMember: RequestHandler = async (req, res) => {
 };
 
 //CONTROLLER THAT WILL BE ACCESSED IF THERE IS NO ROUTES
-export const unknownRouteHandler: RequestHandler = (req, res) => {
-  res.status(404).json({ message: "unknown route" });
+export const unknownRouteHandler: RequestHandler =
 };

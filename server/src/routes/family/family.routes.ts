@@ -3,6 +3,9 @@ import { httpFetchFamilyMembers, httpFetchSingleFamilyMember } from "./family.co
 
 const familyRoute = express.Router()
 
+//ADD FAMILY MEMBERS
+familyRoute.post('/members', httpFetchFamilyMembers)
+
 // GET ALL THE FAMILY MEMBERS
 familyRoute.get('/members', httpFetchFamilyMembers)
 

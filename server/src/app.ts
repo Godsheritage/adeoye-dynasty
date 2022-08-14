@@ -24,7 +24,9 @@ app.get("/images/:key", (req, res) => {
 });
 
 //IF THE ROUTE ISNT FOUND
-app.get(unknownRouteHandler)
+app.get((req:any, res:any) => {
+  res.status(404).json({ message: "unknown route" });
+});
 
 app.use(express.static(path.join(__dirname, "..", "public ")));
 
