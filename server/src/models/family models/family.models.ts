@@ -111,8 +111,18 @@ const familyMembers: familyMemberTypes["member"][] = [
   },
 ];
 
-const addFamilyMembers = async () => {
-  await familyModel.create(familyMembers);
+export const addFamilyMembers = async (member:familyMemberTypes["member"]) => {
+  const newMember = {
+    name: member.name,
+    DOB: member.DOB,
+    image: member.image,
+    sex: member.sex,
+    bio: member.bio,
+    age: member.age,
+    isAlive: member.DOB,
+    YearOfDeath: member.DOB,
+  }
+  await familyModel.create(newMember);
 };
 
 // addFamilyMembers();
