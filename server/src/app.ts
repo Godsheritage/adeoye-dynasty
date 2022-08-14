@@ -5,7 +5,7 @@ import express from "express";
 import { uploadFile, getFileStream } from "./s3";
 import authRoute from "./routes/auth/auth.routes";
 import familyRoute from "./routes/family/family.routes";
-import { unknownRouteHandler } from "./routes/family/family.controllers";
+// import { unknownRouteHandler } from "./routes/family/family.controllers";
 
 const app = express();
 
