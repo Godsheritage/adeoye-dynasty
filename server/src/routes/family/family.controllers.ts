@@ -14,6 +14,4 @@ export const httpFetchSingleFamilyMember: RequestHandler = async (req, res) => {
   return res.status(200).json(await fetchSingleFamilyMember(req.params.name));
 };
 
-//CONTROLLER THAT WILL BE ACCESSED IF THERE IS NO ROUTES
-export const unknownRouteHandler: RequestHandler =
-};
+
