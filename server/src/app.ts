@@ -22,16 +22,18 @@ app.get("/images/:key", (req, res) => {
   const readStream = getFileStream(key);
   readStream.pipe(res);
 });
-//may move to buttom
+
 //CONTROLLER THAT WILL BE ACCESSED IF THERE IS NO ROUTES
-app.use((req, res) => {
-  return res.status(404).json({ mesage: "could not find route" });
-})
+
 
 app.use(express.static(path.join(__dirname, "..", "public ")));
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public ", "index.html"));
 });
+
+app.use((req, res) => {
+  return res.status(404).json({ mesage: "could not find route" });
+})
 
 export default app;
