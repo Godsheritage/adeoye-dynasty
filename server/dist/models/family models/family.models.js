@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchSingleFamilyMember = exports.fetchFamilyMembers = void 0;
+exports.fetchSingleFamilyMember = exports.fetchFamilyMembers = exports.addFamilyMembers = void 0;
 const family_mongo_1 = require("./family.mongo");
 // to find the age of a member
 const year = new Date().getFullYear();
@@ -109,9 +109,21 @@ const familyMembers = [
         YearOfDeath: null,
     },
 ];
-const addFamilyMembers = async () => {
-    await family_mongo_1.familyModel.create(familyMembers);
+//ADD A FAMILY MEMBER
+const addFamilyMembers = async (member) => {
+    const newMember = {
+        name: member.name,
+        DOB: member.DOB,
+        image: member.image,
+        sex: member.sex,
+        bio: member.bio,
+        age: member.age,
+        isAlive: member.DOB,
+        YearOfDeath: member.DOB,
+    };
+    await family_mongo_1.familyModel.create(newMember);
 };
+exports.addFamilyMembers = addFamilyMembers;
 // addFamilyMembers();
 // FETCH ALL THE FAMILY MEMBERS
 const fetchFamilyMembers = async () => {
@@ -123,4 +135,4 @@ const fetchSingleFamilyMember = async (name) => {
     return await family_mongo_1.familyModel.findOne({ name }, { __v: 0 });
 };
 exports.fetchSingleFamilyMember = fetchSingleFamilyMember;
-exports.default = familyMembers;
+// export default familyMembers;

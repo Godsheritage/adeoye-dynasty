@@ -10,7 +10,7 @@ const express_1 = __importDefault(require("express"));
 const s3_1 = require("./s3");
 const auth_routes_1 = __importDefault(require("./routes/auth/auth.routes"));
 const family_routes_1 = __importDefault(require("./routes/family/family.routes"));
-const family_controllers_1 = require("./routes/family/family.controllers");
+// import { unknownRouteHandler } from "./routes/family/family.controllers";
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -22,8 +22,11 @@ app.get("/images/:key", (req, res) => {
     const readStream = (0, s3_1.getFileStream)(key);
     readStream.pipe(res);
 });
-//IF THE ROUTE ISNT FOUND
-app.get(family_controllers_1.unknownRouteHandler);
+//may move to buttom
+//CONTROLLER THAT WILL BE ACCESSED IF THERE IS NO ROUTES
+app.use((req, res) => {
+    return res.status(404).json({ mesage: "could not find route" });
+});
 app.use(express_1.default.static(path_1.default.join(__dirname, "..", "public ")));
 app.get("/*", (req, res) => {
     res.sendFile(path_1.default.join(__dirname, "..", "public ", "index.html"));
