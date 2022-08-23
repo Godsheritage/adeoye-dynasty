@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchSingleFamilyMember = exports.fetchFamilyMembers = exports.addFamilyMembers = void 0;
 const family_mongo_1 = require("./family.mongo");
-// to find the age of a member
-const year = new Date().getFullYear();
-const age = (DOB) => {
-    return year - DOB.getFullYear();
+//FIND AGE OF EACH MEMBER
+const currentAge = (DOB) => {
+    const currentYear = new Date().getFullYear();
+    return currentYear - DOB.getFullYear();
 };
 const familyMembers = [
     {
@@ -14,7 +14,7 @@ const familyMembers = [
         image: "Tunde.jpg",
         sex: "male",
         bio: "just there",
-        age: age(new Date("26 May 1971")),
+        age: currentAge(new Date("26 May 1971")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -24,7 +24,7 @@ const familyMembers = [
         image: "Ruth.jpg",
         sex: "female",
         bio: "just there",
-        age: age(new Date("21 September 1976")),
+        age: currentAge(new Date("21 September 1976")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -34,7 +34,7 @@ const familyMembers = [
         image: "Crownfit.jpg",
         sex: "male",
         bio: "just there",
-        age: age(new Date("28 August 2002")),
+        age: currentAge(new Date("28 August 2002")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -44,7 +44,7 @@ const familyMembers = [
         image: "Godsheritage.JPG",
         sex: "male",
         bio: "just there",
-        age: age(new Date("30 march 2004")),
+        age: currentAge(new Date("30 march 2004")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -54,7 +54,7 @@ const familyMembers = [
         image: "Mojola.JPG",
         sex: "male",
         bio: "just there",
-        age: age(new Date("16 November 2007")),
+        age: currentAge(new Date("16 November 2007")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -64,7 +64,7 @@ const familyMembers = [
         image: "Tunde.jpg",
         sex: "male",
         bio: "just there",
-        age: age(new Date("26 May 1971")),
+        age: currentAge(new Date("26 May 1971")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -74,7 +74,7 @@ const familyMembers = [
         image: "Ruth.jpg",
         sex: "female",
         bio: "just there",
-        age: age(new Date("21 September 1976")),
+        age: currentAge(new Date("21 September 1976")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -84,7 +84,7 @@ const familyMembers = [
         image: "Crownfit.jpg",
         sex: "male",
         bio: "just there",
-        age: age(new Date("28 August 2002")),
+        age: currentAge(new Date("28 August 2002")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -94,7 +94,7 @@ const familyMembers = [
         image: "Godsheritage.JPG",
         sex: "male",
         bio: "just there",
-        age: age(new Date("30 march 2004")),
+        age: currentAge(new Date("30 march 2004")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -104,7 +104,7 @@ const familyMembers = [
         image: "Mojola.JPG",
         sex: "male",
         bio: "just there",
-        age: age(new Date("16 November 2007")),
+        age: currentAge(new Date("16 November 2007")),
         isAlive: true,
         YearOfDeath: null,
     },
@@ -125,14 +125,13 @@ const addFamilyMembers = async (member) => {
 };
 exports.addFamilyMembers = addFamilyMembers;
 // addFamilyMembers();
-// FETCH ALL THE FAMILY MEMBERS
+// FETCH AND SORT ALL THE FAMILY MEMBERS FROM THE DATABASE
 const fetchFamilyMembers = async () => {
     return await family_mongo_1.familyModel.find({}, { __v: 0 }).sort({ age: -1 });
 };
 exports.fetchFamilyMembers = fetchFamilyMembers;
-// FETCH FAMILY MEMBER BY NAME
+// FETCH FAMILY MEMBER BY NAME FROM THE DATABASE
 const fetchSingleFamilyMember = async (name) => {
     return await family_mongo_1.familyModel.findOne({ name }, { __v: 0 });
 };
 exports.fetchSingleFamilyMember = fetchSingleFamilyMember;
-// export default familyMembers;

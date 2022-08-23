@@ -1,11 +1,10 @@
 import { familyMemberTypes } from "../../types";
 import { familyModel } from "./family.mongo";
 
-// to find the age of a member
-const year: any = new Date().getFullYear();
-
-const age = (DOB: Date) => {
-  return year - DOB.getFullYear();
+//FIND AGE OF EACH MEMBER
+const currentAge = (DOB: Date) => {
+  const currentYear: number = new Date().getFullYear();
+  return currentYear - DOB.getFullYear();
 };
 
 const familyMembers: familyMemberTypes["member"][] = [
@@ -15,7 +14,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Tunde.jpg",
     sex: "male",
     bio: "just there",
-    age: age(new Date("26 May 1971")),
+    age: currentAge(new Date("26 May 1971")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -25,7 +24,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Ruth.jpg",
     sex: "female",
     bio: "just there",
-    age: age(new Date("21 September 1976")),
+    age: currentAge(new Date("21 September 1976")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -35,7 +34,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Crownfit.jpg",
     sex: "male",
     bio: "just there",
-    age: age(new Date("28 August 2002")),
+    age: currentAge(new Date("28 August 2002")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -45,7 +44,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Godsheritage.JPG",
     sex: "male",
     bio: "just there",
-    age: age(new Date("30 march 2004")),
+    age: currentAge(new Date("30 march 2004")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -55,7 +54,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Mojola.JPG",
     sex: "male",
     bio: "just there",
-    age: age(new Date("16 November 2007")),
+    age: currentAge(new Date("16 November 2007")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -65,7 +64,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Tunde.jpg",
     sex: "male",
     bio: "just there",
-    age: age(new Date("26 May 1971")),
+    age: currentAge(new Date("26 May 1971")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -75,7 +74,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Ruth.jpg",
     sex: "female",
     bio: "just there",
-    age: age(new Date("21 September 1976")),
+    age: currentAge(new Date("21 September 1976")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -85,7 +84,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Crownfit.jpg",
     sex: "male",
     bio: "just there",
-    age: age(new Date("28 August 2002")),
+    age: currentAge(new Date("28 August 2002")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -95,7 +94,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Godsheritage.JPG",
     sex: "male",
     bio: "just there",
-    age: age(new Date("30 march 2004")),
+    age: currentAge(new Date("30 march 2004")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -105,7 +104,7 @@ const familyMembers: familyMemberTypes["member"][] = [
     image: "Mojola.JPG",
     sex: "male",
     bio: "just there",
-    age: age(new Date("16 November 2007")),
+    age: currentAge(new Date("16 November 2007")),
     isAlive: true,
     YearOfDeath: null,
   },
@@ -113,7 +112,7 @@ const familyMembers: familyMemberTypes["member"][] = [
 
 
 //ADD A FAMILY MEMBER
-export const addFamilyMembers = async (member:familyMemberTypes["member"]) => {
+export const addFamilyMembers = async (member: familyMemberTypes["member"]) => {
   const newMember = {
     name: member.name,
     DOB: member.DOB,
@@ -123,20 +122,19 @@ export const addFamilyMembers = async (member:familyMemberTypes["member"]) => {
     age: member.age,
     isAlive: member.DOB,
     YearOfDeath: member.DOB,
-  }
+  };
   await familyModel.create(newMember);
 };
 
 // addFamilyMembers();
 
-// FETCH ALL THE FAMILY MEMBERS
+// FETCH AND SORT ALL THE FAMILY MEMBERS FROM THE DATABASE
 export const fetchFamilyMembers = async () => {
   return await familyModel.find({}, { __v: 0 }).sort({ age: -1 });
 };
 
-// FETCH FAMILY MEMBER BY NAME
+// FETCH FAMILY MEMBER BY NAME FROM THE DATABASE
 export const fetchSingleFamilyMember = async (name: string) => {
   return await familyModel.findOne({ name }, { __v: 0 });
 };
 
-// export default familyMembers;

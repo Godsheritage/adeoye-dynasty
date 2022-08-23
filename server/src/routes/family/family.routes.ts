@@ -1,9 +1,9 @@
-import express from "express";
 import {
   httpFetchFamilyMembers,
   httpFetchSingleFamilyMember,
   httpAddFamilyMember,
 } from "./family.controllers";
+import express from "express";
 import { check } from "express-validator";
 
 const familyRoute = express.Router();

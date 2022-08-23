@@ -11,7 +11,7 @@ export const httpFetchFamilyMembers: RequestHandler = async (req, res) => {
   return res.status(200).json(await fetchFamilyMembers());
 };
 
-//CONTROLLER TO FETCH FAMILY MEMBERS BY NAME FROM THE DATABASE(MODEL FILE)//
+//CONTROLLER TO FETCH FAMILY MEMBERS BY NAME FROM THE DATABASE(MODEL FILE)
 export const httpFetchSingleFamilyMember: RequestHandler = async (req, res) => {
   return res.status(200).json(await fetchSingleFamilyMember(req.params.name));
 };

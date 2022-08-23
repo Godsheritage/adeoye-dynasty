@@ -8,7 +8,7 @@ const httpFetchFamilyMembers = async (req, res) => {
     return res.status(200).json(await (0, family_models_1.fetchFamilyMembers)());
 };
 exports.httpFetchFamilyMembers = httpFetchFamilyMembers;
-//CONTROLLER TO FETCH FAMILY MEMBERS BY NAME FROM THE DATABASE(MODEL FILE)//
+//CONTROLLER TO FETCH FAMILY MEMBERS BY NAME FROM THE DATABASE(MODEL FILE)
 const httpFetchSingleFamilyMember = async (req, res) => {
     return res.status(200).json(await (0, family_models_1.fetchSingleFamilyMember)(req.params.name));
 };
