@@ -16,8 +16,12 @@ mongoose_1.default.connection.once("open", () => {
     console.log("mongo connection is ready");
 });
 const PORT = process.env.PORT || 1234;
-server.listen(PORT, async () => {
-    // make the mongo connection on start
-    await mongoose_1.default.connect(process.env.MONGO_URL);
-    console.log(`server is listening on port ${PORT}`);
-});
+//START THE SERVER
+const startServer = async () => {
+    server.listen(PORT, async () => {
+        // make the mongo connection on start
+        await mongoose_1.default.connect(process.env.MONGO_URL);
+        console.log(`server is listening on port ${PORT}`);
+    });
+};
+startServer();
