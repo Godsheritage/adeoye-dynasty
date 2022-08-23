@@ -4,7 +4,7 @@ import httpSignInUsers from "./auth.controllers";
 
 const authRoute = express.Router();
 
-//TO SIGN IN USERS
+// SIGN IN USERS
 authRoute.post(
   "/",
   [

@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const express_validator_1 = require("express-validator");
 const auth_controllers_1 = __importDefault(require("./auth.controllers"));
 const authRoute = express_1.default.Router();
-//TO SIGN IN USERS
+// SIGN IN USERS
 authRoute.post("/", [
     (0, express_validator_1.check)("username").notEmpty(),
     (0, express_validator_1.check)("password")

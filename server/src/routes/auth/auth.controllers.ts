@@ -9,9 +9,9 @@ const httpSignInUsers: RequestHandler = async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(422).json({ message: " missing fields" });
   }
+  const { username, password } = req.body;  
 
-  const { username, password } = req.body;
-//FETCH USERS FROM THE BACKEND
+  //FETCH USERS FROM THE BACKEND
   const user: any = await findUser(username, password);
   if (!user!) {
     return res.status(404).json({ message: "user not found" });
