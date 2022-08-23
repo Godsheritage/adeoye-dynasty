@@ -9,11 +9,11 @@ const auth_mongo_1 = __importDefault(require("./auth.mongo"));
 const findUser = async (username, password) => {
     const user = await auth_mongo_1.default.findOne({ username }, { __v: 0 });
     if (!user) {
-        return { message: "user Not found", error: 404 };
+        return { message: "user Not found", status: 404 };
     }
     if (user.password !== password) {
-        return { message: "Password is incorrect", error: 422 };
+        return { message: "Password is incorrect", status: 422 };
     }
-    return user;
+    return { message: "Successfully logged in", user, status: 200 };
 };
 exports.findUser = findUser;
