@@ -1,6 +1,6 @@
-import S3 from "aws-sdk/clients/s3";
-import dotenv from "dotenv";
 import fs from "fs";
+import dotenv from "dotenv";
+import S3 from "aws-sdk/clients/s3";
 
 dotenv.config();
 
@@ -16,8 +16,7 @@ const s3 = new S3({
   secretAccessKey,
 });
 
-//upload an image
-
+//UPLOAD AN IMAGE
 export const uploadFile: any = (file: any) => {
   const fileStream = fs.createReadStream(file.path);
   const uploadParams: any = {
@@ -29,8 +28,7 @@ export const uploadFile: any = (file: any) => {
   return s3.upload(uploadParams).promise();
 };
 
-//download an image
- 
+//DOWNLOAD AN IMAGE
 export const getFileStream = (fileKey: any) => {
   const downloadParams: any = {
     Key: fileKey,

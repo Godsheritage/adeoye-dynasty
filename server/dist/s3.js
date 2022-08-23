@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getFileStream = exports.uploadFile = void 0;
-const s3_1 = __importDefault(require("aws-sdk/clients/s3"));
-const dotenv_1 = __importDefault(require("dotenv"));
 const fs_1 = __importDefault(require("fs"));
+const dotenv_1 = __importDefault(require("dotenv"));
+const s3_1 = __importDefault(require("aws-sdk/clients/s3"));
 dotenv_1.default.config();
 const AWS_BUCKET_NAME = process.env.AWS_BUCKET_NAME;
 const region = process.env.AWS_BUCKET_REGION;
@@ -17,7 +17,7 @@ const s3 = new s3_1.default({
     accessKeyId,
     secretAccessKey,
 });
-//upload an image
+//UPLOAD AN IMAGE
 const uploadFile = (file) => {
     const fileStream = fs_1.default.createReadStream(file.path);
     const uploadParams = {
@@ -28,7 +28,7 @@ const uploadFile = (file) => {
     return s3.upload(uploadParams).promise();
 };
 exports.uploadFile = uploadFile;
-//download an image
+//DOWNLOAD AN IMAGE
 const getFileStream = (fileKey) => {
     const downloadParams = {
         Key: fileKey,
