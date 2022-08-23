@@ -23,13 +23,14 @@ app.get("/images/:key", (req, res) => {
   readStream.pipe(res);
 });
 
-
+//HOST THE CLIENT ON THE SERVER
 app.use(express.static(path.join(__dirname, "..", "public ")));
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public ", "index.html"));
 });
 
+//ROUTE NOT FOUND
 app.use((req, res) => {
   return res.status(404).json({ mesage: "could not find route" });
 })

@@ -22,10 +22,12 @@ app.get("/images/:key", (req, res) => {
     const readStream = (0, s3_1.getFileStream)(key);
     readStream.pipe(res);
 });
+//HOST THE CLIENT ON THE SERVER
 app.use(express_1.default.static(path_1.default.join(__dirname, "..", "public ")));
 app.get("/*", (req, res) => {
     res.sendFile(path_1.default.join(__dirname, "..", "public ", "index.html"));
 });
+//ROUTE NOT FOUND
 app.use((req, res) => {
     return res.status(404).json({ mesage: "could not find route" });
 });
