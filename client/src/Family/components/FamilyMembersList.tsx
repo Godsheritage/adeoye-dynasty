@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import FamilyContext from "../../context/FamilyContext";
-import { contextTypes } from "../../types";
 import FamilyMember from "./FamilyMember";
+import { contextTypes } from "../../types";
+import FamilyContext from "../../context/FamilyContext";
 
 const FamilyMembersList: React.FC<any> = ({ familyMembers }) => {
   const {isDashboardMode } = useContext(FamilyContext) as contextTypes
