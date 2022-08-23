@@ -110,8 +110,7 @@ const familyMembers: familyMemberTypes["member"][] = [
   },
 ];
 
-
-//ADD A FAMILY MEMBER
+//ADD A FAMILY MEMBER TO THE DATABASE
 export const addFamilyMembers = async (member: familyMemberTypes["member"]) => {
   const newMember = {
     name: member.name,
@@ -126,8 +125,6 @@ export const addFamilyMembers = async (member: familyMemberTypes["member"]) => {
   await familyModel.create(newMember);
 };
 
-// addFamilyMembers();
-
 // FETCH AND SORT ALL THE FAMILY MEMBERS FROM THE DATABASE
 export const fetchFamilyMembers = async () => {
   return await familyModel.find({}, { __v: 0 }).sort({ age: -1 });
@@ -135,6 +132,9 @@ export const fetchFamilyMembers = async () => {
 
 // FETCH FAMILY MEMBER BY NAME FROM THE DATABASE
 export const fetchSingleFamilyMember = async (name: string) => {
-  return await familyModel.findOne({ name }, { __v: 0 });
+  const member = await familyModel.findOne({ name }, { __v: 0 });
+  if (!member) {
+    return { message: "member not found", status: 404 };
+  }
+  return { message: "member found", status: 200, member };
 };
-

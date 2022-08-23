@@ -20,6 +20,6 @@ familyRoute.post("/", [
 ], family_controllers_1.httpAddFamilyMember);
 // GET ALL THE FAMILY MEMBERS
 familyRoute.get("/members", family_controllers_1.httpFetchFamilyMembers);
-//GET ALL THE FAMILY MEMBERS BY NAME
+//GET FAMILY MEMBER BY NAME
 familyRoute.get("/members/:name", family_controllers_1.httpFetchSingleFamilyMember);
 exports.default = familyRoute;

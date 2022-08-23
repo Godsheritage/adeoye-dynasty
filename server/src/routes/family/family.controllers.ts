@@ -13,15 +13,15 @@ export const httpFetchFamilyMembers: RequestHandler = async (req, res) => {
 
 //CONTROLLER TO FETCH FAMILY MEMBERS BY NAME FROM THE DATABASE(MODEL FILE)
 export const httpFetchSingleFamilyMember: RequestHandler = async (req, res) => {
-  return res.status(200).json(await fetchSingleFamilyMember(req.params.name));
+  const member = await fetchSingleFamilyMember(req.params.name);
+  return res.status(member.status).json(member);
 };
 
 //CONTROLLER TO ADD FAMILY MEMBER TO THE DATABASE//
 export const httpAddFamilyMember: RequestHandler = async (req, res) => {
-  let errors = validationResult(req)
-  if(!errors.isEmpty()){
-    return res.status(422).json(errors.array())
+  let errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json(errors.array());
   }
   return res.status(201).json(await addFamilyMembers(req.body));
 };
-

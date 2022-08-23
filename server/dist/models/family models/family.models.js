@@ -109,7 +109,7 @@ const familyMembers = [
         YearOfDeath: null,
     },
 ];
-//ADD A FAMILY MEMBER
+//ADD A FAMILY MEMBER TO THE DATABASE
 const addFamilyMembers = async (member) => {
     const newMember = {
         name: member.name,
@@ -124,7 +124,6 @@ const addFamilyMembers = async (member) => {
     await family_mongo_1.familyModel.create(newMember);
 };
 exports.addFamilyMembers = addFamilyMembers;
-// addFamilyMembers();
 // FETCH AND SORT ALL THE FAMILY MEMBERS FROM THE DATABASE
 const fetchFamilyMembers = async () => {
     return await family_mongo_1.familyModel.find({}, { __v: 0 }).sort({ age: -1 });
@@ -132,6 +131,10 @@ const fetchFamilyMembers = async () => {
 exports.fetchFamilyMembers = fetchFamilyMembers;
 // FETCH FAMILY MEMBER BY NAME FROM THE DATABASE
 const fetchSingleFamilyMember = async (name) => {
-    return await family_mongo_1.familyModel.findOne({ name }, { __v: 0 });
+    const member = await family_mongo_1.familyModel.findOne({ name }, { __v: 0 });
+    if (!member) {
+        return { message: "member not found", status: 404 };
+    }
+    return { message: "member found", status: 200, member };
 };
 exports.fetchSingleFamilyMember = fetchSingleFamilyMember;

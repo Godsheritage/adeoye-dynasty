@@ -27,7 +27,7 @@ familyRoute.post(
 // GET ALL THE FAMILY MEMBERS
 familyRoute.get("/members", httpFetchFamilyMembers);
 
-//GET ALL THE FAMILY MEMBERS BY NAME
+//GET FAMILY MEMBER BY NAME
 familyRoute.get("/members/:name", httpFetchSingleFamilyMember);
 
 export default familyRoute;
