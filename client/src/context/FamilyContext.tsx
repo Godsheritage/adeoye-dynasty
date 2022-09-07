@@ -16,26 +16,32 @@ export const FamilyContextProvider: React.FC<any> = ({ children }) => {
   const [isLoggedInMode, setIsLoggedInMode] = useState<boolean>(false);
 
   // FETCH FAMILY MEMBERS
-  // const fetchFamily = async () => {
-  //   const response = await axios.get(`${API_URL}api/family/members`);
-  //   dispatch(addMember(response.data));
-  //   console.log("API CALLED");
-  // };
-
-  // useEffect(() => {
-  //   fetchFamily();
-  // }, []);
-
-  const fetchFamily = useCallback(async () => {
-    const response = await axios.get(`${API_URL}/api/family/members`);
+  const fetchFamily = async () => {
+    const response = await axios.get(`${API_URL}api/family/members`);
     dispatch(addMember(response.data));
     console.log("API CALLED");
-  }, [dispatch]);
+  };
 
   useEffect(() => {
     fetchFamily();
-  }, [fetchFamily]);
-  // console.log(getstat)
+  }, []);
+
+  //FETCH FAMILY
+  // const fetchFamily = useCallback(async () => {
+  //   let response;
+  //   try {
+  //     response = await axios.get(`${API_URL}/api/family/members`);
+  //     dispatch(addMember(response.data));
+  //   } catch (error) {
+  //     console.log(`fetch family failed to run ${error}`);
+  //   }
+
+  //   console.log("API CALLED");
+  // }, [dispatch]);
+
+  // useEffect(() => {
+  //   fetchFamily();
+  // }, [fetchFamily]);
 
   let familyMembers: familyMemberTypes["member"][] = useSelector(
     (state: any) => state.familyMembers
