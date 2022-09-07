@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.familyModel = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
+//MONGODB SCHEMA
 const familySchema = new mongoose_1.default.Schema({
     name: { type: String, required: true },
     DOB: { type: Date, required: true },

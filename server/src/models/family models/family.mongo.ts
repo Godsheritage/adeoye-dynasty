@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
+//MONGODB SCHEMA
 const familySchema = new mongoose.Schema({
   name: { type: String, required: true },
   DOB: { type: Date, required: true },
